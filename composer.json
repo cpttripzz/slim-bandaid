@@ -1,0 +1,10 @@
+{
+    "require": {
+        "slim/slim": "2.*",
+        "illuminate/database": "*",
+        "league/oauth2-server": "3.2.*@dev"
+    },
+    "autoload": {
+        "psr-4": {"" : [ "src/"] }
+    }
+}

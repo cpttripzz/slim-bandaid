@@ -2,13 +2,10 @@
 session_start();
 require 'vendor/autoload.php';
 
-use Illuminate\Events\Dispatcher;
-use Illuminate\Container\Container;
 
 $config['database'] = array(
     'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'bandaid',
+    'dsn' => 'mysql:dbname=bandaid;host=localhost',
     'username' => 'root',
     'password' => '123456',
     'charset' => 'utf8',
@@ -23,17 +20,19 @@ $app = new \Slim\Slim();
 
 try {
     $app->container->singleton('db', function () use ($config) {
-        $capsule = new Illuminate\Database\Capsule\Manager;
-        $capsule->setEventDispatcher(new Dispatcher(new Container));
-        $capsule->addConnection($config['database']);
-        $capsule->setAsGlobal();
-        $capsule->bootEloquent();
-        return $capsule->getConnection();
-    });
+        $options = array(
+            \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            \PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC
+        );
 
+        $pdo = new \PDO($config['database']['dsn'], $config['database']['username'], $config['database']['password'], $options);
+        return $pdo;
+    });
 } catch (PDOException $exception) {
     var_dump($exception);
 }
+
 foreach ($config['routes'] as $route) {
     require 'app/routes/' . $route . '.php';
 }

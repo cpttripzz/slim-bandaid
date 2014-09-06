@@ -12,8 +12,10 @@ $server->addGrantType(new \League\OAuth2\Server\Grant\Implicit());
 $app->get('/oauth', function () use ($server, $app) {
     try {
 
+        $params = $app->request()->params();
+
         // Tell the auth server to check the required parameters are in the query string
-        $params = $server->getGrantType('implicit')->completeFlow();
+        $params = $server->getGrantType('implicit')->completeFlow($params['client_id']);
 
         $_SESSION['params'] = serialize($params);
 

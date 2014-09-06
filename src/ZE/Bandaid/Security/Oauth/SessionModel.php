@@ -16,39 +16,19 @@ class SessionModel implements SessionInterface {
         $this->db->insert('
             INSERT INTO oauth_sessions (
                 client_id,
-                redirect_uri,
                 owner_type,
-                owner_id,
-                auth_code,
-                access_token,
-                refresh_token,
-                access_token_expires,
-                stage,
-                first_requested,
-                last_updated
+                owner_id
+
             )
             VALUES (
                 :clientId,
-                :redirectUri,
                 :type,
-                :typeId,
-                :authCode,
-                :accessToken,
-                :refreshToken,
-                :accessTokenExpire,
-                :stage,
-                UNIX_TIMESTAMP(NOW()),
-                UNIX_TIMESTAMP(NOW())
+                :typeId
+
             )', array(
             ':clientId' =>  $clientId,
-            ':redirectUri'  =>  $redirectUri,
             ':type' =>  $type,
-            ':typeId'   =>  $typeId,
-            ':authCode' =>  $authCode,
-            ':accessToken'  =>  $accessToken,
-            ':refreshToken' =>  $refreshToken,
-            ':accessTokenExpire'    =>  $accessTokenExpire,
-            ':stage'    =>  $stage
+            ':typeId'   =>  $typeId
         ));
 
         return $this->db->getInsertId();

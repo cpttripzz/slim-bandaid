@@ -5,21 +5,57 @@ require 'vendor/autoload.php';
 
 $config['database'] = array(
     'driver' => 'mysql',
-    'dsn' => 'mysql:dbname=bandaid;host=localhost',
+    'dsn' => 'mysql:dbname=test_bandaid;host=localhost',
     'username' => 'root',
     'password' => '123456',
     'charset' => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix' => '',
 );
-$config['routes'] = array('bands', 'auth');
+$config['routes'] = array('bands', 'auth', 'user');
 
-// initialize app
 $app = new \Slim\Slim();
+
+$app->add(new \Slim\Middleware\SessionCookie(array('secret' => $app->getRandomUuid)));
+
+$getRandomUuid = function ($app) {
+    return function () use ($app) {
+        return bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
+    };
+};
+
+
+
+$authenticate = function ($app) {
+    return function () use ($app) {
+        if (!isset($_SESSION['user'])) {
+//            $_SESSION['urlRedirect'] = $app->request()->getPathInfo();
+            $app->returnJson(array('success'=>false, 'statusCode'=>401));
+        }
+    };
+};
+function returnJson ($returnArray) {
+        $app = \Slim\Slim::getInstance();
+
+        if ($returnArray['success'] === true){
+            $app->response()->status(200);
+        } else {
+            $statusCode = (empty($returnArray['statusCode'])) ? 400 : $returnArray['statusCode'];
+            $app->response()->status($statusCode);
+        }
+        $callback = (empty($returnArray['callback'])) ? null : $returnArray['callback'];
+        if ($callback) {
+            echo $callback . '(' . json_encode($returnArray) .');';
+        } else {
+            $app->response()->header('Content-Type', 'application/json');
+            echo json_encode($returnArray);
+        }
+
+};
 
 
 try {
-    $app->container->singleton('db', function () use ($config) {
+    $app->container->singleton('pdo', function () use ($config) {
         $options = array(
             \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,

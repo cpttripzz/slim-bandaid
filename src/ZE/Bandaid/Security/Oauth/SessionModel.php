@@ -2,127 +2,17 @@
 namespace ZE\Bandaid\Security\Oauth;
 
 use \League\OAuth2\Server\Storage\SessionInterface;
-class SessionModel implements SessionInterface {
 
-    private $db;
+class SessionModel implements SessionInterface
+{
 
-    public function __construct($db)
+    private $pdo;
+
+    public function __construct($pdo)
     {
-        $this->db = $db;
+        $this->pdo = $pdo;
     }
 
-    public function createSession($clientId, $redirectUri, $type = 'user', $typeId = null, $authCode = null, $accessToken = null, $refreshToken = null, $accessTokenExpire = null, $stage = 'requested')
-    {
-        $this->db->insert('
-            INSERT INTO oauth_sessions (
-                client_id,
-                owner_type,
-                owner_id
-
-            )
-            VALUES (
-                :clientId,
-                :type,
-                :typeId
-
-            )', array(
-            ':clientId' =>  $clientId,
-            ':type' =>  $type,
-            ':typeId'   =>  $typeId
-        ));
-
-        return $this->db->getInsertId();
-    }
-
-    public function updateSession($sessionId, $authCode = null, $accessToken = null, $refreshToken = null, $accessTokenExpire = null, $stage = 'requested')
-    {
-        $this->db->update('
-            UPDATE oauth_sessions SET
-                auth_code = :authCode,
-                access_token = :accessToken,
-                refresh_token = :refreshToken,
-                access_token_expires = :accessTokenExpire,
-                stage = :stage,
-                last_updated = UNIX_TIMESTAMP(NOW())
-            WHERE id = :sessionId',
-            array(
-                ':authCode' =>  $authCode,
-                ':accessToken'  =>  $accessToken,
-                ':refreshToken' =>  $refreshToken,
-                ':accessTokenExpire'    =>  $accessTokenExpire,
-                ':stage'    =>  $stage,
-                ':sessionId'    =>  $sessionId
-            ));
-    }
-
-    public function deleteSession($clientId, $type, $typeId)
-    {
-        $this->db->delete('
-                DELETE FROM oauth_sessions WHERE
-                client_id = :clientId AND
-                owner_type = :type AND
-                owner_id = :typeId',
-            array(
-                ':clientId' =>  $clientId,
-                ':type'  =>  $type,
-                ':typeId' =>  $typeId
-            ));
-    }
-
-    public function validateAuthCode($clientId, $redirectUri, $authCode)
-    {
-        $result = $this->db->select('
-                SELECT * FROM oauth_sessions WHERE
-                    client_id = :clientId AND
-                    redirect_uri = :redirectUri AND
-                    auth_code = :authCode',
-            array(
-                ':clientId' =>  $clientId,
-                ':redirectUri'  =>  $redirectUri,
-                ':authCode' =>  $authCode
-            ));
-
-        while ($row = $result->fetch())
-        {
-            return (array) $row;
-        }
-
-        return false;
-    }
-
-    public function validateAccessToken($accessToken)
-    {
-        // Not needed for this demo
-        die(var_dump('validateAccessToken'));
-    }
-
-    public function getAccessToken($sessionId)
-    {
-        // Not needed for this demo
-    }
-
-    public function validateRefreshToken($refreshToken, $clientId)
-    {
-        // Not needed for this demo
-    }
-
-    public function updateRefreshToken($sessionId, $newAccessToken, $newRefreshToken, $accessTokenExpires)
-    {
-        // Not needed for this demo
-    }
-
-    public function associateScope($sessionId, $scopeId)
-    {
-        $this->db->insert('INSERT INTO oauth_session_scopes (session_id, scope_id) VALUE (:sessionId, :scopeId)', array(
-            ':sessionId'    =>  $sessionId,
-            ':scopeId'  =>  $scopeId
-        ));
-    }
-
-    public function getScopes($accessToken)
-    {
-        // Not needed for this demo
-    }
 
     /**
      * Associate a redirect URI with a session
@@ -159,7 +49,20 @@ class SessionModel implements SessionInterface {
      */
     public function associateAccessToken($sessionId, $accessToken, $expireTime)
     {
-        // TODO: Implement associateAccessToken() method.
+        $sql = '
+          INSERT INTO oauth_session_access_tokens (session_id, access_token, access_token_expires)
+             VALUE (:sessionId, :accessToken, :accessTokenExpire)';
+        $stmt = $this->pdo->prepare($sql);
+        try {
+            $stmt->execute(array(
+                    ':sessionId' => $sessionId,
+                    ':accessToken' => $accessToken,
+                    ':accessTokenExpire' => $expireTime)
+            );
+            return $this->pdo->lastInsertId();
+        } catch (\PDOException $e) {
+            return false;
+        }
     }
 
     /**
@@ -285,5 +188,233 @@ class SessionModel implements SessionInterface {
     public function getAuthCodeScopes($oauthSessionAuthCodeId)
     {
         // TODO: Implement getAuthCodeScopes() method.
+    }
+
+    /**
+     * Create a new session
+     *
+     * Example SQL query:
+     *
+     * <code>
+     * INSERT INTO oauth_sessions (client_id, owner_type,  owner_id)
+     *  VALUE (:clientId, :ownerType, :ownerId)
+     * </code>
+     *
+     * @param  string $clientId The client ID
+     * @param  string $ownerType The type of the session owner (e.g. "user")
+     * @param  string $ownerId The ID of the session owner (e.g. "123")
+     * @return int               The session ID
+     */
+    public function createSession($clientId, $ownerType, $ownerId)
+    {
+        // TODO: Implement createSession() method.
+    }
+
+    /**
+     * Delete a session
+     *
+     * Example SQL query:
+     *
+     * <code>
+     * DELETE FROM oauth_sessions WHERE client_id = :clientId AND owner_type = :type AND owner_id = :typeId
+     * </code>
+     *
+     * @param  string $clientId The client ID
+     * @param  string $ownerType The type of the session owner (e.g. "user")
+     * @param  string $ownerId The ID of the session owner (e.g. "123")
+     * @return void
+     */
+    public function deleteSession($clientId, $ownerType, $ownerId=null)
+    {
+        if(!$ownerId){
+            return false;
+        }
+        $sql = 'DELETE FROM oauth_sessions WHERE client_id = :clientId AND owner_type = :type AND owner_id = :typeId';
+
+        $stmt = $this->pdo->prepare($sql);
+        try {
+            $stmt->execute(array(
+                    ':clientId' => $clientId,
+                    ':type' => $ownerType,
+                    ':owner_id' => $ownerId)
+            );
+            return $this->pdo->lastInsertId();
+        } catch (\PDOException $e) {
+            return false;
+        }
+    }
+
+    /**
+     * Validate an authorization code
+     *
+     * Example SQL query:
+     *
+     * <code>
+     * SELECT oauth_sessions.id AS session_id, oauth_session_authcodes.id AS authcode_id FROM oauth_sessions
+     *  JOIN oauth_session_authcodes ON oauth_session_authcodes.`session_id` = oauth_sessions.id
+     *  JOIN oauth_session_redirects ON oauth_session_redirects.`session_id` = oauth_sessions.id WHERE
+     * oauth_sessions.client_id = :clientId AND oauth_session_authcodes.`auth_code` = :authCode
+     *  AND `oauth_session_authcodes`.`auth_code_expires` >= :time AND
+     *  `oauth_session_redirects`.`redirect_uri` = :redirectUri
+     * </code>
+     *
+     * Expected response:
+     *
+     * <code>
+     * array(
+     *     'session_id' =>  (int)
+     *     'authcode_id'  =>  (int)
+     * )
+     * </code>
+     *
+     * @param  string $clientId The client ID
+     * @param  string $redirectUri The redirect URI
+     * @param  string $authCode The authorization code
+     * @return array|bool              False if invalid or array as above
+     */
+    public function validateAuthCode($clientId, $redirectUri, $authCode)
+    {
+        // TODO: Implement validateAuthCode() method.
+    }
+
+    /**
+     * Validate an access token
+     *
+     * Example SQL query:
+     *
+     * <code>
+     * SELECT session_id, oauth_sessions.`client_id`, oauth_sessions.`owner_id`, oauth_sessions.`owner_type`
+     *  FROM `oauth_session_access_tokens` JOIN oauth_sessions ON oauth_sessions.`id` = session_id WHERE
+     *  access_token = :accessToken AND access_token_expires >= UNIX_TIMESTAMP(NOW())
+     * </code>
+     *
+     * Expected response:
+     *
+     * <code>
+     * array(
+     *     'session_id' =>  (int),
+     *     'client_id'  =>  (string),
+     *     'owner_id'   =>  (string),
+     *     'owner_type' =>  (string)
+     * )
+     * </code>
+     *
+     * @param  string $accessToken The access token
+     * @return array|bool              False if invalid or an array as above
+     */
+    public function validateAccessToken($accessToken)
+    {
+        // TODO: Implement validateAccessToken() method.
+    }
+
+    /**
+     * Validate a refresh token
+     *
+     * Example SQL query:
+     *
+     * <code>
+     * SELECT session_access_token_id FROM `oauth_session_refresh_tokens` WHERE refresh_token = :refreshToken
+     *  AND refresh_token_expires >= UNIX_TIMESTAMP(NOW()) AND client_id = :clientId
+     * </code>
+     *
+     * @param  string $refreshToken The refresh token
+     * @param  string $clientId The client ID
+     * @return int|bool               The ID of the access token the refresh token is linked to (or false if invalid)
+     */
+    public function validateRefreshToken($refreshToken, $clientId)
+    {
+        // TODO: Implement validateRefreshToken() method.
+    }
+
+    /**
+     * Get an access token by ID
+     *
+     * Example SQL query:
+     *
+     * <code>
+     * SELECT * FROM `oauth_session_access_tokens` WHERE `id` = :accessTokenId
+     * </code>
+     *
+     * Expected response:
+     *
+     * <code>
+     * array(
+     *     'id' =>  (int),
+     *     'session_id' =>  (int),
+     *     'access_token'   =>  (string),
+     *     'access_token_expires'   =>  (int)
+     * )
+     * </code>
+     *
+     * @param  int $accessTokenId The access token ID
+     * @return array
+     */
+    public function getAccessToken($accessTokenId)
+    {
+        // TODO: Implement getAccessToken() method.
+    }
+
+    /**
+     * Associate a scope with an access token
+     *
+     * Example SQL query:
+     *
+     * <code>
+     * INSERT INTO `oauth_session_token_scopes` (`session_access_token_id`, `scope_id`) VALUE (:accessTokenId, :scopeId)
+     * </code>
+     *
+     * @param  int $accessTokenId The ID of the access token
+     * @param  int $scopeId The ID of the scope
+     * @return void
+     */
+    public function associateScope($accessTokenId, $scopeId)
+    {
+        $sql = 'INSERT INTO `oauth_session_token_scopes` (`session_access_token_id`, `scope_id`) VALUE (:accessTokenId, :scopeId)';
+        $stmt = $this->pdo->prepare($sql);
+        try {
+            $stmt->execute(array(
+                    ':session_access_token_id' => $accessTokenId,
+                    ':scope_id' => $scopeId
+                )
+            );
+            return $this->pdo->lastInsertId();
+        } catch (\PDOException $e) {
+            return false;
+        }
+    }
+
+    /**
+     * Get all associated access tokens for an access token
+     *
+     * Example SQL query:
+     *
+     * <code>
+     * SELECT oauth_scopes.* FROM oauth_session_token_scopes JOIN oauth_session_access_tokens
+     *  ON oauth_session_access_tokens.`id` = `oauth_session_token_scopes`.`session_access_token_id`
+     *  JOIN oauth_scopes ON oauth_scopes.id = `oauth_session_token_scopes`.`scope_id`
+     *  WHERE access_token = :accessToken
+     * </code>
+     *
+     * Expected response:
+     *
+     * <code>
+     * array (
+     *     array(
+     *         'id'     =>  (int),
+     *         'scope'  =>  (string),
+     *         'name'   =>  (string),
+     *         'description'    =>  (string)
+     *     ),
+     *     ...
+     *     ...
+     * )
+     * </code>
+     *
+     * @param  string $accessToken The access token
+     * @return array
+     */
+    public function getScopes($accessToken)
+    {
+        // TODO: Implement getScopes() method.
     }
 }

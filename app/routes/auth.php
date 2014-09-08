@@ -9,21 +9,15 @@ $server = new \League\OAuth2\Server\Authorization(new ClientModel(), new Session
 $server->addGrantType(new \League\OAuth2\Server\Grant\AuthCode());
 $server->addGrantType(new \League\OAuth2\Server\Grant\Implicit());
 
-$app->get('/oauth', function () use ($server, $app) {
+$app->get('/oauth', $authenticate($app),  function () use ($server, $app) {
     try {
+        $authParams = $app->request()->params();
+        if (empty($authParams['user_id'])){
+            $authParams['user_id'] = null;
+        }
 
-        $params = $app->request()->params();
-
-        // Tell the auth server to check the required parameters are in the query string
-        $params = $server->getGrantType('implicit')->completeFlow($params['client_id']);
-
+        $params = $server->getGrantType('implicit')->completeFlow($authParams);
         $_SESSION['params'] = serialize($params);
-
-        // url decoded
-        // ?client_id=I6Lh72kTItE6y29Ig607N74M7i21oyTo&client_details=User details&redirect_uri=http://client.dev/signin/redirect&response_type=code&scopes=user
-        // url encoded
-        // ?client_id=I6Lh72kTItE6y29Ig607N74M7i21oyTo&client_details=User details&redirect_uri=http%3A%2F%2Fclient.dev%2Fsignin%2Fredirect&response_type=code&scopes=user
-
         return $app->Redirect('/signin');
     } catch (\League\OAuth2\Server\Exception\ClientException $e) {
         echo $e;

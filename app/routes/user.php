@@ -7,37 +7,27 @@
  */
 
 $app->group('/user', function () use ($app) {
-    $app->post('/register', function ($id) {
+    $userService = new \ZE\Bandaid\Service\UserService($app->pdo);
 
-    });
-    $app->post("/login", function () use ($app) {
-        $email = $app->request()->post('email');
+    $app->map('/register', function ($app,$userService) {
+        $params = $app->request()->params();
+        $username = empty($params['username']) ? null : $params['username'];
+        $password = empty($params['password']) ? null : $params['password'];
+        $email = empty($params['email']) ? null : $params['email'];
+        returnJson($userService->createUser($username,$password, $email));
+    })->via('GET', 'POST');
+
+    $app->post("/login", function () use ($app,$userService) {
+        $username = $app->request()->post('username');
         $password = $app->request()->post('password');
-
-        if ($email != "brian@nesbot.com") {
-            $errors['email'] = "Email is not found.";
-        } else if ($password != "aaaa") {
-            $app->flash('email', $email);
-            $errors['password'] = "Password does not match.";
+        $email = $app->request()->post('email');
+        if(!$user = $userService->getUserByCredentials($username,$password, $email)){
+            $app->returnJson(array('success' => false, 'User or password do not match'));
         }
-
-        if (count($errors) > 0) {
-            $app->flash('errors', $errors);
-            $app->redirect('/login');
-        }
-
-        $_SESSION['user'] = $email;
-
-        if (isset($_SESSION['urlRedirect'])) {
-            $tmp = $_SESSION['urlRedirect'];
-            unset($_SESSION['urlRedirect']);
-            $app->redirect($tmp);
-        }
-
-        $app->redirect('/');
+        $_SESSION['user'] = $user;
     });
 
-    $app->put('/logout', function ($id) {
-
+    $app->put('/logout', function () {
+        unset($_SESSION['user']);
     });
 });

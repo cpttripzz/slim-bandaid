@@ -19,9 +19,12 @@ class UserService
         $this->pdo = $pdo;
     }
 
-    public function getUserByCredentials($username,$password)
+    public function getUserByCredentials($username,$password,$columns=null)
     {
-        $sql = 'SELECT * FROM users WHERE username = :username AND password = SHA2(CONCAT(:password,salt), 256)';
+        if(!$columns){
+            $columns = array('id', 'email','username');
+        }
+        $sql = 'SELECT '.implode(",",$columns).' FROM users WHERE username = :username AND password = SHA2(CONCAT(:password,salt), 256)';
         $stmt  = $this->pdo->prepare($sql);
         $stmt->execute(array(':username' => $username,':password'=>$password));
         return $stmt->fetch();
@@ -29,17 +32,17 @@ class UserService
 
     public function createUser($username,$password, $email)
     {
-        $escapedPassword = mysql_real_escape_string($password);
         $salt = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
-        $saltedPassword =  $escapedPassword . $salt;
-        $hashedPassword = hash('sha256', $saltedPassword);
         $sql = "INSERT INTO users(username,email,salt,password) VALUES (:username,:email,:salt, SHA2(CONCAT(:password,:salt), 256) )";
         $stmt  = $this->pdo->prepare($sql);
         try {
             $stmt->execute(array(':username' => $username, ':email' => $email, ':salt' => $salt, ':password' => $password));
-            return $this->pdo->lastInsertId();
-        }catch (\Exception $e){
-            return false;
+            return array('success' => true, 'id' => $this->pdo->lastInsertId());
+        }catch (\PDOException $e){
+            return array('success' => false, 'message' => 'Duplicate email or username');
+        }
+        catch (\Exception $e){
+            return array('success' => false, 'message' => 'Unkown error');
         }
     }
 }

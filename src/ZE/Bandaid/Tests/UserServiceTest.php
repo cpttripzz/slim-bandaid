@@ -24,8 +24,8 @@ class UserServiceTest extends Abstract_TestCase
 //        $this->setFixturePath(getcwd() . '/src/ZE/Bandaid/Tests/fixtures/users');
 //        $this->setFixtures(array('users'), true);
 //        $this->loadFixtures(true);
-//        $this->truncateTables(array('users'));
-        $username = 'admina';
+        $this->truncateTables(array('users'));
+        $username = 'admin';
         $password = '123456';
         $email = 'admin@admin.com';
         $this->service->createUser($username,$password,$email);

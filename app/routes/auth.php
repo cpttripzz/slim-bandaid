@@ -12,10 +12,6 @@ $server->addGrantType(new \League\OAuth2\Server\Grant\Implicit());
 $app->get('/oauth', $authenticate($app),  function () use ($server, $app) {
     try {
         $authParams = $app->request()->params();
-        if (empty($authParams['user_id'])){
-            $authParams['user_id'] = null;
-        }
-
         $params = $server->getGrantType('implicit')->completeFlow($authParams);
         $_SESSION['params'] = serialize($params);
         return $app->Redirect('/signin');

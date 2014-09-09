@@ -1,7 +1,15 @@
 <?php
 session_start();
 require 'vendor/autoload.php';
-
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    // return only the headers and not the content
+    // only allow CORS if we're doing a GET - i.e. no saving for now.
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']) && $_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'] == 'GET') {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Headers: X-Requested-With');
+    }
+    exit;
+}
 
 $config['database'] = array(
     'driver' => 'mysql',
@@ -30,7 +38,7 @@ $authenticate = function ($app) {
     return function () use ($app) {
         if (!isset($_SESSION['user'])) {
 //            $_SESSION['urlRedirect'] = $app->request()->getPathInfo();
-            $app->returnJson(array('success'=>false, 'statusCode'=>401));
+            returnJson(array('success'=>false, 'statusCode'=>401));
         }
     };
 };
@@ -46,9 +54,11 @@ function returnJson ($returnArray) {
         $callback = (empty($returnArray['callback'])) ? null : $returnArray['callback'];
         if ($callback) {
             echo $callback . '(' . json_encode($returnArray) .');';
+            exit;
         } else {
             $app->response()->header('Content-Type', 'application/json');
             echo json_encode($returnArray);
+            exit;
         }
 
 };

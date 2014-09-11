@@ -23,8 +23,11 @@ $config['database'] = array(
 $config['routes'] = array('bands', 'auth', 'user');
 
 $app = new \Slim\Slim();
-
-$app->add(new \Slim\Middleware\SessionCookie(array('secret' => $app->getRandomUuid)));
+function getJWTSecret()
+{
+    $secret ='f8916451dab8ccdcfb28158383fd8783c0dcf4b05c5d69cea9b2188fbf62a92';
+    return $secret;
+}
 
 $getRandomUuid = function ($app) {
     return function () use ($app) {

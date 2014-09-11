@@ -24,7 +24,7 @@ class UserService
         if(!$columns){
             $columns = array('id', 'email','username');
         }
-        $sql = 'SELECT '.implode(",",$columns).' FROM users WHERE username = :username AND password = SHA2(CONCAT(:password,salt), 256)';
+        $sql = 'SELECT '.implode(",",$columns).' FROM users WHERE email = :username AND password = SHA2(CONCAT(:password,salt), 256)';
         $stmt  = $this->pdo->prepare($sql);
         $stmt->execute(array(':username' => $username,':password'=>$password));
         return $stmt->fetch();

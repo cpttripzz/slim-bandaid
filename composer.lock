@@ -4,64 +4,51 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c094993571a2bb038482f1523d6849ab",
+    "hash": "1e39e51ac7304e7eb067f6c09ab14970",
     "packages": [
         {
-            "name": "league/oauth2-server",
-            "version": "3.2.3",
+            "name": "firebase/php-jwt",
+            "version": "dev-master",
+            "target-dir": "Firebase/PHP-JWT",
             "source": {
                 "type": "git",
-                "url": "https://github.com/thephpleague/oauth2-server.git",
-                "reference": "2f14f6b3919029a14b2f09641fa757c1a566a2da"
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "9e5ae039440bc0806ba85ab887ab9701b5e55ffb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/2f14f6b3919029a14b2f09641fa757c1a566a2da",
-                "reference": "2f14f6b3919029a14b2f09641fa757c1a566a2da",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/9e5ae039440bc0806ba85ab887ab9701b5e55ffb",
+                "reference": "9e5ae039440bc0806ba85ab887ab9701b5e55ffb",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
-            },
-            "replace": {
-                "lncd/oauth2": "*"
-            },
-            "require-dev": {
-                "league/phpunit-coverage-listener": "~1.0",
-                "mockery/mockery": ">=0.7.2"
+                "php": ">=5.2.0"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "League\\OAuth2\\Server": "src/"
-                }
+                "classmap": [
+                    "Authentication/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
-                    "name": "Alex Bilbie",
-                    "email": "hello@alexbilbie.com",
-                    "homepage": "http://www.alexbilbie.com",
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
                     "role": "Developer"
                 }
             ],
-            "description": "A lightweight and powerful OAuth 2.0 authorization and resource server library with support for all the core specification grants. This library will allow you to secure your API with OAuth and allow your applications users to approve apps that want to access their data from your API.",
-            "keywords": [
-                "Authentication",
-                "api",
-                "auth",
-                "authorization",
-                "oauth",
-                "oauth2",
-                "protect",
-                "resource",
-                "secure",
-                "server"
-            ],
-            "time": "2014-07-23 15:13:50"
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "time": "2014-08-28 17:20:29"
         },
         {
             "name": "slim/slim",
@@ -968,6 +955,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "firebase/php-jwt": 20,
         "mustangostang/spyc": 20
     },
     "prefer-stable": false,

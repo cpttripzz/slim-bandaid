@@ -7,7 +7,7 @@
  */
 namespace ZE\Bandaid\Service;
 
-class UserService
+class PDOUserService implements UserServiceInterface
 {
     
     protected $db;

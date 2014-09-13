@@ -10,22 +10,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     }
     exit;
 }
-
-$config['database'] = array(
-    'driver' => 'mysql',
-    'dsn' => 'mysql:dbname=test_bandaid;host=localhost',
-    'username' => 'root',
-    'password' => '123456',
-    'charset' => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix' => '',
+$config['dbType'] = 'mongo';
+$config['databases'] = array(
+    'mysql' => array(
+        'dsn' => 'mysql:dbname=test_bandaid;host=localhost',
+        'username' => 'root',
+        'password' => '123456',
+        'charset' => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix' => '',
+    ),
+    'mongo' => array(
+        'dbHost' => 'localhost',
+        'dbname' => 'bandaid'
+    )
 );
+
 $config['routes'] = array('bands', 'auth', 'user');
 
 $app = new \Slim\Slim();
 function getJWTSecret()
 {
-    $secret ='f8916451dab8ccdcfb28158383fd8783c0dcf4b05c5d69cea9b2188fbf62a92';
+    $secret = 'f8916451dab8ccdcfb28158383fd8783c0dcf4b05c5d69cea9b2188fbf62a92';
     return $secret;
 }
 
@@ -36,43 +42,56 @@ $getRandomUuid = function ($app) {
 };
 
 
-
 $authenticate = function ($app) {
     return function () use ($app) {
         if (!isset($_SESSION['user'])) {
 //            $_SESSION['urlRedirect'] = $app->request()->getPathInfo();
-            returnJson(array('success'=>false, 'statusCode'=>401));
+            returnJson(array('success' => false, 'statusCode' => 401));
         }
     };
 };
-function returnJson ($returnArray,$success=true,$statusCode=200) {
-        $app = \Slim\Slim::getInstance();
+function returnJson($returnArray, $success = true, $statusCode = 200)
+{
+    $app = \Slim\Slim::getInstance();
 
-        $app->response()->status($statusCode);
-        $callback = (empty($returnArray['callback'])) ? null : $returnArray['callback'];
-        if ($callback) {
-            unset($returnArray['callback']);
-            echo $callback . '(' . json_encode($returnArray) .');';
-            exit;
-        } else {
-            $app->response()->header('Content-Type', 'application/json');
-            echo json_encode($returnArray);
-            exit;
-        }
+    $app->response()->status($statusCode);
+    $callback = (empty($returnArray['callback'])) ? null : $returnArray['callback'];
+    if ($callback) {
+        unset($returnArray['callback']);
+        echo $callback . '(' . json_encode($returnArray) . ');';
+        exit;
+    } else {
+        $app->response()->header('Content-Type', 'application/json');
+        echo json_encode($returnArray);
+        exit;
+    }
 
-};
+}
+
+;
 
 
 try {
-    $app->container->singleton('pdo', function () use ($config) {
-        $options = array(
-            \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
-            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-            \PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC
-        );
-
-        $pdo = new \PDO($config['database']['dsn'], $config['database']['username'], $config['database']['password'], $options);
-        return $pdo;
+    $app->container->singleton('db', function () use ($config) {
+        switch ($config['dbType']) {
+            case 'mysql':
+                $options = array(
+                    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
+                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+                    \PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC
+                );
+                $pdo = new \PDO($config['database']['dsn'], $config['database']['username'], $config['database']['password'], $options);
+                return $pdo;
+                break;
+            case 'mongo':
+                $dbHost = $config['databases']['mongo']['dbHost'];
+                $dbName = $config['databases']['mongo']['dbName'];
+                $server = "mongodb://$dbHost:27017";
+                $m = new \MongoClient($server);
+                $db = $m->$dbName;
+                return $db;
+                break;
+        }
     });
 } catch (PDOException $exception) {
     var_dump($exception);

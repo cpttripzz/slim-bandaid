@@ -1,6 +1,7 @@
 <?php
 $app->group('/user', function () use ($app) {
-    $userService = new \ZE\Bandaid\Service\UserService($app->pdo);
+
+    $userService = ZE\Bandaid\Factory\UserServiceFactory::create($app['activeDb'], $app->db);
 
     $app->map('/register', function ($app,$userService) {
         $params = $app->request()->params();

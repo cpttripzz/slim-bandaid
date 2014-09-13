@@ -8,16 +8,16 @@
 
 namespace ZE\Bandaid\Tests;
 
-use ZE\Bandaid\Service\UserService;
+use ZE\Bandaid\Service\MongoUserService;
 
-class UserServiceTest extends Abstract_TestCase
+class MongoUserServiceTest extends Abstract_TestCase
 {
     private $service;
 
     public function __construct()
     {
-        parent::__construct();
-        $this->service = new UserService($this->pdo);
+        parent::__construct('mongo');
+        $this->service = new MongoUserService($this->db);
     }
     public function testUserCreated()
     {
@@ -30,7 +30,7 @@ class UserServiceTest extends Abstract_TestCase
         $email = 'bboplifa@gmail.com';
         $this->service->createUser($username,$password,$email);
         $user = $this->service->getUserByCredentials($username,$password);
-        $this->assertEquals($user['id'], 1);
+        $this->assertEquals($user['email'], $username);
     }
 
 }

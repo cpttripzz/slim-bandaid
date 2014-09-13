@@ -6,10 +6,9 @@ use Spyc;
 abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
 {
     protected $fixturePath = 'fixtures';
-    /**
-     * @var \PDO
-     */
-    protected $pdo = null;
+
+    protected $db = null;
+    protected $dbType = 'pdo';
 
     /**
      * @var Array fixtures
@@ -34,11 +33,20 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
 
     public function truncateTables($tables)
     {
-        foreach($tables as $table){
-            $stmt = $this->pdo->prepare("TRUNCATE TABLE $table");
-            $stmt->execute();
+        foreach ($tables as $table) {
+            switch ($this->dbType) {
+                case 'pdo':
+                    $stmt = $this->db->prepare("TRUNCATE TABLE $table");
+                    $stmt->execute();
+                    break;
+                case 'mongo':
+                    $this->db->$table->drop();
+                    break;
+            }
+
         }
     }
+
     public function loadFixtures($truncate = false)
     {
         if (!empty($this->fixtures)) {
@@ -53,18 +61,18 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                     $columns = array_keys(reset($fixtureData));
                     $values = $columns;
                     array_walk($values, function (&$item) {
-                            $item = ':' . $item;
-                        });
+                        $item = ':' . $item;
+                    });
 
-                    $query = 'INSERT INTO `' . $table . '`(' . implode(',', $columns) . ' ) VALUES ( ' . implode(',', $values) .' )';
+                    $query = 'INSERT INTO `' . $table . '`(' . implode(',', $columns) . ' ) VALUES ( ' . implode(',', $values) . ' )';
                     foreach ($fixtureData as $row) {
-                        $stmt = $this->pdo->prepare($query);
+                        $stmt = $this->db->prepare($query);
                         foreach ($row as $key => &$value) {
                             $stmt->bindParam(':' . $key, $value, \PDO::PARAM_STR);
                         }
                         try {
                             $stmt->execute();
-                        } catch(\Exception $e){
+                        } catch (\Exception $e) {
                             var_dump($e);
                         }
                     }
@@ -94,29 +102,44 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return \PDO
      */
-    public function getPdo()
+    public function getDb()
     {
-        return $this->pdo;
+        return $this->db;
     }
 
     /**
      * @param \PDO $pdo
      */
-    public function setPdo($pdo)
+    public function setDb($db)
     {
-        $this->pdo = $pdo;
+        $this->db = $db;
     }
 
 
-    public function __construct()
+    public function __construct($dbType = 'pdo')
     {
-        if ($this->pdo === null) {
-            $options = array(
-                \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
-                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                \PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC
-            );
-            $this->pdo = new \PDO($GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD'], $options);
+        $this->dbType = $dbType;
+        switch ($dbType) {
+            case 'pdo':
+                if ($this->db === null) {
+                    $options = array(
+                        \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
+                        \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+                        \PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC
+                    );
+                    $this->db = new \PDO($GLOBALS['PDO_DSN'], $GLOBALS['PDO_USER'], $GLOBALS['PDO_PASSWD'], $options);
+                }
+                break;
+            case 'mongo':
+                if ($this->db === null) {
+                    $host = $GLOBALS['MONGO_DBHOST'];
+                    $database = $GLOBALS['MONGO_DBNAME'];
+                    $server = "mongodb://$host:27017";
+                    $connection = new \MongoClient($server);
+                    $collection = $connection->$database;
+                    $this->db = $collection ;
+                }
+                break;
         }
     }
 

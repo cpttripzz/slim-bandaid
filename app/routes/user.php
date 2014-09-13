@@ -16,11 +16,12 @@ $app->group('/user', function () use ($app) {
         empty($params['email']) ? returnJson(array('success' => false, 'message' => 'User blank')) : $email =$params['email'];
         empty($params['password']) ? returnJson(array('success' => false, 'message' => 'Password blank')) : $password = $params['password'];
         if(!$user = $userService->getUserByCredentials($email,$password)){
-            returnJson(array('success' => false, 'message' => 'User or password do not match'));
+            returnJson(array('message' => 'User or password do not match'),false,403);
         }
         $token = array('id' =>$user['id'], 'timestamp'=> time() );
 
-        returnJson(array('success' => true, 'message' => 'Logged In', 'token' => JWT::encode($token, getJWTSecret())));
+        $user['token'] = JWT::encode($token, getJWTSecret());
+        returnJson(array('message' => 'Logged In', 'user' =>$user ));
 
     });
 

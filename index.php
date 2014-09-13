@@ -45,17 +45,13 @@ $authenticate = function ($app) {
         }
     };
 };
-function returnJson ($returnArray) {
+function returnJson ($returnArray,$success=true,$statusCode=200) {
         $app = \Slim\Slim::getInstance();
 
-        if ($returnArray['success'] === true){
-            $app->response()->status(200);
-        } else {
-            $statusCode = (empty($returnArray['statusCode'])) ? 400 : $returnArray['statusCode'];
-            $app->response()->status($statusCode);
-        }
+        $app->response()->status($statusCode);
         $callback = (empty($returnArray['callback'])) ? null : $returnArray['callback'];
         if ($callback) {
+            unset($returnArray['callback']);
             echo $callback . '(' . json_encode($returnArray) .');';
             exit;
         } else {

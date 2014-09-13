@@ -25,9 +25,9 @@ class UserServiceTest extends Abstract_TestCase
 //        $this->setFixtures(array('users'), true);
 //        $this->loadFixtures(true);
         $this->truncateTables(array('users'));
-        $username = 'admin';
+        $username = 'bboplifa@gmail.com';
         $password = '123456';
-        $email = 'admin@admin.com';
+        $email = 'bboplifa@gmail.com';
         $this->service->createUser($username,$password,$email);
         $user = $this->service->getUserByCredentials($username,$password);
         $this->assertEquals($user['id'], 1);

@@ -9,14 +9,12 @@ namespace ZE\Bandaid\Service;
 
 class UserService
 {
-    /**
-     * @var \PDO
-     */
-    protected $pdo;
+    
+    protected $db;
 
-    public function __construct($pdo)
+    public function __construct($db)
     {
-        $this->pdo = $pdo;
+        $this->db = $db;
     }
 
     public function getUserByCredentials($username,$password,$columns=null)
@@ -25,7 +23,7 @@ class UserService
             $columns = array('id', 'email','username');
         }
         $sql = 'SELECT '.implode(",",$columns).' FROM users WHERE email = :username AND password = SHA2(CONCAT(:password,salt), 256)';
-        $stmt  = $this->pdo->prepare($sql);
+        $stmt  = $this->db->prepare($sql);
         $stmt->execute(array(':username' => $username,':password'=>$password));
         return $stmt->fetch();
     }
@@ -34,10 +32,10 @@ class UserService
     {
         $salt = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
         $sql = "INSERT INTO users(username,email,salt,password) VALUES (:username,:email,:salt, SHA2(CONCAT(:password,:salt), 256) )";
-        $stmt  = $this->pdo->prepare($sql);
+        $stmt  = $this->db->prepare($sql);
         try {
             $stmt->execute(array(':username' => $username, ':email' => $email, ':salt' => $salt, ':password' => $password));
-            return array('success' => true, 'id' => $this->pdo->lastInsertId());
+            return array('success' => true, 'id' => $this->db->lastInsertId());
         }catch (\PDOException $e){
             return array('success' => false, 'message' => 'Duplicate email or username');
         }

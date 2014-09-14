@@ -10,7 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     }
     exit;
 }
-$config['dbType'] = 'mongo';
+$app = new \Slim\Slim();
+$app->dbType = 'mongo';
+$config['dbType'] = $app->dbType;
 $config['databases'] = array(
     'mysql' => array(
         'dsn' => 'mysql:dbname=test_bandaid;host=localhost',
@@ -22,13 +24,12 @@ $config['databases'] = array(
     ),
     'mongo' => array(
         'dbHost' => 'localhost',
-        'dbname' => 'bandaid'
+        'dbName' => 'bandaid'
     )
 );
 
 $config['routes'] = array('bands', 'auth', 'user');
 
-$app = new \Slim\Slim();
 function getJWTSecret()
 {
     $secret = 'f8916451dab8ccdcfb28158383fd8783c0dcf4b05c5d69cea9b2188fbf62a92';
@@ -67,8 +68,6 @@ function returnJson($returnArray, $success = true, $statusCode = 200)
     }
 
 }
-
-;
 
 
 try {

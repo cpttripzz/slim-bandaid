@@ -19,17 +19,17 @@ class MongoUserService implements UserServiceInterface
 
     public function getUserByCredentials($username,$password,$columns=null)
     {
-
+        if(!$columns){
+            $columns = array('id', 'email','username');
+        }
         $query = array('username' => $username);
         $user = $this->db->users->findOne($query);
-        if(!$user || !hash("sha256", $user['password'] . $user['salt']) == $password ){
+        if(!$user || hash("sha256",  $password . $user['salt']) != $user['password']){
             return null;
         } else {
+            $user = array_intersect_key($user,array_flip($columns));
             return $user;
         }
-
-
-
     }
 
     public function createUser($username,$password, $email)
@@ -42,6 +42,10 @@ class MongoUserService implements UserServiceInterface
             'salt' => $salt,
             'password' => $password
         );
+        $userExists = $this->db->users->findOne(array('username' => $username));
+        if($userExists){
+            return array('success' => false, 'message' => 'Duplicate email or username');
+        }
         try {
             $this->db->users->insert($user);
         } catch (\Exception $e){

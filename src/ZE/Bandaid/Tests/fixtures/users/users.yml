@@ -1,13 +1,13 @@
 users:
   -
     id: 1
-    username: admin
+    username: admin@admin.com
     username_canonical: admin
     email: admin@admin.com
     email_canonical: admin@admin.com
     enabled: 1
-    salt: s0vnq5lmwyok44kwgcco0oc0wkw0skk
-    password: rLq6rn12smA6ntC2AL8vtcBJ7oJIWodF6wW6kp13sJaqnSTfrRHo0XOf/80fDTzz7Oo2CMQEVx/hbcIm3gtBVw==
+    salt: 72a01698c124b27922298437b24900dbc05244b34f60e7ebe6b506d0828e8b05
+    password: 59a64daaaf95953456697ff68fa5ca354cad22ef810d4dee78b76f9f14463a85
     last_login: 2014-09-05 01:29:48
     locked: 0
     expired: 0

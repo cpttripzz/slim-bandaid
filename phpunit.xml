@@ -6,7 +6,7 @@
         <var name="PDO_PASSWD" value="123456" />
         <var name="PDO_DBNAME" value="test_bandaid" />
         <var name="MONGO_DBHOST" value="localhost" />
-        <var name="MONGO_DBNAME" value="test_bandaid" />
+        <var name="MONGO_DBNAME" value="bandaid" />
     </php>
     <testsuites>
         <testsuite name="Project Test Suite">

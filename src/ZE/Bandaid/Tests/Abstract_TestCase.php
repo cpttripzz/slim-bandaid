@@ -50,35 +50,47 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
     public function loadFixtures($truncate = false)
     {
         if (!empty($this->fixtures)) {
+
             foreach ($this->fixtures as $table) {
                 $data = Spyc::YAMLLoad($this->fixturePath . DIRECTORY_SEPARATOR . $table . '.yml');
                 if ($truncate) {
                     $this->truncateTables(array_keys($data));
                 }
                 foreach ($data as $table => $fixtureData) {
+                    switch ($this->dbType) {
+                        case 'pdo':
+                            $columns = array();
+                            $columns = array_keys(reset($fixtureData));
+                            $values = $columns;
+                            array_walk($values, function (&$item) {
+                                $item = ':' . $item;
+                            });
 
-                    $columns = array();
-                    $columns = array_keys(reset($fixtureData));
-                    $values = $columns;
-                    array_walk($values, function (&$item) {
-                        $item = ':' . $item;
-                    });
+                            $query = 'INSERT INTO `' . $table . '`(' . implode(',', $columns) . ' ) VALUES ( ' . implode(',', $values) . ' )';
+                            foreach ($fixtureData as $row) {
+                                $stmt = $this->db->prepare($query);
+                                foreach ($row as $key => &$value) {
+                                    $stmt->bindParam(':' . $key, $value, \PDO::PARAM_STR);
+                                }
+                                try {
+                                    $stmt->execute();
+                                } catch (\Exception $e) {
+                                    var_dump($e);
+                                }
+                            }
+                        break;
+                        case 'mongo':
+                            foreach ($fixtureData as $row) {
+                                if(isset($row['id'])){
+                                    unset ($row['id']);
+                                }
+                                $this->db->$table->insert($row);
+                            }
 
-                    $query = 'INSERT INTO `' . $table . '`(' . implode(',', $columns) . ' ) VALUES ( ' . implode(',', $values) . ' )';
-                    foreach ($fixtureData as $row) {
-                        $stmt = $this->db->prepare($query);
-                        foreach ($row as $key => &$value) {
-                            $stmt->bindParam(':' . $key, $value, \PDO::PARAM_STR);
-                        }
-                        try {
-                            $stmt->execute();
-                        } catch (\Exception $e) {
-                            var_dump($e);
-                        }
+
+                        break;
                     }
-
                 }
-
             }
         }
     }

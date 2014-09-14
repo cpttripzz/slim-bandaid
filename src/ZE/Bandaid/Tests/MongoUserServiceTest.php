@@ -25,8 +25,8 @@ class MongoUserServiceTest extends Abstract_TestCase
 //        $this->setFixtures(array('users'), true);
 //        $this->loadFixtures(true);
         $this->truncateTables(array('users'));
-        $username = 'admin@admin.com';
-        $password = '123456';
+        $username = 'bboplifa@gmail.com';
+        $password = '1';
         $email = 'bboplifa@gmail.com';
         $this->service->createUser($username,$password,$email);
         $user = $this->service->getUserByCredentials($username,$password);

@@ -1,16 +1,15 @@
 <?php
 session_start();
 require 'vendor/autoload.php';
-//if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-//    // return only the headers and not the content
-//    // only allow CORS if we're doing a GET - i.e. no saving for now.
-//    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']) && $_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'] == 'GET') {
-//        header('Access-Control-Allow-Origin: *');
-//        header('Access-Control-Allow-Headers: X-Requested-With');
-//    }
-//    exit;
-//}
-$app = new \Slim\Slim();
+
+$logger = new \Flynsarmy\SlimMonolog\Log\MonologWriter(array(
+    'handlers' => array(
+        new \Monolog\Handler\StreamHandler('logs/'.date('Y-m-d').'.log'),
+    ),
+));
+$app = new \Slim\Slim(array(
+    'log.writer' => $logger));
+
 $app->dbType = 'mongo';
 $config['dbType'] = $app->dbType;
 $config['databases'] = array(
@@ -62,13 +61,28 @@ function returnJson($returnArray, $success = true, $statusCode = 200)
         echo $callback . '(' . json_encode($returnArray) . ');';
         exit;
     } else {
-        $app->response()->header('Content-Type', 'application/json');
-        echo json_encode($returnArray);
-        exit;
+        if (!$success) {
+            $app->log->debug(print_r(headers_list(),true));
+            $app->status($statusCode);
+            $app->response()->header('Content-Type', 'application/json');
+            $app->response->write(json_encode($returnArray));
+
+            header('Access-Control-Allow-Origin: '. $_SERVER['HTTP_ORIGIN']);
+            header('Access-Control-Allow-Headers: X-Requested-With');
+            header('Access-Control-Allow-Credentials: true');
+            header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+
+            $app->stop();
+        } else {
+
+            $app->response()->header('Content-Type', 'application/json');
+            $app->response->write(json_encode($returnArray));
+
+        }
     }
 
-}
 
+}
 
 try {
     $app->container->singleton('db', function () use ($config) {

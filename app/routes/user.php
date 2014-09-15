@@ -16,7 +16,7 @@ $app->group('/user', function () use ($app) {
         empty($params['email']) ? returnJson(array('success' => false, 'message' => 'User blank')) : $email =$params['email'];
         empty($params['password']) ? returnJson(array('success' => false, 'message' => 'Password blank')) : $password = $params['password'];
         if(!$user = $userService->getUserByCredentials($email,$password)){
-            returnJson(array('message' => 'User or password do not match'),false,403);
+            returnJson(array('reasons' => 'User or password do not match'),false,401);
         }
         $token = array('email' =>$user['email'], 'timestamp'=> time() );
         $user['token'] = JWT::encode($token, getJWTSecret());

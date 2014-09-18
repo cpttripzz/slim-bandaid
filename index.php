@@ -1,7 +1,15 @@
 <?php
 session_start();
 require 'vendor/autoload.php';
-
+/*if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    // return only the headers and not the content
+    // only allow CORS if we're doing a GET - i.e. no saving for now.
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']) ) {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Headers: X-Requested-With');
+    }
+    exit;
+}*/
 $logger = new \Flynsarmy\SlimMonolog\Log\MonologWriter(array(
     'handlers' => array(
         new \Monolog\Handler\StreamHandler('logs/'.date('Y-m-d').'.log'),

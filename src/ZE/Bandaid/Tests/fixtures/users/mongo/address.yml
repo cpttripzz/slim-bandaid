@@ -13,7 +13,7 @@ address:
     id: 2
     city_id: 41
     region_id: 1
-    address: Plaça de Sant Felip Neri
+    address: Plaaa de Sant Felip Neri
     latitude: 41.383352
     longitude: 2.175116
     createdAt: 2014-09-20 11:49:14
@@ -31,7 +31,7 @@ address:
     id: 4
     city_id: 49
     region_id: 3
-    address: ???2-11
+    address: 2-11
     latitude: 35.689334888033
     longitude: 139.68974590302
     createdAt: 2014-09-20 11:49:17
@@ -67,7 +67,7 @@ address:
     id: 8
     city_id: 52
     region_id: 6
-    address: Costera Miguel Alemán No. 1926, Interior Galerías Diana, Fraccionamiento Magallanes
+    address: Costera Miguel Aleman No. 1926, Interior Galeraas Diana, Fraccionamiento Magallanes
     latitude: 16.860305220534
     longitude: -99.873824939132
     createdAt: 2014-09-20 11:49:24
@@ -112,7 +112,7 @@ address:
     id: 13
     city_id: 52
     region_id: 6
-    address: Costera Miguel Alemán 22
+    address: Costera Miguel Aleman 22
     latitude: 16.845937659338
     longitude: -99.848899841309
     createdAt: 2014-09-20 11:49:33
@@ -418,7 +418,7 @@ address:
     id: 47
     city_id: 41
     region_id: 1
-    address: C. Palau de la Música, 4-6
+    address: C. Palau de la Masica, 4-6
     latitude: 41.387791
     longitude: 2.175207
     createdAt: 2014-09-20 11:51:13
@@ -544,7 +544,7 @@ address:
     id: 61
     city_id: 16
     region_id: 16
-    address: Vieux-Port de Montréal
+    address: Vieux-Port de Montraal
     latitude: 45.505252862441
     longitude: -73.55214715004
     createdAt: 2014-09-20 11:51:49
@@ -895,7 +895,7 @@ address:
     id: 100
     city_id: 46
     region_id: 17
-    address: 52 rue de l'Hôtel de Ville
+    address: 52 rue de l'Hatel de Ville
     latitude: 48.854282173898
     longitude: 2.3554944992065
     createdAt: 2014-09-20 11:53:32
@@ -922,7 +922,7 @@ address:
     id: 103
     city_id: 52
     region_id: 6
-    address: Costera Miguel Alemán S/n, Fraccionamiento Club Deportivo.
+    address: Costera Miguel Aleman S/n, Fraccionamiento Club Deportivo.
     latitude: 16.85467651919
     longitude: -99.860279114731
     createdAt: 2014-09-20 11:53:38
@@ -1030,7 +1030,7 @@ address:
     id: 115
     city_id: 42
     region_id: 10
-    address: C. Tetuán, 12
+    address: C. Tetuan, 12
     latitude: 40.41719844806
     longitude: -3.7044444680214
     createdAt: 2014-09-20 11:54:07
@@ -1039,7 +1039,7 @@ address:
     id: 116
     city_id: 42
     region_id: 10
-    address: C. Tetuán, 12
+    address: C. Tetuan, 12
     latitude: 40.41719844806
     longitude: -3.7044444680214
     createdAt: 2014-09-20 11:54:08
@@ -1300,7 +1300,7 @@ address:
     id: 145
     city_id: 47
     region_id: 23
-    address: 1 avenue Docteur Ménard
+    address: 1 avenue Docteur Manard
     latitude: 43.709160117516
     longitude: 7.2695642709732
     createdAt: 2014-09-20 11:55:20
@@ -1318,7 +1318,7 @@ address:
     id: 147
     city_id: 47
     region_id: 24
-    address: 1 avenue Docteur Ménard
+    address: 1 avenue Docteur Manard
     latitude: 43.709160117516
     longitude: 7.2695642709732
     createdAt: 2014-09-20 11:55:22
@@ -1399,7 +1399,7 @@ address:
     id: 156
     city_id: 51
     region_id: 26
-    address: Plaza de la Constitución s/n
+    address: Plaza de la Constitucian s/n
     latitude: 19.432600481483
     longitude: -99.133222103119
     createdAt: 2014-09-20 11:55:43
@@ -1453,7 +1453,7 @@ address:
     id: 162
     city_id: 47
     region_id: 23
-    address: Place Masséna
+    address: Place Massana
     latitude: 43.696982885758
     longitude: 7.2703313827515
     createdAt: 2014-09-20 11:55:58

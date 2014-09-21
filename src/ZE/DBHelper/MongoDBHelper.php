@@ -56,16 +56,19 @@ class MongoDBHelper
         }
         foreach ($row as $column => &$colValue) {
             if (isset($options['embed']['columns'][$column])){
-                $query = array($options['embed']['columns'][$column]['reference_table_id'] => (int) $row[$column]);
-                $document = $this->db->$options['embed']['columns'][$column]['reference_table']->findOne($query);
-                if(isset($options['embed']['columns'][$column]['columns_to_embed'])){
-                    if($options['embed']['columns'][$column]['dual_reference']){
-                        $dualRefMap[$options['embed']['columns'][$column]['reference_table']][] = $document['_id']->{'$id'};
+                if(!empty($row[$column])) {
+                    $innerQuery = array($options['embed']['columns'][$column]['reference_table_id'] => (int)$row[$column]);
+                    $document = $this->db->$options['embed']['columns'][$column]['reference_table']->findOne($innerQuery);
+                    if (isset($options['embed']['columns'][$column]['columns_to_embed'])) {
+                        if ($options['embed']['columns'][$column]['dual_reference']) {
+                            $dualRefMap[$options['embed']['columns'][$column]['reference_table']][] = $document['_id']->{'$id'};
+                        }
+                        $document = array_intersect_key($document, array_flip($options['embed']['columns'][$column]['columns_to_embed']));
                     }
-                    $document = array_intersect_key($document,array_flip($options['embed']['columns'][$column]['columns_to_embed']));
+                    $row[$options['embed']['columns'][$column]['reference_table']] = $document;
                 }
                 unset($row[$column]);
-                $row[$options['embed']['columns'][$column]['reference_table']] = $document;
+
             } elseif (isset($mongoIdsMap[$column])) {
                 $mongoIds = $this->getMongoIdsByValue($mongoIdsMap[$column], 'id', $colValue);
                 unset($row[$column]);
@@ -119,7 +122,7 @@ class MongoDBHelper
             $row = $this->db->$joinTableMapping['update_table']->findOne($query);
             $row[$joinTableMapping['reference_table_id'] ] = $referenceTableIds;
             $mongoIdsMap = array($joinTableMapping['reference_table_id'] => $joinTableMapping['reference_table']);
-            $this->saveRow($row, $joinTableMapping['update_table'], $dualReference,$mongoIdsMap, $query);
+            $this->saveRow($row, $joinTableMapping['update_table'], $dualReference,$mongoIdsMap, $query, $joinTableMapping);
         }
     }
 } 

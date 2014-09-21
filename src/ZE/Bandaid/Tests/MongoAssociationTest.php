@@ -27,24 +27,12 @@ class MongoAssociationTest extends Abstract_TestCase
         $dbHelper->setMongoIdsMap(array('user_id' => 'user'));
         $this->setDbHelper($dbHelper);
         $this->setFixturePath(getcwd() . '/src/ZE/Bandaid/Tests/fixtures/users/mongo');
-        $this->setFixtures(array('user' => array(), 'association' => array(), 'genre' => array(), 'country' => array()));
-        $this->loadFixtures(true);
-        $this->setJoinTableFixtures(
-            array(
-                'association_genre' =>
-                    array(
-                        'dual_reference' => true,
-                        'table_name' => 'association_genre',
-                        'update_table' => 'association',
-                        'update_table_id' => 'association_id',
-                        'reference_table' => 'genre',
-                        'reference_table_id' => 'genre_id'
-                    )
-            )
-        );
-        $this->loadJoinTableFixtures();
-        $this->setFixtures(
-            array('region' => array(
+        $this->setFixtures(array(
+            'user' => array(),
+            'association' => array(),
+            'genre' => array(),
+            'country' => array(),
+            'region' => array(
                 'embed' =>
                     array('columns' => array(
                         'country_id' =>
@@ -55,10 +43,78 @@ class MongoAssociationTest extends Abstract_TestCase
                                 'columns_to_embed' => array('code','name')
 
                             )
-                    ))
-            ))
+                    ))),
+            'city' => array(
+                'columns_to_delete' => array('region_id'),
+                'embed' =>
+                    array('columns' => array(
+                        'country_id' =>
+                            array(
+                                'dual_reference' => false,
+                                'reference_table' => 'country',
+                                'reference_table_id' => 'id',
+                                'columns_to_embed' => array('code','name')
+
+                            )
+                    ))),
+            'address' => array(
+                'embed' =>
+                    array('columns' => array(
+                        'city_id' =>
+                            array(
+                                'dual_reference' => false,
+                                'reference_table' => 'city',
+                                'reference_table_id' => 'id',
+                                'columns_to_embed' => array('name')
+
+                            ),
+                        'region_id' =>
+                            array(
+                                'dual_reference' => false,
+                                'reference_table' => 'region',
+                                'reference_table_id' => 'id',
+                                'columns_to_embed' => array('long_name')
+                            )
+                    )))
+            ));
+        $this->loadFixtures(true);
+        $this->setJoinTableFixtures(
+            array(
+                'association_genre' =>
+                    array(
+                        'dual_reference' => true,
+                        'table_name' => 'association_genre',
+                        'update_table' => 'association',
+                        'update_table_id' => 'association_id',
+                        'reference_table' => 'genre',
+                        'reference_table_id' => 'genre_id',
+                    ),
+                'association_address' =>
+                    array(
+                        'dual_reference' => false,
+                        'table_name' => 'association_address',
+                        'update_table' => 'association',
+                        'update_table_id' => 'association_id',
+                        'reference_table' => 'address',
+                        'reference_table_id' => 'address_id',
+                        'embed' =>
+                            array('columns' => array(
+                                'address_id' =>
+                                    array(
+                                        'dual_reference' => false,
+                                        'table_name' => 'association_address',
+                                        'update_table' => 'association',
+                                        'update_table_id' => 'id',
+                                        'reference_table' => 'address',
+                                        'reference_table_id' => 'id',
+                                        'columns_to_embed' => array('address')
+                                    ),
+                            ))
+                    ),
+
+            )
         );
-        $this->loadFixtures(false);
+        $this->loadJoinTableFixtures();
 
     }
 }

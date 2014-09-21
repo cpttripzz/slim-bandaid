@@ -88,6 +88,7 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
             foreach ($this->fixtures as $table=>$options) {
 
                 $data = Spyc::YAMLLoad($this->fixturePath . DIRECTORY_SEPARATOR . $table . '.yml');
+
                 if ($truncate) {
                     $this->truncateTables(array_keys($data));
                 }
@@ -115,6 +116,10 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                             break;
                         case 'mongo':
                             foreach ($fixtureData as $row) {
+
+                                if(isset($options['columns_to_delete'])){
+                                    $row = array_diff_key($row,array_flip($options['columns_to_delete']));
+                                }
                                 $this->dbHelper->saveRow($row, $table, $dualReference,null,null,$options);
                             }
                             break;

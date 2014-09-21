@@ -1,0 +1,276 @@
+---
+bandvacancy_genre:
+  -
+    bandvacancy_id: 1
+    genre_id: 3
+  -
+    bandvacancy_id: 2
+    genre_id: 11
+  -
+    bandvacancy_id: 3
+    genre_id: 8
+  -
+    bandvacancy_id: 4
+    genre_id: 3
+  -
+    bandvacancy_id: 5
+    genre_id: 10
+  -
+    bandvacancy_id: 6
+    genre_id: 9
+  -
+    bandvacancy_id: 7
+    genre_id: 5
+  -
+    bandvacancy_id: 8
+    genre_id: 7
+  -
+    bandvacancy_id: 9
+    genre_id: 4
+  -
+    bandvacancy_id: 10
+    genre_id: 1
+  -
+    bandvacancy_id: 11
+    genre_id: 1
+  -
+    bandvacancy_id: 12
+    genre_id: 8
+  -
+    bandvacancy_id: 13
+    genre_id: 3
+  -
+    bandvacancy_id: 14
+    genre_id: 9
+  -
+    bandvacancy_id: 15
+    genre_id: 10
+  -
+    bandvacancy_id: 16
+    genre_id: 6
+  -
+    bandvacancy_id: 17
+    genre_id: 5
+  -
+    bandvacancy_id: 18
+    genre_id: 5
+  -
+    bandvacancy_id: 19
+    genre_id: 9
+  -
+    bandvacancy_id: 20
+    genre_id: 8
+  -
+    bandvacancy_id: 21
+    genre_id: 1
+  -
+    bandvacancy_id: 22
+    genre_id: 3
+  -
+    bandvacancy_id: 23
+    genre_id: 3
+  -
+    bandvacancy_id: 24
+    genre_id: 2
+  -
+    bandvacancy_id: 25
+    genre_id: 2
+  -
+    bandvacancy_id: 26
+    genre_id: 7
+  -
+    bandvacancy_id: 27
+    genre_id: 11
+  -
+    bandvacancy_id: 28
+    genre_id: 6
+  -
+    bandvacancy_id: 29
+    genre_id: 11
+  -
+    bandvacancy_id: 30
+    genre_id: 10
+  -
+    bandvacancy_id: 31
+    genre_id: 4
+  -
+    bandvacancy_id: 32
+    genre_id: 4
+  -
+    bandvacancy_id: 33
+    genre_id: 9
+  -
+    bandvacancy_id: 34
+    genre_id: 4
+  -
+    bandvacancy_id: 35
+    genre_id: 8
+  -
+    bandvacancy_id: 36
+    genre_id: 6
+  -
+    bandvacancy_id: 37
+    genre_id: 2
+  -
+    bandvacancy_id: 38
+    genre_id: 6
+  -
+    bandvacancy_id: 39
+    genre_id: 8
+  -
+    bandvacancy_id: 40
+    genre_id: 7
+  -
+    bandvacancy_id: 41
+    genre_id: 9
+  -
+    bandvacancy_id: 42
+    genre_id: 7
+  -
+    bandvacancy_id: 43
+    genre_id: 10
+  -
+    bandvacancy_id: 44
+    genre_id: 1
+  -
+    bandvacancy_id: 45
+    genre_id: 7
+  -
+    bandvacancy_id: 46
+    genre_id: 1
+  -
+    bandvacancy_id: 47
+    genre_id: 10
+  -
+    bandvacancy_id: 48
+    genre_id: 3
+  -
+    bandvacancy_id: 49
+    genre_id: 1
+  -
+    bandvacancy_id: 50
+    genre_id: 10
+  -
+    bandvacancy_id: 51
+    genre_id: 6
+  -
+    bandvacancy_id: 52
+    genre_id: 1
+  -
+    bandvacancy_id: 53
+    genre_id: 2
+  -
+    bandvacancy_id: 54
+    genre_id: 4
+  -
+    bandvacancy_id: 55
+    genre_id: 10
+  -
+    bandvacancy_id: 56
+    genre_id: 5
+  -
+    bandvacancy_id: 57
+    genre_id: 10
+  -
+    bandvacancy_id: 58
+    genre_id: 5
+  -
+    bandvacancy_id: 59
+    genre_id: 9
+  -
+    bandvacancy_id: 60
+    genre_id: 5
+  -
+    bandvacancy_id: 61
+    genre_id: 10
+  -
+    bandvacancy_id: 62
+    genre_id: 2
+  -
+    bandvacancy_id: 63
+    genre_id: 4
+  -
+    bandvacancy_id: 64
+    genre_id: 1
+  -
+    bandvacancy_id: 65
+    genre_id: 2
+  -
+    bandvacancy_id: 66
+    genre_id: 7
+  -
+    bandvacancy_id: 67
+    genre_id: 9
+  -
+    bandvacancy_id: 68
+    genre_id: 4
+  -
+    bandvacancy_id: 69
+    genre_id: 9
+  -
+    bandvacancy_id: 70
+    genre_id: 7
+  -
+    bandvacancy_id: 71
+    genre_id: 2
+  -
+    bandvacancy_id: 72
+    genre_id: 9
+  -
+    bandvacancy_id: 73
+    genre_id: 9
+  -
+    bandvacancy_id: 74
+    genre_id: 9
+  -
+    bandvacancy_id: 75
+    genre_id: 4
+  -
+    bandvacancy_id: 76
+    genre_id: 8
+  -
+    bandvacancy_id: 77
+    genre_id: 3
+  -
+    bandvacancy_id: 78
+    genre_id: 11
+  -
+    bandvacancy_id: 79
+    genre_id: 4
+  -
+    bandvacancy_id: 80
+    genre_id: 6
+  -
+    bandvacancy_id: 81
+    genre_id: 11
+  -
+    bandvacancy_id: 82
+    genre_id: 7
+  -
+    bandvacancy_id: 83
+    genre_id: 9
+  -
+    bandvacancy_id: 84
+    genre_id: 9
+  -
+    bandvacancy_id: 85
+    genre_id: 5
+  -
+    bandvacancy_id: 86
+    genre_id: 5
+  -
+    bandvacancy_id: 87
+    genre_id: 5
+  -
+    bandvacancy_id: 88
+    genre_id: 2
+  -
+    bandvacancy_id: 89
+    genre_id: 7
+  -
+    bandvacancy_id: 90
+    genre_id: 3
+  -
+    bandvacancy_id: 91
+    genre_id: 10
+

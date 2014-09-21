@@ -1,0 +1,1228 @@
+---
+country:
+  -
+    id: 1
+    code: AF
+    name: Afghanistan
+    slug: afghanistan
+  -
+    id: 2
+    code: AX
+    name: Aland Islands
+    slug: aland-islands
+  -
+    id: 3
+    code: AL
+    name: Albania
+    slug: albania
+  -
+    id: 4
+    code: DZ
+    name: Algeria
+    slug: algeria
+  -
+    id: 5
+    code: AS
+    name: American Samoa
+    slug: american-samoa
+  -
+    id: 6
+    code: AD
+    name: Andorra
+    slug: andorra
+  -
+    id: 7
+    code: AO
+    name: Angola
+    slug: angola
+  -
+    id: 8
+    code: AI
+    name: Anguilla
+    slug: anguilla
+  -
+    id: 9
+    code: AQ
+    name: Antarctica
+    slug: antarctica
+  -
+    id: 10
+    code: AG
+    name: Antigua And Barbuda
+    slug: antigua-and-barbuda
+  -
+    id: 11
+    code: AR
+    name: Argentina
+    slug: argentina
+  -
+    id: 12
+    code: AM
+    name: Armenia
+    slug: armenia
+  -
+    id: 13
+    code: AW
+    name: Aruba
+    slug: aruba
+  -
+    id: 14
+    code: AU
+    name: Australia
+    slug: australia
+  -
+    id: 15
+    code: AT
+    name: Austria
+    slug: austria
+  -
+    id: 16
+    code: AZ
+    name: Azerbaijan
+    slug: azerbaijan
+  -
+    id: 17
+    code: BS
+    name: Bahamas
+    slug: bahamas
+  -
+    id: 18
+    code: BH
+    name: Bahrain
+    slug: bahrain
+  -
+    id: 19
+    code: BD
+    name: Bangladesh
+    slug: bangladesh
+  -
+    id: 20
+    code: BB
+    name: Barbados
+    slug: barbados
+  -
+    id: 21
+    code: BY
+    name: Belarus
+    slug: belarus
+  -
+    id: 22
+    code: BE
+    name: Belgium
+    slug: belgium
+  -
+    id: 23
+    code: BZ
+    name: Belize
+    slug: belize
+  -
+    id: 24
+    code: BJ
+    name: Benin
+    slug: benin
+  -
+    id: 25
+    code: BM
+    name: Bermuda
+    slug: bermuda
+  -
+    id: 26
+    code: BT
+    name: Bhutan
+    slug: bhutan
+  -
+    id: 27
+    code: BO
+    name: Bolivia
+    slug: bolivia
+  -
+    id: 28
+    code: BA
+    name: Bosnia And Herzegovina
+    slug: bosnia-and-herzegovina
+  -
+    id: 29
+    code: BW
+    name: Botswana
+    slug: botswana
+  -
+    id: 30
+    code: BV
+    name: Bouvet Island
+    slug: bouvet-island
+  -
+    id: 31
+    code: BR
+    name: Brazil
+    slug: brazil
+  -
+    id: 32
+    code: IO
+    name: British Indian Ocean Territory
+    slug: british-indian-ocean-territory
+  -
+    id: 33
+    code: BN
+    name: Brunei Darussalam
+    slug: brunei-darussalam
+  -
+    id: 34
+    code: BG
+    name: Bulgaria
+    slug: bulgaria
+  -
+    id: 35
+    code: BF
+    name: Burkina Faso
+    slug: burkina-faso
+  -
+    id: 36
+    code: BI
+    name: Burundi
+    slug: burundi
+  -
+    id: 37
+    code: KH
+    name: Cambodia
+    slug: cambodia
+  -
+    id: 38
+    code: CM
+    name: Cameroon
+    slug: cameroon
+  -
+    id: 39
+    code: CA
+    name: Canada
+    slug: canada
+  -
+    id: 40
+    code: CV
+    name: Cape Verde
+    slug: cape-verde
+  -
+    id: 41
+    code: KY
+    name: Cayman Islands
+    slug: cayman-islands
+  -
+    id: 42
+    code: CF
+    name: Central African Republic
+    slug: central-african-republic
+  -
+    id: 43
+    code: TD
+    name: Chad
+    slug: chad
+  -
+    id: 44
+    code: CL
+    name: Chile
+    slug: chile
+  -
+    id: 45
+    code: CN
+    name: China
+    slug: china
+  -
+    id: 46
+    code: CX
+    name: Christmas Island
+    slug: christmas-island
+  -
+    id: 47
+    code: CC
+    name: Cocos (Keeling) Islands
+    slug: cocos-keeling-islands
+  -
+    id: 48
+    code: CO
+    name: Colombia
+    slug: colombia
+  -
+    id: 49
+    code: KM
+    name: Comoros
+    slug: comoros
+  -
+    id: 50
+    code: CG
+    name: Congo
+    slug: congo
+  -
+    id: 51
+    code: CD
+    name: Congo, Democratic Republic
+    slug: congo-democratic-republic
+  -
+    id: 52
+    code: CK
+    name: Cook Islands
+    slug: cook-islands
+  -
+    id: 53
+    code: CR
+    name: Costa Rica
+    slug: costa-rica
+  -
+    id: 54
+    code: CI
+    name: Cote D'Ivoire
+    slug: cote-d-ivoire
+  -
+    id: 55
+    code: HR
+    name: Croatia
+    slug: croatia
+  -
+    id: 56
+    code: CU
+    name: Cuba
+    slug: cuba
+  -
+    id: 57
+    code: CY
+    name: Cyprus
+    slug: cyprus
+  -
+    id: 58
+    code: CZ
+    name: Czech Republic
+    slug: czech-republic
+  -
+    id: 59
+    code: DK
+    name: Denmark
+    slug: denmark
+  -
+    id: 60
+    code: DJ
+    name: Djibouti
+    slug: djibouti
+  -
+    id: 61
+    code: DM
+    name: Dominica
+    slug: dominica
+  -
+    id: 62
+    code: DO
+    name: Dominican Republic
+    slug: dominican-republic
+  -
+    id: 63
+    code: EC
+    name: Ecuador
+    slug: ecuador
+  -
+    id: 64
+    code: EG
+    name: Egypt
+    slug: egypt
+  -
+    id: 65
+    code: SV
+    name: El Salvador
+    slug: el-salvador
+  -
+    id: 66
+    code: GQ
+    name: Equatorial Guinea
+    slug: equatorial-guinea
+  -
+    id: 67
+    code: ER
+    name: Eritrea
+    slug: eritrea
+  -
+    id: 68
+    code: EE
+    name: Estonia
+    slug: estonia
+  -
+    id: 69
+    code: ET
+    name: Ethiopia
+    slug: ethiopia
+  -
+    id: 70
+    code: FK
+    name: Falkland Islands (Malvinas)
+    slug: falkland-islands-malvinas
+  -
+    id: 71
+    code: FO
+    name: Faroe Islands
+    slug: faroe-islands
+  -
+    id: 72
+    code: FJ
+    name: Fiji
+    slug: fiji
+  -
+    id: 73
+    code: FI
+    name: Finland
+    slug: finland
+  -
+    id: 74
+    code: FR
+    name: France
+    slug: france
+  -
+    id: 75
+    code: GF
+    name: French Guiana
+    slug: french-guiana
+  -
+    id: 76
+    code: PF
+    name: French Polynesia
+    slug: french-polynesia
+  -
+    id: 77
+    code: TF
+    name: French Southern Territories
+    slug: french-southern-territories
+  -
+    id: 78
+    code: GA
+    name: Gabon
+    slug: gabon
+  -
+    id: 79
+    code: GM
+    name: Gambia
+    slug: gambia
+  -
+    id: 80
+    code: GE
+    name: Georgia
+    slug: georgia
+  -
+    id: 81
+    code: DE
+    name: Germany
+    slug: germany
+  -
+    id: 82
+    code: GH
+    name: Ghana
+    slug: ghana
+  -
+    id: 83
+    code: GI
+    name: Gibraltar
+    slug: gibraltar
+  -
+    id: 84
+    code: GR
+    name: Greece
+    slug: greece
+  -
+    id: 85
+    code: GL
+    name: Greenland
+    slug: greenland
+  -
+    id: 86
+    code: GD
+    name: Grenada
+    slug: grenada
+  -
+    id: 87
+    code: GP
+    name: Guadeloupe
+    slug: guadeloupe
+  -
+    id: 88
+    code: GU
+    name: Guam
+    slug: guam
+  -
+    id: 89
+    code: GT
+    name: Guatemala
+    slug: guatemala
+  -
+    id: 90
+    code: GG
+    name: Guernsey
+    slug: guernsey
+  -
+    id: 91
+    code: GN
+    name: Guinea
+    slug: guinea
+  -
+    id: 92
+    code: GW
+    name: Guinea-Bissau
+    slug: guinea-bissau
+  -
+    id: 93
+    code: GY
+    name: Guyana
+    slug: guyana
+  -
+    id: 94
+    code: HT
+    name: Haiti
+    slug: haiti
+  -
+    id: 95
+    code: HM
+    name: Heard Island & Mcdonald Islands
+    slug: heard-island-mcdonald-islands
+  -
+    id: 96
+    code: VA
+    name: Holy See (Vatican City State)
+    slug: holy-see-vatican-city-state
+  -
+    id: 97
+    code: HN
+    name: Honduras
+    slug: honduras
+  -
+    id: 98
+    code: HK
+    name: Hong Kong
+    slug: hong-kong
+  -
+    id: 99
+    code: HU
+    name: Hungary
+    slug: hungary
+  -
+    id: 100
+    code: IS
+    name: Iceland
+    slug: iceland
+  -
+    id: 101
+    code: IN
+    name: India
+    slug: india
+  -
+    id: 102
+    code: ID
+    name: Indonesia
+    slug: indonesia
+  -
+    id: 103
+    code: IR
+    name: Iran, Islamic Republic Of
+    slug: iran-islamic-republic-of
+  -
+    id: 104
+    code: IQ
+    name: Iraq
+    slug: iraq
+  -
+    id: 105
+    code: IE
+    name: Ireland
+    slug: ireland
+  -
+    id: 106
+    code: IM
+    name: Isle Of Man
+    slug: isle-of-man
+  -
+    id: 107
+    code: IL
+    name: Israel
+    slug: israel
+  -
+    id: 108
+    code: IT
+    name: Italy
+    slug: italy
+  -
+    id: 109
+    code: JM
+    name: Jamaica
+    slug: jamaica
+  -
+    id: 110
+    code: JP
+    name: Japan
+    slug: japan
+  -
+    id: 111
+    code: JE
+    name: Jersey
+    slug: jersey
+  -
+    id: 112
+    code: JO
+    name: Jordan
+    slug: jordan
+  -
+    id: 113
+    code: KZ
+    name: Kazakhstan
+    slug: kazakhstan
+  -
+    id: 114
+    code: KE
+    name: Kenya
+    slug: kenya
+  -
+    id: 115
+    code: KI
+    name: Kiribati
+    slug: kiribati
+  -
+    id: 116
+    code: KR
+    name: Korea
+    slug: korea
+  -
+    id: 117
+    code: KW
+    name: Kuwait
+    slug: kuwait
+  -
+    id: 118
+    code: KG
+    name: Kyrgyzstan
+    slug: kyrgyzstan
+  -
+    id: 119
+    code: LA
+    name: Lao People's Democratic Republic
+    slug: lao-people-s-democratic-republic
+  -
+    id: 120
+    code: LV
+    name: Latvia
+    slug: latvia
+  -
+    id: 121
+    code: LB
+    name: Lebanon
+    slug: lebanon
+  -
+    id: 122
+    code: LS
+    name: Lesotho
+    slug: lesotho
+  -
+    id: 123
+    code: LR
+    name: Liberia
+    slug: liberia
+  -
+    id: 124
+    code: LY
+    name: Libyan Arab Jamahiriya
+    slug: libyan-arab-jamahiriya
+  -
+    id: 125
+    code: LI
+    name: Liechtenstein
+    slug: liechtenstein
+  -
+    id: 126
+    code: LT
+    name: Lithuania
+    slug: lithuania
+  -
+    id: 127
+    code: LU
+    name: Luxembourg
+    slug: luxembourg
+  -
+    id: 128
+    code: MO
+    name: Macao
+    slug: macao
+  -
+    id: 129
+    code: MK
+    name: Macedonia
+    slug: macedonia
+  -
+    id: 130
+    code: MG
+    name: Madagascar
+    slug: madagascar
+  -
+    id: 131
+    code: MW
+    name: Malawi
+    slug: malawi
+  -
+    id: 132
+    code: MY
+    name: Malaysia
+    slug: malaysia
+  -
+    id: 133
+    code: MV
+    name: Maldives
+    slug: maldives
+  -
+    id: 134
+    code: ML
+    name: Mali
+    slug: mali
+  -
+    id: 135
+    code: MT
+    name: Malta
+    slug: malta
+  -
+    id: 136
+    code: MH
+    name: Marshall Islands
+    slug: marshall-islands
+  -
+    id: 137
+    code: MQ
+    name: Martinique
+    slug: martinique
+  -
+    id: 138
+    code: MR
+    name: Mauritania
+    slug: mauritania
+  -
+    id: 139
+    code: MU
+    name: Mauritius
+    slug: mauritius
+  -
+    id: 140
+    code: YT
+    name: Mayotte
+    slug: mayotte
+  -
+    id: 141
+    code: MX
+    name: Mexico
+    slug: mexico
+  -
+    id: 142
+    code: FM
+    name: Micronesia, Federated States Of
+    slug: micronesia-federated-states-of
+  -
+    id: 143
+    code: MD
+    name: Moldova
+    slug: moldova
+  -
+    id: 144
+    code: MC
+    name: Monaco
+    slug: monaco
+  -
+    id: 145
+    code: MN
+    name: Mongolia
+    slug: mongolia
+  -
+    id: 146
+    code: ME
+    name: Montenegro
+    slug: montenegro
+  -
+    id: 147
+    code: MS
+    name: Montserrat
+    slug: montserrat
+  -
+    id: 148
+    code: MA
+    name: Morocco
+    slug: morocco
+  -
+    id: 149
+    code: MZ
+    name: Mozambique
+    slug: mozambique
+  -
+    id: 150
+    code: MM
+    name: Myanmar
+    slug: myanmar
+  -
+    id: 151
+    code: NA
+    name: Namibia
+    slug: namibia
+  -
+    id: 152
+    code: NR
+    name: Nauru
+    slug: nauru
+  -
+    id: 153
+    code: NP
+    name: Nepal
+    slug: nepal
+  -
+    id: 154
+    code: NL
+    name: Netherlands
+    slug: netherlands
+  -
+    id: 155
+    code: AN
+    name: Netherlands Antilles
+    slug: netherlands-antilles
+  -
+    id: 156
+    code: NC
+    name: New Caledonia
+    slug: new-caledonia
+  -
+    id: 157
+    code: NZ
+    name: New Zealand
+    slug: new-zealand
+  -
+    id: 158
+    code: NI
+    name: Nicaragua
+    slug: nicaragua
+  -
+    id: 159
+    code: NE
+    name: Niger
+    slug: niger
+  -
+    id: 160
+    code: NG
+    name: Nigeria
+    slug: nigeria
+  -
+    id: 161
+    code: NU
+    name: Niue
+    slug: niue
+  -
+    id: 162
+    code: NF
+    name: Norfolk Island
+    slug: norfolk-island
+  -
+    id: 163
+    code: MP
+    name: Northern Mariana Islands
+    slug: northern-mariana-islands
+  -
+    id: 164
+    code: NO
+    name: Norway
+    slug: norway
+  -
+    id: 165
+    code: OM
+    name: Oman
+    slug: oman
+  -
+    id: 166
+    code: PK
+    name: Pakistan
+    slug: pakistan
+  -
+    id: 167
+    code: PW
+    name: Palau
+    slug: palau
+  -
+    id: 168
+    code: PS
+    name: Palestinian Territory, Occupied
+    slug: palestinian-territory-occupied
+  -
+    id: 169
+    code: PA
+    name: Panama
+    slug: panama
+  -
+    id: 170
+    code: PG
+    name: Papua New Guinea
+    slug: papua-new-guinea
+  -
+    id: 171
+    code: PY
+    name: Paraguay
+    slug: paraguay
+  -
+    id: 172
+    code: PE
+    name: Peru
+    slug: peru
+  -
+    id: 173
+    code: PH
+    name: Philippines
+    slug: philippines
+  -
+    id: 174
+    code: PN
+    name: Pitcairn
+    slug: pitcairn
+  -
+    id: 175
+    code: PL
+    name: Poland
+    slug: poland
+  -
+    id: 176
+    code: PT
+    name: Portugal
+    slug: portugal
+  -
+    id: 177
+    code: PR
+    name: Puerto Rico
+    slug: puerto-rico
+  -
+    id: 178
+    code: QA
+    name: Qatar
+    slug: qatar
+  -
+    id: 179
+    code: RE
+    name: Reunion
+    slug: reunion
+  -
+    id: 180
+    code: RO
+    name: Romania
+    slug: romania
+  -
+    id: 181
+    code: RU
+    name: Russian Federation
+    slug: russian-federation
+  -
+    id: 182
+    code: RW
+    name: Rwanda
+    slug: rwanda
+  -
+    id: 183
+    code: BL
+    name: Saint Barthelemy
+    slug: saint-barthelemy
+  -
+    id: 184
+    code: SH
+    name: Saint Helena
+    slug: saint-helena
+  -
+    id: 185
+    code: KN
+    name: Saint Kitts And Nevis
+    slug: saint-kitts-and-nevis
+  -
+    id: 186
+    code: LC
+    name: Saint Lucia
+    slug: saint-lucia
+  -
+    id: 187
+    code: MF
+    name: Saint Martin
+    slug: saint-martin
+  -
+    id: 188
+    code: PM
+    name: Saint Pierre And Miquelon
+    slug: saint-pierre-and-miquelon
+  -
+    id: 189
+    code: VC
+    name: Saint Vincent And Grenadines
+    slug: saint-vincent-and-grenadines
+  -
+    id: 190
+    code: WS
+    name: Samoa
+    slug: samoa
+  -
+    id: 191
+    code: SM
+    name: San Marino
+    slug: san-marino
+  -
+    id: 192
+    code: ST
+    name: Sao Tome And Principe
+    slug: sao-tome-and-principe
+  -
+    id: 193
+    code: SA
+    name: Saudi Arabia
+    slug: saudi-arabia
+  -
+    id: 194
+    code: SN
+    name: Senegal
+    slug: senegal
+  -
+    id: 195
+    code: RS
+    name: Serbia
+    slug: serbia
+  -
+    id: 196
+    code: SC
+    name: Seychelles
+    slug: seychelles
+  -
+    id: 197
+    code: SL
+    name: Sierra Leone
+    slug: sierra-leone
+  -
+    id: 198
+    code: SG
+    name: Singapore
+    slug: singapore
+  -
+    id: 199
+    code: SK
+    name: Slovakia
+    slug: slovakia
+  -
+    id: 200
+    code: SI
+    name: Slovenia
+    slug: slovenia
+  -
+    id: 201
+    code: SB
+    name: Solomon Islands
+    slug: solomon-islands
+  -
+    id: 202
+    code: SO
+    name: Somalia
+    slug: somalia
+  -
+    id: 203
+    code: ZA
+    name: South Africa
+    slug: south-africa
+  -
+    id: 204
+    code: GS
+    name: South Georgia And Sandwich Isl.
+    slug: south-georgia-and-sandwich-isl
+  -
+    id: 205
+    code: ES
+    name: Spain
+    slug: spain
+  -
+    id: 206
+    code: LK
+    name: Sri Lanka
+    slug: sri-lanka
+  -
+    id: 207
+    code: SD
+    name: Sudan
+    slug: sudan
+  -
+    id: 208
+    code: SR
+    name: Suriname
+    slug: suriname
+  -
+    id: 209
+    code: SJ
+    name: Svalbard And Jan Mayen
+    slug: svalbard-and-jan-mayen
+  -
+    id: 210
+    code: SZ
+    name: Swaziland
+    slug: swaziland
+  -
+    id: 211
+    code: SE
+    name: Sweden
+    slug: sweden
+  -
+    id: 212
+    code: CH
+    name: Switzerland
+    slug: switzerland
+  -
+    id: 213
+    code: SY
+    name: Syrian Arab Republic
+    slug: syrian-arab-republic
+  -
+    id: 214
+    code: TW
+    name: Taiwan
+    slug: taiwan
+  -
+    id: 215
+    code: TJ
+    name: Tajikistan
+    slug: tajikistan
+  -
+    id: 216
+    code: TZ
+    name: Tanzania
+    slug: tanzania
+  -
+    id: 217
+    code: TH
+    name: Thailand
+    slug: thailand
+  -
+    id: 218
+    code: TL
+    name: Timor-Leste
+    slug: timor-leste
+  -
+    id: 219
+    code: TG
+    name: Togo
+    slug: togo
+  -
+    id: 220
+    code: TK
+    name: Tokelau
+    slug: tokelau
+  -
+    id: 221
+    code: TO
+    name: Tonga
+    slug: tonga
+  -
+    id: 222
+    code: TT
+    name: Trinidad And Tobago
+    slug: trinidad-and-tobago
+  -
+    id: 223
+    code: TN
+    name: Tunisia
+    slug: tunisia
+  -
+    id: 224
+    code: TR
+    name: Turkey
+    slug: turkey
+  -
+    id: 225
+    code: TM
+    name: Turkmenistan
+    slug: turkmenistan
+  -
+    id: 226
+    code: TC
+    name: Turks And Caicos Islands
+    slug: turks-and-caicos-islands
+  -
+    id: 227
+    code: TV
+    name: Tuvalu
+    slug: tuvalu
+  -
+    id: 228
+    code: UG
+    name: Uganda
+    slug: uganda
+  -
+    id: 229
+    code: UA
+    name: Ukraine
+    slug: ukraine
+  -
+    id: 230
+    code: AE
+    name: United Arab Emirates
+    slug: united-arab-emirates
+  -
+    id: 231
+    code: GB
+    name: United Kingdom
+    slug: united-kingdom
+  -
+    id: 232
+    code: US
+    name: United States
+    slug: united-states
+  -
+    id: 233
+    code: UM
+    name: United States Outlying Islands
+    slug: united-states-outlying-islands
+  -
+    id: 234
+    code: UY
+    name: Uruguay
+    slug: uruguay
+  -
+    id: 235
+    code: UZ
+    name: Uzbekistan
+    slug: uzbekistan
+  -
+    id: 236
+    code: VU
+    name: Vanuatu
+    slug: vanuatu
+  -
+    id: 237
+    code: VE
+    name: Venezuela
+    slug: venezuela
+  -
+    id: 238
+    code: VN
+    name: Viet Nam
+    slug: viet-nam
+  -
+    id: 239
+    code: VG
+    name: Virgin Islands, British
+    slug: virgin-islands-british
+  -
+    id: 240
+    code: VI
+    name: Virgin Islands, U.S.
+    slug: virgin-islands-u-s
+  -
+    id: 241
+    code: WF
+    name: Wallis And Futuna
+    slug: wallis-and-futuna
+  -
+    id: 242
+    code: EH
+    name: Western Sahara
+    slug: western-sahara
+  -
+    id: 243
+    code: YE
+    name: Yemen
+    slug: yemen
+  -
+    id: 244
+    code: ZM
+    name: Zambia
+    slug: zambia
+  -
+    id: 245
+    code: ZW
+    name: Zimbabwe
+    slug: zimbabwe
+

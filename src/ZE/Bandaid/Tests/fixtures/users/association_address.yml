@@ -1,0 +1,540 @@
+---
+association_address:
+  -
+    association_id: 1
+    address_id: 1
+  -
+    association_id: 2
+    address_id: 2
+  -
+    association_id: 2
+    address_id: 3
+  -
+    association_id: 3
+    address_id: 4
+  -
+    association_id: 3
+    address_id: 5
+  -
+    association_id: 4
+    address_id: 6
+  -
+    association_id: 5
+    address_id: 7
+  -
+    association_id: 6
+    address_id: 8
+  -
+    association_id: 6
+    address_id: 9
+  -
+    association_id: 7
+    address_id: 10
+  -
+    association_id: 8
+    address_id: 11
+  -
+    association_id: 9
+    address_id: 12
+  -
+    association_id: 9
+    address_id: 13
+  -
+    association_id: 10
+    address_id: 14
+  -
+    association_id: 11
+    address_id: 15
+  -
+    association_id: 11
+    address_id: 16
+  -
+    association_id: 12
+    address_id: 17
+  -
+    association_id: 12
+    address_id: 18
+  -
+    association_id: 13
+    address_id: 19
+  -
+    association_id: 14
+    address_id: 20
+  -
+    association_id: 15
+    address_id: 22
+  -
+    association_id: 15
+    address_id: 23
+  -
+    association_id: 16
+    address_id: 21
+  -
+    association_id: 17
+    address_id: 26
+  -
+    association_id: 18
+    address_id: 24
+  -
+    association_id: 18
+    address_id: 25
+  -
+    association_id: 19
+    address_id: 27
+  -
+    association_id: 19
+    address_id: 28
+  -
+    association_id: 20
+    address_id: 31
+  -
+    association_id: 21
+    address_id: 29
+  -
+    association_id: 21
+    address_id: 30
+  -
+    association_id: 22
+    address_id: 34
+  -
+    association_id: 23
+    address_id: 32
+  -
+    association_id: 23
+    address_id: 33
+  -
+    association_id: 24
+    address_id: 35
+  -
+    association_id: 25
+    address_id: 36
+  -
+    association_id: 26
+    address_id: 37
+  -
+    association_id: 26
+    address_id: 38
+  -
+    association_id: 27
+    address_id: 39
+  -
+    association_id: 27
+    address_id: 40
+  -
+    association_id: 28
+    address_id: 41
+  -
+    association_id: 29
+    address_id: 42
+  -
+    association_id: 30
+    address_id: 43
+  -
+    association_id: 31
+    address_id: 44
+  -
+    association_id: 32
+    address_id: 45
+  -
+    association_id: 33
+    address_id: 46
+  -
+    association_id: 34
+    address_id: 47
+  -
+    association_id: 34
+    address_id: 48
+  -
+    association_id: 35
+    address_id: 49
+  -
+    association_id: 35
+    address_id: 50
+  -
+    association_id: 36
+    address_id: 51
+  -
+    association_id: 37
+    address_id: 52
+  -
+    association_id: 37
+    address_id: 53
+  -
+    association_id: 38
+    address_id: 54
+  -
+    association_id: 38
+    address_id: 55
+  -
+    association_id: 39
+    address_id: 56
+  -
+    association_id: 39
+    address_id: 57
+  -
+    association_id: 40
+    address_id: 58
+  -
+    association_id: 40
+    address_id: 59
+  -
+    association_id: 41
+    address_id: 60
+  -
+    association_id: 41
+    address_id: 61
+  -
+    association_id: 42
+    address_id: 62
+  -
+    association_id: 42
+    address_id: 63
+  -
+    association_id: 43
+    address_id: 64
+  -
+    association_id: 44
+    address_id: 65
+  -
+    association_id: 44
+    address_id: 66
+  -
+    association_id: 45
+    address_id: 67
+  -
+    association_id: 46
+    address_id: 68
+  -
+    association_id: 47
+    address_id: 69
+  -
+    association_id: 47
+    address_id: 70
+  -
+    association_id: 48
+    address_id: 71
+  -
+    association_id: 48
+    address_id: 72
+  -
+    association_id: 49
+    address_id: 73
+  -
+    association_id: 50
+    address_id: 74
+  -
+    association_id: 51
+    address_id: 75
+  -
+    association_id: 51
+    address_id: 76
+  -
+    association_id: 52
+    address_id: 77
+  -
+    association_id: 52
+    address_id: 78
+  -
+    association_id: 53
+    address_id: 79
+  -
+    association_id: 54
+    address_id: 80
+  -
+    association_id: 55
+    address_id: 81
+  -
+    association_id: 56
+    address_id: 82
+  -
+    association_id: 56
+    address_id: 83
+  -
+    association_id: 57
+    address_id: 84
+  -
+    association_id: 58
+    address_id: 85
+  -
+    association_id: 59
+    address_id: 86
+  -
+    association_id: 60
+    address_id: 87
+  -
+    association_id: 60
+    address_id: 88
+  -
+    association_id: 61
+    address_id: 90
+  -
+    association_id: 61
+    address_id: 91
+  -
+    association_id: 62
+    address_id: 89
+  -
+    association_id: 63
+    address_id: 94
+  -
+    association_id: 64
+    address_id: 92
+  -
+    association_id: 64
+    address_id: 93
+  -
+    association_id: 65
+    address_id: 96
+  -
+    association_id: 65
+    address_id: 97
+  -
+    association_id: 66
+    address_id: 95
+  -
+    association_id: 67
+    address_id: 98
+  -
+    association_id: 68
+    address_id: 99
+  -
+    association_id: 68
+    address_id: 100
+  -
+    association_id: 69
+    address_id: 101
+  -
+    association_id: 69
+    address_id: 102
+  -
+    association_id: 70
+    address_id: 105
+  -
+    association_id: 70
+    address_id: 106
+  -
+    association_id: 71
+    address_id: 103
+  -
+    association_id: 71
+    address_id: 104
+  -
+    association_id: 72
+    address_id: 109
+  -
+    association_id: 72
+    address_id: 110
+  -
+    association_id: 73
+    address_id: 107
+  -
+    association_id: 73
+    address_id: 108
+  -
+    association_id: 74
+    address_id: 112
+  -
+    association_id: 75
+    address_id: 111
+  -
+    association_id: 76
+    address_id: 113
+  -
+    association_id: 77
+    address_id: 115
+  -
+    association_id: 77
+    address_id: 116
+  -
+    association_id: 78
+    address_id: 114
+  -
+    association_id: 79
+    address_id: 119
+  -
+    association_id: 80
+    address_id: 117
+  -
+    association_id: 80
+    address_id: 118
+  -
+    association_id: 81
+    address_id: 120
+  -
+    association_id: 82
+    address_id: 121
+  -
+    association_id: 83
+    address_id: 124
+  -
+    association_id: 84
+    address_id: 122
+  -
+    association_id: 84
+    address_id: 123
+  -
+    association_id: 85
+    address_id: 126
+  -
+    association_id: 86
+    address_id: 125
+  -
+    association_id: 87
+    address_id: 127
+  -
+    association_id: 88
+    address_id: 128
+  -
+    association_id: 89
+    address_id: 129
+  -
+    association_id: 89
+    address_id: 130
+  -
+    association_id: 90
+    address_id: 131
+  -
+    association_id: 91
+    address_id: 132
+  -
+    association_id: 92
+    address_id: 133
+  -
+    association_id: 93
+    address_id: 134
+  -
+    association_id: 94
+    address_id: 135
+  -
+    association_id: 95
+    address_id: 136
+  -
+    association_id: 95
+    address_id: 137
+  -
+    association_id: 96
+    address_id: 138
+  -
+    association_id: 96
+    address_id: 139
+  -
+    association_id: 97
+    address_id: 140
+  -
+    association_id: 97
+    address_id: 141
+  -
+    association_id: 98
+    address_id: 142
+  -
+    association_id: 99
+    address_id: 143
+  -
+    association_id: 99
+    address_id: 144
+  -
+    association_id: 100
+    address_id: 145
+  -
+    association_id: 101
+    address_id: 146
+  -
+    association_id: 101
+    address_id: 147
+  -
+    association_id: 102
+    address_id: 148
+  -
+    association_id: 103
+    address_id: 149
+  -
+    association_id: 104
+    address_id: 150
+  -
+    association_id: 104
+    address_id: 151
+  -
+    association_id: 105
+    address_id: 152
+  -
+    association_id: 106
+    address_id: 153
+  -
+    association_id: 106
+    address_id: 154
+  -
+    association_id: 107
+    address_id: 155
+  -
+    association_id: 108
+    address_id: 156
+  -
+    association_id: 109
+    address_id: 157
+  -
+    association_id: 109
+    address_id: 158
+  -
+    association_id: 110
+    address_id: 159
+  -
+    association_id: 110
+    address_id: 160
+  -
+    association_id: 111
+    address_id: 161
+  -
+    association_id: 111
+    address_id: 162
+  -
+    association_id: 112
+    address_id: 163
+  -
+    association_id: 113
+    address_id: 164
+  -
+    association_id: 114
+    address_id: 165
+  -
+    association_id: 114
+    address_id: 166
+  -
+    association_id: 115
+    address_id: 167
+  -
+    association_id: 116
+    address_id: 168
+  -
+    association_id: 117
+    address_id: 169
+  -
+    association_id: 117
+    address_id: 170
+  -
+    association_id: 118
+    address_id: 171
+  -
+    association_id: 118
+    address_id: 172
+  -
+    association_id: 119
+    address_id: 173
+  -
+    association_id: 119
+    address_id: 174
+  -
+    association_id: 120
+    address_id: 175
+  -
+    association_id: 120
+    address_id: 176
+  -
+    association_id: 121
+    address_id: 177
+  -
+    association_id: 121
+    address_id: 178
+  -
+    association_id: 122
+    address_id: 1
+

@@ -1,0 +1,43 @@
+---
+instrument:
+  -
+    id: 1
+    name: Guitar
+    slug: guitar
+  -
+    id: 2
+    name: Bass Guitar
+    slug: bass-guitar
+  -
+    id: 3
+    name: Drums
+    slug: drums
+  -
+    id: 4
+    name: Saxophone
+    slug: saxophone
+  -
+    id: 5
+    name: Piano
+    slug: piano
+  -
+    id: 6
+    name: Trumpet
+    slug: trumpet
+  -
+    id: 7
+    name: Tuba
+    slug: tuba
+  -
+    id: 8
+    name: Trombone
+    slug: trombone
+  -
+    id: 9
+    name: Violin
+    slug: violin
+  -
+    id: 10
+    name: Flute
+    slug: flute
+

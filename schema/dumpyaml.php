@@ -17,6 +17,18 @@
 /* ========================================================
  * Configuration (read from command-line)
  * ========================================================
+ *
+ * automated usage
+ * SELECT TABLE_NAME FROM information_schema.tables WHERE table_type = 'BASE TABLE' AND table_schema = 'symfony'
+ *
+ *
+for t in address association association_address association_genre band_musician band_vacancy band_vacancy_association bandvacancy_genre bandvacancy_instrument city country document fos_user_group fos_user_user fos_user_user_group genre instrument item musician_instrument region;
+do
+    echo "$t"
+    php schema/dumpyaml.php -d symfony -t "$t" > /home/zach/dev/slim-bandaid/src/ZE/Bandaid/Tests/fixtures/users/"$t".yml
+
+done
+
  */
 $DBHOST = '';
 $DBUSER = '';
@@ -167,9 +179,11 @@ function sql_to_yaml($link, $sql, $table) {
 
                 // Do have any newlines or line feeds?
                 $literalFlag = (strpos($value, "\r") !== FALSE || strpos($value, "\n") !== FALSE) ? "| " : "";
-
+                if($literalFlag){
+                    $value = str_replace(array("\r\n", "\r", "\n"), ' ', $value);
+                }
                 // Output the key/value pair
-                echo "    {$key}: {$literalFlag}{$value}\n";
+                echo "    {$key}: {$value}\n";
             }
         }
     }
@@ -235,8 +249,6 @@ if (read_args()) {
             }
         }
 
-        // Output footer
-        echo "...\n";
     }
     else {
         echo "Could not select database [{$DBNAME}] :: " . mysql_error() . "\n";

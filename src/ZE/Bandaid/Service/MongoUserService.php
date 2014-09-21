@@ -23,7 +23,7 @@ class MongoUserService implements UserServiceInterface
             $columns = array('id', 'email','username');
         }
         $query = array('username' => $username);
-        $user = $this->db->users->findOne($query);
+        $user = $this->db->user->findOne($query);
         if(!$user || hash("sha256",  $password . $user['salt']) != $user['password']){
             return null;
         } else {
@@ -42,12 +42,12 @@ class MongoUserService implements UserServiceInterface
             'salt' => $salt,
             'password' => $password
         );
-        $userExists = $this->db->users->findOne(array('username' => $username));
+        $userExists = $this->db->user->findOne(array('username' => $username));
         if($userExists){
             return array('success' => false, 'message' => 'Duplicate email or username');
         }
         try {
-            $this->db->users->insert($user);
+            $this->db->user->insert($user);
         } catch (\Exception $e){
             return array('success' => false, 'message' => 'Unkown error');
         }

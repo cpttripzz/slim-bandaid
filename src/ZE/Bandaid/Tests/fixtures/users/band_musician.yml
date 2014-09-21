@@ -1,0 +1,348 @@
+---
+band_musician:
+  -
+    band_id: 2
+    musician_id: 1
+  -
+    band_id: 2
+    musician_id: 3
+  -
+    band_id: 2
+    musician_id: 22
+  -
+    band_id: 2
+    musician_id: 38
+  -
+    band_id: 2
+    musician_id: 119
+  -
+    band_id: 4
+    musician_id: 5
+  -
+    band_id: 4
+    musician_id: 20
+  -
+    band_id: 4
+    musician_id: 90
+  -
+    band_id: 6
+    musician_id: 5
+  -
+    band_id: 6
+    musician_id: 7
+  -
+    band_id: 6
+    musician_id: 9
+  -
+    band_id: 6
+    musician_id: 95
+  -
+    band_id: 8
+    musician_id: 9
+  -
+    band_id: 8
+    musician_id: 45
+  -
+    band_id: 8
+    musician_id: 47
+  -
+    band_id: 8
+    musician_id: 65
+  -
+    band_id: 8
+    musician_id: 115
+  -
+    band_id: 12
+    musician_id: 13
+  -
+    band_id: 12
+    musician_id: 50
+  -
+    band_id: 12
+    musician_id: 93
+  -
+    band_id: 12
+    musician_id: 101
+  -
+    band_id: 12
+    musician_id: 113
+  -
+    band_id: 12
+    musician_id: 119
+  -
+    band_id: 16
+    musician_id: 15
+  -
+    band_id: 18
+    musician_id: 13
+  -
+    band_id: 18
+    musician_id: 17
+  -
+    band_id: 21
+    musician_id: 20
+  -
+    band_id: 21
+    musician_id: 105
+  -
+    band_id: 23
+    musician_id: 22
+  -
+    band_id: 23
+    musician_id: 34
+  -
+    band_id: 23
+    musician_id: 35
+  -
+    band_id: 31
+    musician_id: 3
+  -
+    band_id: 31
+    musician_id: 32
+  -
+    band_id: 33
+    musician_id: 34
+  -
+    band_id: 33
+    musician_id: 48
+  -
+    band_id: 33
+    musician_id: 69
+  -
+    band_id: 37
+    musician_id: 28
+  -
+    band_id: 37
+    musician_id: 38
+  -
+    band_id: 37
+    musician_id: 48
+  -
+    band_id: 37
+    musician_id: 82
+  -
+    band_id: 37
+    musician_id: 115
+  -
+    band_id: 40
+    musician_id: 39
+  -
+    band_id: 40
+    musician_id: 41
+  -
+    band_id: 40
+    musician_id: 58
+  -
+    band_id: 40
+    musician_id: 63
+  -
+    band_id: 42
+    musician_id: 43
+  -
+    band_id: 42
+    musician_id: 85
+  -
+    band_id: 44
+    musician_id: 45
+  -
+    band_id: 44
+    musician_id: 50
+  -
+    band_id: 44
+    musician_id: 51
+  -
+    band_id: 44
+    musician_id: 98
+  -
+    band_id: 44
+    musician_id: 120
+  -
+    band_id: 46
+    musician_id: 47
+  -
+    band_id: 46
+    musician_id: 115
+  -
+    band_id: 57
+    musician_id: 58
+  -
+    band_id: 57
+    musician_id: 76
+  -
+    band_id: 57
+    musician_id: 96
+  -
+    band_id: 57
+    musician_id: 108
+  -
+    band_id: 59
+    musician_id: 41
+  -
+    band_id: 59
+    musician_id: 60
+  -
+    band_id: 59
+    musician_id: 98
+  -
+    band_id: 62
+    musician_id: 26
+  -
+    band_id: 62
+    musician_id: 61
+  -
+    band_id: 62
+    musician_id: 108
+  -
+    band_id: 64
+    musician_id: 32
+  -
+    band_id: 64
+    musician_id: 39
+  -
+    band_id: 64
+    musician_id: 63
+  -
+    band_id: 64
+    musician_id: 90
+  -
+    band_id: 66
+    musician_id: 50
+  -
+    band_id: 66
+    musician_id: 65
+  -
+    band_id: 66
+    musician_id: 69
+  -
+    band_id: 66
+    musician_id: 107
+  -
+    band_id: 66
+    musician_id: 119
+  -
+    band_id: 71
+    musician_id: 70
+  -
+    band_id: 71
+    musician_id: 93
+  -
+    band_id: 71
+    musician_id: 111
+  -
+    band_id: 73
+    musician_id: 9
+  -
+    band_id: 73
+    musician_id: 52
+  -
+    band_id: 73
+    musician_id: 72
+  -
+    band_id: 73
+    musician_id: 89
+  -
+    band_id: 73
+    musician_id: 99
+  -
+    band_id: 73
+    musician_id: 112
+  -
+    band_id: 75
+    musician_id: 74
+  -
+    band_id: 75
+    musician_id: 118
+  -
+    band_id: 75
+    musician_id: 120
+  -
+    band_id: 78
+    musician_id: 10
+  -
+    band_id: 78
+    musician_id: 55
+  -
+    band_id: 78
+    musician_id: 77
+  -
+    band_id: 78
+    musician_id: 107
+  -
+    band_id: 80
+    musician_id: 25
+  -
+    band_id: 80
+    musician_id: 79
+  -
+    band_id: 80
+    musician_id: 101
+  -
+    band_id: 84
+    musician_id: 53
+  -
+    band_id: 84
+    musician_id: 83
+  -
+    band_id: 84
+    musician_id: 90
+  -
+    band_id: 86
+    musician_id: 65
+  -
+    band_id: 86
+    musician_id: 85
+  -
+    band_id: 94
+    musician_id: 61
+  -
+    band_id: 94
+    musician_id: 95
+  -
+    band_id: 102
+    musician_id: 98
+  -
+    band_id: 102
+    musician_id: 103
+  -
+    band_id: 104
+    musician_id: 72
+  -
+    band_id: 104
+    musician_id: 96
+  -
+    band_id: 104
+    musician_id: 105
+  -
+    band_id: 104
+    musician_id: 121
+  -
+    band_id: 106
+    musician_id: 10
+  -
+    band_id: 106
+    musician_id: 79
+  -
+    band_id: 106
+    musician_id: 107
+  -
+    band_id: 114
+    musician_id: 92
+  -
+    band_id: 114
+    musician_id: 98
+  -
+    band_id: 114
+    musician_id: 115
+  -
+    band_id: 116
+    musician_id: 28
+  -
+    band_id: 116
+    musician_id: 63
+  -
+    band_id: 116
+    musician_id: 117
+  -
+    band_id: 122
+    musician_id: 1
+

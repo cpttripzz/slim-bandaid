@@ -6,9 +6,25 @@ use Spyc;
 abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
 {
     protected $fixturePath = 'fixtures';
-
     protected $db = null;
     protected $dbType = 'pdo';
+    protected $dbHelper;
+
+    /**
+     * @return mixed
+     */
+    public function getDbHelper()
+    {
+        return $this->dbHelper;
+    }
+
+    /**
+     * @param mixed $dbHelper
+     */
+    public function setDbHelper($dbHelper)
+    {
+        $this->dbHelper = $dbHelper;
+    }
 
     /**
      * @var Array fixtures
@@ -31,6 +47,24 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
         $this->fixtures = $fixtures;
     }
 
+    protected $joinTableFixtures;
+
+    /**
+     * @return mixed
+     */
+    public function getJoinTableFixtures()
+    {
+        return $this->joinTableFixtures;
+    }
+
+    /**
+     * @param mixed $joinTableFixtures
+     */
+    public function setJoinTableFixtures($joinTableFixtures)
+    {
+        $this->joinTableFixtures = $joinTableFixtures;
+    }
+
     public function truncateTables($tables)
     {
         foreach ($tables as $table) {
@@ -47,11 +81,12 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
         }
     }
 
-    public function loadFixtures($truncate = false)
+    public function loadFixtures($truncate = false,$dualReference=true)
     {
         if (!empty($this->fixtures)) {
 
-            foreach ($this->fixtures as $table) {
+            foreach ($this->fixtures as $table=>$options) {
+
                 $data = Spyc::YAMLLoad($this->fixturePath . DIRECTORY_SEPARATOR . $table . '.yml');
                 if ($truncate) {
                     $this->truncateTables(array_keys($data));
@@ -59,7 +94,6 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                 foreach ($data as $table => $fixtureData) {
                     switch ($this->dbType) {
                         case 'pdo':
-                            $columns = array();
                             $columns = array_keys(reset($fixtureData));
                             $values = $columns;
                             array_walk($values, function (&$item) {
@@ -78,22 +112,35 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                                     var_dump($e);
                                 }
                             }
-                        break;
+                            break;
                         case 'mongo':
                             foreach ($fixtureData as $row) {
-                                if(isset($row['id'])){
-                                    unset ($row['id']);
-                                }
-                                $this->db->$table->insert($row);
+                                $this->dbHelper->saveRow($row, $table, $dualReference,null,null,$options);
                             }
-
-
-                        break;
+                            break;
                     }
                 }
             }
         }
     }
+
+    public function loadJoinTableFixtures($dualReference=true)
+    {
+        if (!empty($this->joinTableFixtures)) {
+
+            foreach ($this->joinTableFixtures as $joinTableFixture) {
+
+                $data = Spyc::YAMLLoad($this->fixturePath . DIRECTORY_SEPARATOR . $joinTableFixture['table_name'] . '.yml');
+
+                foreach ($data as $table => $fixtureData) {
+                    $this->dbHelper->saveJoinTableReferences($joinTableFixture,$fixtureData);
+
+                }
+            }
+
+        }
+    }
+
 
     /**
      * @return string
@@ -148,7 +195,7 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                     $database = $GLOBALS['MONGO_DBNAME'];
                     $server = "mongodb://$host:27017";
                     $connection = new \MongoClient($server);
-                    $collection = $connection->$database;
+                    $collection  = $connection->$database;
                     $this->db = $collection ;
                 }
                 break;

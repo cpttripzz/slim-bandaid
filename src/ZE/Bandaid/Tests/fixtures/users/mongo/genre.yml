@@ -1,0 +1,47 @@
+---
+genre:
+  -
+    id: 1
+    name: Avant Garde
+    slug: avant-garde
+  -
+    id: 2
+    name: Blues
+    slug: blues
+  -
+    id: 3
+    name: Country
+    slug: country
+  -
+    id: 4
+    name: Folk
+    slug: folk
+  -
+    id: 5
+    name: Funk
+    slug: funk
+  -
+    id: 6
+    name: Heavy Metal
+    slug: heavy-metal
+  -
+    id: 7
+    name: Jazz
+    slug: jazz
+  -
+    id: 8
+    name: Punk Rock
+    slug: punk-rock
+  -
+    id: 9
+    name: Rap
+    slug: rap
+  -
+    id: 10
+    name: Rock
+    slug: rock
+  -
+    id: 11
+    name: Reggae
+    slug: reggae
+

@@ -1,0 +1,1105 @@
+---
+association:
+  -
+    id: 1
+    user_id: 1
+    name: Saepe natus
+    description: Aut placeat sunt voluptas numquam optio et. Dolores possimus natus illo laborum. Ut sequi ut omnis sunt architecto est.
+    slug: saepe-natus
+    createdAt: 2014-09-20 11:49:13
+    updatedAt: 2014-09-20 11:49:13
+    type: musician
+  -
+    id: 2
+    user_id: 2
+    name: Numquam aspernatur vitae velit
+    description: Eaque voluptatem reprehenderit quidem quasi ut debitis doloremque. Hic voluptas necessitatibus quibusdam nisi quia.
+    slug: numquam-aspernatur-vitae-velit
+    createdAt: 2014-09-20 11:49:16
+    updatedAt: 2014-09-20 12:09:03
+    type: band
+  -
+    id: 3
+    user_id: 2
+    name: Id fuga sapiente
+    description: In quod earum hic vel qui. Autem voluptatem facilis perferendis aut molestiae magni. Voluptatem nisi culpa eaque dolores sunt.
+    slug: id-fuga-sapiente
+    createdAt: 2014-09-20 11:49:19
+    updatedAt: 2014-09-20 11:49:19
+    type: musician
+  -
+    id: 4
+    user_id: 2
+    name: Dicta nobis ut vitae ut natus
+    description: Sint quo tempore distinctio voluptatem nisi adipisci dolores. Perspiciatis veniam cupiditate ut voluptatem. Hic asperiores delectus molestias quaerat hic tempore.
+    slug: dicta-nobis-ut-vitae-ut-natus
+    createdAt: 2014-09-20 11:49:21
+    updatedAt: 2014-09-20 12:09:03
+    type: band
+  -
+    id: 5
+    user_id: 2
+    name: Doloribus sed exercitationem quibusdam voluptatum
+    description: Et laboriosam magni quaerat iusto ut et. Illum temporibus doloribus consequatur eum. Quos voluptas sunt ut voluptatum et cumque. Architecto ut voluptas quis dolores sit est error.
+    slug: doloribus-sed-exercitationem-quibusdam-voluptatum
+    createdAt: 2014-09-20 11:49:22
+    updatedAt: 2014-09-20 11:49:22
+    type: musician
+  -
+    id: 6
+    user_id: 3
+    name: Facilis et
+    description: Cupiditate quo delectus iste necessitatibus. Quia et sed labore harum. Nihil natus enim tenetur dolores iure.
+    slug: facilis-et
+    createdAt: 2014-09-20 11:49:25
+    updatedAt: 2014-09-20 12:09:03
+    type: band
+  -
+    id: 7
+    user_id: 3
+    name: Vero ratione
+    description: Vitae ratione cum molestiae sit rerum quisquam consequatur. Id sed iusto ipsum quisquam ipsam et ea. Excepturi vitae vero autem est quia.
+    slug: vero-ratione
+    createdAt: 2014-09-20 11:49:27
+    updatedAt: 2014-09-20 11:49:27
+    type: musician
+  -
+    id: 8
+    user_id: 4
+    name: Optio facilis et minus doloribus
+    description: Quis aspernatur amet expedita ducimus ut. Porro distinctio distinctio saepe ullam. Itaque non optio laborum at delectus. Id reiciendis nam corporis.
+    slug: optio-facilis-et-minus-doloribus
+    createdAt: 2014-09-20 11:49:28
+    updatedAt: 2014-09-20 12:09:03
+    type: band
+  -
+    id: 9
+    user_id: 4
+    name: Minima natus
+    description: Vel sit in voluptatem corporis nobis voluptatem vel. Qui harum laudantium ad aut quia. Et ducimus provident quia laudantium animi quidem. Distinctio atque officia et fugit quia officiis.
+    slug: minima-natus
+    createdAt: 2014-09-20 11:49:34
+    updatedAt: 2014-09-20 11:49:34
+    type: musician
+  -
+    id: 10
+    user_id: 4
+    name: Rem est dolores eos
+    description: Quos aperiam aspernatur quaerat dolorem laudantium modi natus et. Deserunt ut molestiae labore voluptas ducimus nostrum. Minima rerum perspiciatis qui et mollitia est assumenda.
+    slug: rem-est-dolores-eos
+    createdAt: 2014-09-20 11:49:41
+    updatedAt: 2014-09-20 11:49:41
+    type: musician
+  -
+    id: 11
+    user_id: 4
+    name: Nam similique
+    description: Ut eum in saepe quia. Sint voluptatibus voluptatem et cumque deleniti nulla sunt. Quaerat praesentium omnis exercitationem repellat fugit maiores.
+    slug: nam-similique
+    createdAt: 2014-09-20 11:49:43
+    updatedAt: 2014-09-20 11:49:43
+    type: musician
+  -
+    id: 12
+    user_id: 5
+    name: Quia quam corporis sit voluptatum
+    description: Aut ea aspernatur maxime adipisci. Consequatur quos qui dolorem et molestias et dolorum.
+    slug: quia-quam-corporis-sit-voluptatum
+    createdAt: 2014-09-20 11:49:52
+    updatedAt: 2014-09-20 12:09:04
+    type: band
+  -
+    id: 13
+    user_id: 5
+    name: Quaerat perspiciatis
+    description: Deserunt vero est officia sunt. Quia dolor est dolorem pariatur. Fugit iusto quae asperiores et officiis.
+    slug: quaerat-perspiciatis
+    createdAt: 2014-09-20 11:50:03
+    updatedAt: 2014-09-20 11:50:03
+    type: musician
+  -
+    id: 14
+    user_id: 5
+    name: Nostrum at est magnam est et
+    description: Voluptatum quos veritatis quam placeat quasi officiis eaque. Quas aliquid impedit qui optio in molestias ut. Odit voluptates voluptas tempora omnis.
+    slug: nostrum-at-est-magnam-est-et
+    createdAt: 2014-09-20 11:50:06
+    updatedAt: 2014-09-20 11:50:06
+    type: musician
+  -
+    id: 15
+    user_id: 6
+    name: Quos fuga ipsa eos minima
+    description: Et sequi voluptas deserunt. Consectetur voluptatem quas ut exercitationem officiis eum. Rem ut earum autem aut eligendi. Animi omnis minus illo omnis rem nesciunt.
+    slug: quos-fuga-ipsa-eos-minima
+    createdAt: 2014-09-20 11:50:15
+    updatedAt: 2014-09-20 11:50:15
+    type: musician
+  -
+    id: 16
+    user_id: 6
+    name: Nostrum
+    description: Harum et voluptates ex voluptatem id. Voluptates consequatur sit ea porro. At perferendis amet aliquam quibusdam quidem iure ab minima.
+    slug: nostrum
+    createdAt: 2014-09-20 11:50:11
+    updatedAt: 2014-09-20 11:50:15
+    type: band
+  -
+    id: 17
+    user_id: 6
+    name: In ut praesentium exercitationem nisi
+    description: Rerum fugiat amet eius harum in vitae saepe. Omnis quasi dolores maiores velit nemo exercitationem. Alias aliquid et non qui. Omnis sunt eaque quae quam facilis dolorem. Dolores odio repellat dolor.
+    slug: in-ut-praesentium-exercitationem-nisi
+    createdAt: 2014-09-20 11:50:21
+    updatedAt: 2014-09-20 11:50:21
+    type: musician
+  -
+    id: 18
+    user_id: 6
+    name: Suscipit
+    description: Exercitationem et dolores accusantium non. Voluptate ipsa omnis blanditiis est. Eos quia molestiae nam odit. Eos laboriosam quibusdam et consequatur vel.
+    slug: suscipit
+    createdAt: 2014-09-20 11:50:19
+    updatedAt: 2014-09-20 12:09:04
+    type: band
+  -
+    id: 19
+    user_id: 7
+    name: Quia culpa at
+    description: Incidunt omnis expedita amet et provident iste beatae. Earum facere est quo nihil. Deserunt mollitia dolorum eius impedit.
+    slug: quia-culpa-at
+    createdAt: 2014-09-20 11:50:25
+    updatedAt: 2014-09-20 11:50:25
+    type: musician
+  -
+    id: 20
+    user_id: 8
+    name: Est
+    description: Ut fugiat sint voluptates occaecati iure et quidem. Dolorum consequatur cum nostrum. Voluptatem fugit quibusdam quod omnis aliquid dolorum aspernatur. Et quas et eius aut ut velit.
+    slug: est
+    createdAt: 2014-09-20 11:50:32
+    updatedAt: 2014-09-20 11:50:32
+    type: musician
+  -
+    id: 21
+    user_id: 8
+    name: Repellendus voluptas
+    description: Quo quod facilis velit quia labore. Dolore quis consequuntur rem itaque sed. Omnis ipsam impedit sequi optio.
+    slug: repellendus-voluptas
+    createdAt: 2014-09-20 11:50:29
+    updatedAt: 2014-09-20 12:09:04
+    type: band
+  -
+    id: 22
+    user_id: 8
+    name: Quia aliquam laboriosam laboriosam totam
+    description: Aut est minus sequi sit ea incidunt. Ipsum optio aut distinctio sit reprehenderit ut dolore. Ut ex harum dolor aut modi in dignissimos.
+    slug: quia-aliquam-laboriosam-laboriosam-totam
+    createdAt: 2014-09-20 11:50:39
+    updatedAt: 2014-09-20 11:50:39
+    type: musician
+  -
+    id: 23
+    user_id: 8
+    name: Neque culpa blanditiis
+    description: Occaecati ducimus sed culpa dolore ex ut. Blanditiis quod reprehenderit sunt rerum vitae quia. Fugit rerum vitae non rem et. Blanditiis placeat libero maxime ut doloremque totam saepe.
+    slug: neque-culpa-blanditiis
+    createdAt: 2014-09-20 11:50:36
+    updatedAt: 2014-09-20 12:09:04
+    type: band
+  -
+    id: 24
+    user_id: 9
+    name: Officia odio ut dicta eligendi iste recusandae
+    description: Expedita aut sit qui aut. Sed harum distinctio est voluptas aut labore. Voluptatum cum similique necessitatibus corrupti.
+    slug: officia-odio-ut-dicta-eligendi-iste-recusandae
+    createdAt: 2014-09-20 11:50:41
+    updatedAt: 2014-09-20 11:50:41
+    type: musician
+  -
+    id: 25
+    user_id: 10
+    name: Quasi maxime quasi
+    description: | Architecto eos et eius quo expedita. Est saepe quos itaque unde. Sequi culpa quod inventore qui id.
+Officia aut nemo vel amet. Occaecati excepturi et explicabo eaque.
+    slug: quasi-maxime-quasi
+    createdAt: 2014-09-20 11:50:44
+    updatedAt: 2014-09-20 11:50:44
+    type: musician
+  -
+    id: 26
+    user_id: 11
+    name: Suscipit vero
+    description: Vel laudantium voluptas officiis qui culpa neque. Facere nemo quas sequi magni fugiat quod. Veritatis excepturi totam at unde voluptatem. Quia veniam repudiandae est labore.
+    slug: suscipit-vero
+    createdAt: 2014-09-20 11:50:49
+    updatedAt: 2014-09-20 11:50:49
+    type: musician
+  -
+    id: 27
+    user_id: 12
+    name: Corporis impedit
+    description: Error deserunt et ad aut impedit. Distinctio iste dolore et. Et id dolores sunt sunt. Nemo sit molestiae eum enim voluptatum. Atque qui repudiandae eius sequi atque.
+    slug: corporis-impedit
+    createdAt: 2014-09-20 11:50:53
+    updatedAt: 2014-09-20 11:50:53
+    type: musician
+  -
+    id: 28
+    user_id: 12
+    name: Amet quibusdam aspernatur quisquam
+    description: Sed nihil eum harum voluptatem. Quidem aspernatur a aut explicabo. Rerum voluptas consequatur in optio nihil. Soluta fugit repellat officia in voluptates doloremque enim.
+    slug: amet-quibusdam-aspernatur-quisquam
+    createdAt: 2014-09-20 11:50:56
+    updatedAt: 2014-09-20 11:50:56
+    type: musician
+  -
+    id: 29
+    user_id: 13
+    name: Eum nobis dolor
+    description: Quaerat voluptatem non mollitia voluptas deserunt sit vel. Quam corporis odio optio tempore ut ad rem. Consequuntur ratione incidunt harum id repellat.
+    slug: eum-nobis-dolor
+    createdAt: 2014-09-20 11:50:59
+    updatedAt: 2014-09-20 11:50:59
+    type: musician
+  -
+    id: 30
+    user_id: 13
+    name: Voluptates
+    description: Praesentium dicta ad veniam porro. Est vel accusantium consequatur sed reiciendis quia. Aliquam illo quisquam non ea dolor sunt. Quia quos praesentium unde.
+    slug: voluptates
+    createdAt: 2014-09-20 11:51:03
+    updatedAt: 2014-09-20 11:51:03
+    type: musician
+  -
+    id: 31
+    user_id: 14
+    name: Delectus quia qui
+    description: Voluptatum sed qui non ut ullam. Et placeat delectus aliquid. Atque dolor incidunt iusto voluptatem facilis quia. Quia omnis explicabo et distinctio.
+    slug: delectus-quia-qui
+    createdAt: 2014-09-20 11:51:06
+    updatedAt: 2014-09-20 12:09:04
+    type: band
+  -
+    id: 32
+    user_id: 14
+    name: Est omnis
+    description: Voluptate esse expedita ut assumenda reprehenderit. Occaecati recusandae ad iure et ipsam ut debitis. Mollitia occaecati accusantium est sequi quidem ea molestiae.
+    slug: est-omnis
+    createdAt: 2014-09-20 11:51:08
+    updatedAt: 2014-09-20 11:51:08
+    type: musician
+  -
+    id: 33
+    user_id: 14
+    name: Sit earum nostrum adipisci
+    description: | Aut earum in animi blanditiis et. Hic at voluptas illum nobis earum enim.
+Laudantium dignissimos aut numquam quo ut. Iste quas nemo nam et harum vitae. Dolor et est corrupti vel animi qui et.
+    slug: sit-earum-nostrum-adipisci
+    createdAt: 2014-09-20 11:51:11
+    updatedAt: 2014-09-20 12:09:05
+    type: band
+  -
+    id: 34
+    user_id: 14
+    name: Soluta eaque ut
+    description: Et et aut iure fugiat magnam. Et enim facilis ea deleniti ut sequi in.
+    slug: soluta-eaque-ut
+    createdAt: 2014-09-20 11:51:16
+    updatedAt: 2014-09-20 11:51:16
+    type: musician
+  -
+    id: 35
+    user_id: 14
+    name: In delectus
+    description: Ratione iste quia non qui. Ullam ipsa autem eaque ut molestias. Quia sint eveniet reiciendis rem quia asperiores. Dolorum porro ad aut soluta.
+    slug: in-delectus
+    createdAt: 2014-09-20 11:51:20
+    updatedAt: 2014-09-20 11:51:20
+    type: musician
+  -
+    id: 36
+    user_id: 14
+    name: Culpa earum
+    description: Autem aut quo ut quis quis officia. Doloribus blanditiis amet illum nam ducimus excepturi. Numquam sint id dolore sint ut quas voluptatem. Facere id aut nisi non.
+    slug: culpa-earum
+    createdAt: 2014-09-20 11:51:23
+    updatedAt: 2014-09-20 11:51:23
+    type: musician
+  -
+    id: 37
+    user_id: 15
+    name: Repellat omnis ea
+    description: Sint reiciendis quis adipisci eligendi. Minus reprehenderit iusto laboriosam impedit saepe odit. Error ea porro at debitis sunt ut. Rem officiis aut iste dolorem praesentium consequatur.
+    slug: repellat-omnis-ea
+    createdAt: 2014-09-20 11:51:30
+    updatedAt: 2014-09-20 12:09:05
+    type: band
+  -
+    id: 38
+    user_id: 15
+    name: Qui est
+    description: Qui et minima sed. Deserunt facere aliquam eum doloremque et natus aliquam. Quia provident ut similique qui cumque sed molestiae enim. Et ipsa enim sed itaque blanditiis voluptatem repellat.
+    slug: qui-est
+    createdAt: 2014-09-20 11:51:36
+    updatedAt: 2014-09-20 11:51:36
+    type: musician
+  -
+    id: 39
+    user_id: 16
+    name: Omnis natus
+    description: Consectetur omnis dolore officia culpa similique. Laudantium ad pariatur voluptates. Nesciunt corporis qui voluptate minus et labore. Minus iste ut sunt quo ut assumenda aut est.
+    slug: omnis-natus
+    createdAt: 2014-09-20 11:51:42
+    updatedAt: 2014-09-20 11:51:42
+    type: musician
+  -
+    id: 40
+    user_id: 17
+    name: Tenetur at reprehenderit aut ipsum
+    description: Vel repellat non perferendis omnis esse. Omnis quia unde nesciunt est minima. Praesentium animi voluptatibus vel et natus quia. Labore ea architecto et quaerat est omnis.
+    slug: tenetur-at-reprehenderit-aut-ipsum
+    createdAt: 2014-09-20 11:51:46
+    updatedAt: 2014-09-20 12:09:05
+    type: band
+  -
+    id: 41
+    user_id: 17
+    name: Voluptates dolor sint nesciunt harum voluptate hic
+    description: Mollitia et ut nihil expedita deserunt enim. Aut quasi voluptatem maiores. Aliquam illum dignissimos harum occaecati omnis fugit. Excepturi debitis vitae quo et molestias et.
+    slug: voluptates-dolor-sint-nesciunt-harum-voluptate-hic
+    createdAt: 2014-09-20 11:51:50
+    updatedAt: 2014-09-20 11:51:50
+    type: musician
+  -
+    id: 42
+    user_id: 17
+    name: Sequi fugiat et aut cupiditate facilis
+    description: Ut id dolor molestiae facere facilis nemo. Vero voluptatibus id alias. Itaque exercitationem iste quidem quae. Sit soluta assumenda aliquam consequatur eligendi veniam.
+    slug: sequi-fugiat-et-aut-cupiditate-facilis
+    createdAt: 2014-09-20 11:51:55
+    updatedAt: 2014-09-20 12:09:05
+    type: band
+  -
+    id: 43
+    user_id: 17
+    name: Odit voluptas
+    description: Ipsum mollitia maxime rerum velit incidunt placeat temporibus repudiandae. Fuga quos tenetur rerum minima officiis commodi iure. Sapiente ea praesentium molestias et aut et.
+    slug: odit-voluptas
+    createdAt: 2014-09-20 11:51:59
+    updatedAt: 2014-09-20 11:51:59
+    type: musician
+  -
+    id: 44
+    user_id: 18
+    name: Quia cupiditate incidunt
+    description: Aut modi et veniam quasi praesentium autem. Et perferendis voluptates excepturi sapiente laudantium. Reiciendis dolorum fuga aperiam iusto deserunt vero.
+    slug: quia-cupiditate-incidunt
+    createdAt: 2014-09-20 11:52:04
+    updatedAt: 2014-09-20 12:09:06
+    type: band
+  -
+    id: 45
+    user_id: 18
+    name: Aut et
+    description: Delectus voluptas mollitia sequi. Fugit et et aut in. Consequatur illo et libero quas minus ut atque.
+    slug: aut-et
+    createdAt: 2014-09-20 11:52:07
+    updatedAt: 2014-09-20 11:52:07
+    type: musician
+  -
+    id: 46
+    user_id: 18
+    name: Blanditiis consequuntur aperiam doloremque aspernatur quod
+    description: Odit perspiciatis tempore cumque exercitationem vitae nam dolor. Atque dignissimos iure quas expedita. Reprehenderit consequuntur dolor fugiat ducimus.
+    slug: blanditiis-consequuntur-aperiam-doloremque-aspernatur-quod
+    createdAt: 2014-09-20 11:52:10
+    updatedAt: 2014-09-20 12:09:06
+    type: band
+  -
+    id: 47
+    user_id: 18
+    name: Commodi laborum
+    description: Dolor perspiciatis placeat quia deserunt temporibus. Et id animi dolorum omnis qui consequatur. Nesciunt asperiores doloremque assumenda. Ipsa quia impedit sed debitis in aut.
+    slug: commodi-laborum
+    createdAt: 2014-09-20 11:52:14
+    updatedAt: 2014-09-20 11:52:14
+    type: musician
+  -
+    id: 48
+    user_id: 19
+    name: Vero reprehenderit quam excepturi
+    description: Nostrum eveniet vero sed accusantium animi veniam. Minus laborum facere molestias placeat iusto magni. Tempora natus et beatae enim. Dolor architecto placeat sed nemo.
+    slug: vero-reprehenderit-quam-excepturi
+    createdAt: 2014-09-20 11:52:18
+    updatedAt: 2014-09-20 11:52:18
+    type: musician
+  -
+    id: 49
+    user_id: 19
+    name: Expedita rem ut et
+    description: Possimus sunt vero dolorum veritatis. Doloremque ad soluta et dolorum reiciendis dolor sint. Quo iusto quam assumenda voluptatum rerum. Reprehenderit iste occaecati esse ut tempora ut.
+    slug: expedita-rem-ut-et
+    createdAt: 2014-09-20 11:52:21
+    updatedAt: 2014-09-20 11:52:21
+    type: musician
+  -
+    id: 50
+    user_id: 20
+    name: Dicta illum dolorum est explicabo
+    description: Delectus qui consequuntur sapiente quia aliquam et. Illo debitis autem nihil sint inventore assumenda adipisci et. Rem eum ad non velit sed qui incidunt. Sit aut omnis dolores.
+    slug: dicta-illum-dolorum-est-explicabo
+    createdAt: 2014-09-20 11:52:23
+    updatedAt: 2014-09-20 11:52:23
+    type: musician
+  -
+    id: 51
+    user_id: 21
+    name: Assumenda magni incidunt deserunt
+    description: Temporibus eligendi nihil expedita repellendus provident. Voluptatibus omnis placeat qui nisi deserunt quia distinctio expedita. Iusto qui quos iure. Nam et ut quo repellendus et at.
+    slug: assumenda-magni-incidunt-deserunt
+    createdAt: 2014-09-20 11:52:29
+    updatedAt: 2014-09-20 11:52:29
+    type: musician
+  -
+    id: 52
+    user_id: 21
+    name: Cum assumenda soluta et necessitatibus
+    description: Temporibus impedit quasi magni dolorem. Repudiandae voluptatem minima et consequatur assumenda rem omnis. Quo excepturi eaque aut debitis mollitia.
+    slug: cum-assumenda-soluta-et-necessitatibus
+    createdAt: 2014-09-20 11:52:33
+    updatedAt: 2014-09-20 11:52:33
+    type: musician
+  -
+    id: 53
+    user_id: 22
+    name: Dignissimos ab facere
+    description: Rem maxime est excepturi tempora non. Labore iusto incidunt facilis quibusdam nihil sunt. Veritatis laboriosam est sed.
+    slug: dignissimos-ab-facere
+    createdAt: 2014-09-20 11:52:37
+    updatedAt: 2014-09-20 11:52:37
+    type: musician
+  -
+    id: 54
+    user_id: 23
+    name: Quas eos consectetur quis quos dolore
+    description: Atque quam sunt velit voluptatem nobis voluptatem perspiciatis. Dolorum deserunt velit et vitae unde. Eius et fuga odio quia velit.
+    slug: quas-eos-consectetur-quis-quos-dolore
+    createdAt: 2014-09-20 11:52:39
+    updatedAt: 2014-09-20 11:52:39
+    type: musician
+  -
+    id: 55
+    user_id: 24
+    name: Consequatur et repudiandae dolorem iste rem
+    description: Officia dolorem voluptatem ut. Iste voluptas fugiat impedit rerum iure. At repellat omnis sunt perferendis.
+    slug: consequatur-et-repudiandae-dolorem-iste-rem
+    createdAt: 2014-09-20 11:52:42
+    updatedAt: 2014-09-20 11:52:42
+    type: musician
+  -
+    id: 56
+    user_id: 24
+    name: At quia soluta voluptas
+    description: Eligendi cum commodi dolores eveniet sint voluptate voluptas. Sint voluptatem eos fugiat. Voluptas maxime ea sequi veniam qui est. Nesciunt tempore voluptatem consequatur nihil laboriosam nisi eos.
+    slug: at-quia-soluta-voluptas
+    createdAt: 2014-09-20 11:52:46
+    updatedAt: 2014-09-20 11:52:46
+    type: musician
+  -
+    id: 57
+    user_id: 25
+    name: Sit
+    description: | Ad et iste ut aperiam. Natus alias quo quaerat vero consequatur nesciunt. Magni qui quae aliquid sit.
+Autem sit rerum et quidem. Facere reprehenderit id qui. Architecto sunt aut incidunt impedit ab.
+    slug: sit
+    createdAt: 2014-09-20 11:52:50
+    updatedAt: 2014-09-20 12:09:06
+    type: band
+  -
+    id: 58
+    user_id: 25
+    name: Exercitationem aliquid excepturi pariatur
+    description: Laborum odit autem qui sunt eveniet cumque dignissimos unde. Aut non doloribus et. Voluptatibus ut optio enim expedita et sed. Voluptatem dolores molestiae sequi non.
+    slug: exercitationem-aliquid-excepturi-pariatur
+    createdAt: 2014-09-20 11:52:52
+    updatedAt: 2014-09-20 11:52:52
+    type: musician
+  -
+    id: 59
+    user_id: 25
+    name: Dolor alias
+    description: Doloribus quia voluptatem rerum dicta. Quia ut doloremque harum incidunt dolores quia. Non quos qui repellendus amet.
+    slug: dolor-alias
+    createdAt: 2014-09-20 11:52:55
+    updatedAt: 2014-09-20 12:09:06
+    type: band
+  -
+    id: 60
+    user_id: 25
+    name: Odio qui ea
+    description: Nihil aut quo autem quia fugiat sunt impedit voluptatum. Necessitatibus et odio ipsam sit porro qui. Aliquam rem ea sint possimus eos. Fugit dicta dolorem eius vel eveniet accusantium ut.
+    slug: odio-qui-ea
+    createdAt: 2014-09-20 11:52:59
+    updatedAt: 2014-09-20 11:52:59
+    type: musician
+  -
+    id: 61
+    user_id: 26
+    name: Atque officia
+    description: Eligendi ea nisi unde dolore dolorum id magnam. Ut aliquam est quae ea provident repellendus. Voluptatem velit officiis porro assumenda minima.
+    slug: atque-officia
+    createdAt: 2014-09-20 11:53:08
+    updatedAt: 2014-09-20 11:53:08
+    type: musician
+  -
+    id: 62
+    user_id: 26
+    name: Omnis officiis rerum fuga
+    description: Qui commodi sed quo cum neque tenetur nesciunt ea. Delectus aut quas ut blanditiis nesciunt temporibus quis. Occaecati dolores aut consectetur quo eos.
+    slug: omnis-officiis-rerum-fuga
+    createdAt: 2014-09-20 11:53:04
+    updatedAt: 2014-09-20 12:09:06
+    type: band
+  -
+    id: 63
+    user_id: 27
+    name: Quibusdam sed
+    description: Et et quo facilis autem et quo architecto. Commodi laboriosam consequuntur quia inventore inventore quibusdam quos sit. Dignissimos aliquam asperiores omnis porro.
+    slug: quibusdam-sed
+    createdAt: 2014-09-20 11:53:16
+    updatedAt: 2014-09-20 11:53:16
+    type: musician
+  -
+    id: 64
+    user_id: 27
+    name: Dolor consequuntur eveniet voluptatem
+    description: Nihil rerum temporibus incidunt aspernatur eum libero minus. Ut quisquam corporis omnis dolorum. Dolor corrupti ut fugit eos enim est ipsam.
+    slug: dolor-consequuntur-eveniet-voluptatem
+    createdAt: 2014-09-20 11:53:13
+    updatedAt: 2014-09-20 12:09:06
+    type: band
+  -
+    id: 65
+    user_id: 27
+    name: Aliquam ea doloribus cumque earum perspiciatis
+    description: Neque debitis atque modi accusamus. Iusto dolorem esse id eaque. Minus eum debitis est corporis ut nulla. Laboriosam sed et necessitatibus voluptate doloremque sit distinctio voluptatem.
+    slug: aliquam-ea-doloribus-cumque-earum-perspiciatis
+    createdAt: 2014-09-20 11:53:23
+    updatedAt: 2014-09-20 11:53:23
+    type: musician
+  -
+    id: 66
+    user_id: 27
+    name: Consequatur ut voluptatem
+    description: Et corporis corporis asperiores. Aut praesentium aperiam dolores. Molestiae qui vel quos est voluptatem. Praesentium sit officiis illum omnis voluptatem fuga provident nihil.
+    slug: consequatur-ut-voluptatem
+    createdAt: 2014-09-20 11:53:18
+    updatedAt: 2014-09-20 12:09:07
+    type: band
+  -
+    id: 67
+    user_id: 27
+    name: Delectus culpa et repellendus veritatis
+    description: Ex rerum eaque alias. Error et doloribus minus ipsam. Blanditiis sunt inventore vero ex.
+    slug: delectus-culpa-et-repellendus-veritatis
+    createdAt: 2014-09-20 11:53:25
+    updatedAt: 2014-09-20 11:53:25
+    type: musician
+  -
+    id: 68
+    user_id: 28
+    name: Totam explicabo itaque numquam accusamus
+    description: Animi praesentium quia consequatur est officiis qui quas quas. Quas ut commodi harum iure. Non alias labore minima voluptate mollitia.
+    slug: totam-explicabo-itaque-numquam-accusamus
+    createdAt: 2014-09-20 11:53:33
+    updatedAt: 2014-09-20 11:53:33
+    type: musician
+  -
+    id: 69
+    user_id: 28
+    name: Unde corporis ipsum quis quibusdam
+    description: Dolor ipsa quibusdam voluptatem sit ducimus. Quia assumenda ut nisi ipsam et dolor est.
+    slug: unde-corporis-ipsum-quis-quibusdam
+    createdAt: 2014-09-20 11:53:37
+    updatedAt: 2014-09-20 11:53:37
+    type: musician
+  -
+    id: 70
+    user_id: 29
+    name: Doloribus aliquam voluptatem quas eaque quia
+    description: Voluptas odit eaque eaque et. Nihil in sapiente sed dolorem dolorem impedit vitae et. Aut nihil tempore quam et.
+    slug: doloribus-aliquam-voluptatem-quas-eaque-quia
+    createdAt: 2014-09-20 11:53:46
+    updatedAt: 2014-09-20 11:53:46
+    type: musician
+  -
+    id: 71
+    user_id: 29
+    name: Magni unde dolor nisi
+    description: Reprehenderit amet eum ullam quaerat molestias accusantium. Distinctio qui odit at et ut. Quo et dolores eum non quia ad magni.
+    slug: magni-unde-dolor-nisi
+    createdAt: 2014-09-20 11:53:42
+    updatedAt: 2014-09-20 12:09:07
+    type: band
+  -
+    id: 72
+    user_id: 30
+    name: Beatae quos illo officiis velit
+    description: Qui molestias occaecati vero numquam dolore est. Hic fuga et quia quidem praesentium autem. Consectetur qui quas eum.
+    slug: beatae-quos-illo-officiis-velit
+    createdAt: 2014-09-20 11:53:53
+    updatedAt: 2014-09-20 11:53:53
+    type: musician
+  -
+    id: 73
+    user_id: 30
+    name: Omnis
+    description: Saepe temporibus adipisci aliquid in. Porro non quod delectus. Voluptatum officia aut et possimus. Maiores quasi dicta soluta facere ea. Eaque quis veritatis tempore.
+    slug: omnis
+    createdAt: 2014-09-20 11:53:50
+    updatedAt: 2014-09-20 12:09:07
+    type: band
+  -
+    id: 74
+    user_id: 31
+    name: Voluptas
+    description: Consequuntur architecto aut excepturi tempora. Voluptatem quis sunt voluptatem id. Tempore quo omnis voluptas aut voluptatem temporibus culpa.
+    slug: voluptas
+    createdAt: 2014-09-20 11:53:59
+    updatedAt: 2014-09-20 11:53:59
+    type: musician
+  -
+    id: 75
+    user_id: 31
+    name: Voluptatem
+    description: Ipsam ad quod veniam et quam quis vel. Autem nesciunt voluptas eum eaque eos nesciunt cupiditate. Ea incidunt laudantium quia.
+    slug: voluptatem
+    createdAt: 2014-09-20 11:53:57
+    updatedAt: 2014-09-20 12:09:08
+    type: band
+  -
+    id: 76
+    user_id: 32
+    name: Et nihil aut
+    description: Qui inventore ut repellendus et tenetur animi. Non atque incidunt sequi ratione eum excepturi provident et. Harum illo et vitae rem.
+    slug: et-nihil-aut
+    createdAt: 2014-09-20 11:54:02
+    updatedAt: 2014-09-20 11:54:02
+    type: musician
+  -
+    id: 77
+    user_id: 33
+    name: Dolorum sit
+    description: Assumenda deserunt quis dolor aliquid assumenda. Aliquid quod repudiandae voluptatem reiciendis debitis tempora.
+    slug: dolorum-sit
+    createdAt: 2014-09-20 11:54:09
+    updatedAt: 2014-09-20 11:54:09
+    type: musician
+  -
+    id: 78
+    user_id: 33
+    name: Recusandae expedita deserunt velit dolorum saepe itaque
+    description: Adipisci alias quia veritatis inventore consequatur repudiandae. Labore in voluptate beatae. Ut praesentium aut nobis recusandae optio porro sunt. Accusantium tenetur enim et quia.
+    slug: recusandae-expedita-deserunt-velit-dolorum-saepe-itaque
+    createdAt: 2014-09-20 11:54:05
+    updatedAt: 2014-09-20 12:09:08
+    type: band
+  -
+    id: 79
+    user_id: 33
+    name: Omnis ducimus nemo eos quibusdam necessitatibus non
+    description: Velit accusantium iusto sint quidem quis libero. In et et in quis soluta. Suscipit nobis sequi nemo omnis neque laborum.
+    slug: omnis-ducimus-nemo-eos-quibusdam-necessitatibus-non
+    createdAt: 2014-09-20 11:54:17
+    updatedAt: 2014-09-20 11:54:17
+    type: musician
+  -
+    id: 80
+    user_id: 33
+    name: Fugit minus ipsa qui
+    description: Fuga ut possimus quo voluptate voluptas. Aut repellendus error et voluptatibus. A doloribus sunt itaque eaque eligendi quos. Alias facilis voluptatibus qui numquam et.
+    slug: fugit-minus-ipsa-qui
+    createdAt: 2014-09-20 11:54:14
+    updatedAt: 2014-09-20 12:09:08
+    type: band
+  -
+    id: 81
+    user_id: 34
+    name: Et quasi
+    description: Omnis facere a soluta. Vel commodi sequi sit voluptatum culpa rerum. Tempora aliquam ab rem temporibus.
+    slug: et-quasi
+    createdAt: 2014-09-20 11:54:20
+    updatedAt: 2014-09-20 11:54:20
+    type: musician
+  -
+    id: 82
+    user_id: 34
+    name: Doloribus dolorem et aut
+    description: Voluptatem velit laudantium totam atque. Facilis et similique numquam. Delectus voluptatum laborum fugiat veritatis rerum molestiae inventore neque.
+    slug: doloribus-dolorem-et-aut
+    createdAt: 2014-09-20 11:54:22
+    updatedAt: 2014-09-20 11:54:22
+    type: musician
+  -
+    id: 83
+    user_id: 35
+    name: Soluta doloribus
+    description: Officiis quis voluptas quia iste dolorem velit facilis. Harum ipsa aspernatur neque laborum exercitationem. Qui consequatur quia facere illo id.
+    slug: soluta-doloribus
+    createdAt: 2014-09-20 11:54:30
+    updatedAt: 2014-09-20 11:54:30
+    type: musician
+  -
+    id: 84
+    user_id: 35
+    name: Atque sint nostrum nesciunt similique eum
+    description: Voluptas asperiores accusantium illo et fugiat quos. Vitae eligendi aut inventore id qui quis dolores. Hic et voluptatem aperiam et.
+    slug: atque-sint-nostrum-nesciunt-similique-eum
+    createdAt: 2014-09-20 11:54:25
+    updatedAt: 2014-09-20 12:09:08
+    type: band
+  -
+    id: 85
+    user_id: 35
+    name: Aut fugiat deserunt
+    description: Reiciendis quis fugiat et non voluptatem dicta. Rerum dolorum aspernatur ex sunt accusantium omnis. Nam fuga et tenetur impedit qui.
+    slug: aut-fugiat-deserunt
+    createdAt: 2014-09-20 11:54:34
+    updatedAt: 2014-09-20 11:54:34
+    type: musician
+  -
+    id: 86
+    user_id: 35
+    name: Reiciendis amet voluptatem
+    description: Qui corrupti assumenda pariatur illum veniam. Qui sequi non quia sit consectetur. Libero nam ipsam aut minima eos.
+    slug: reiciendis-amet-voluptatem
+    createdAt: 2014-09-20 11:54:32
+    updatedAt: 2014-09-20 12:09:08
+    type: band
+  -
+    id: 87
+    user_id: 36
+    name: Eveniet esse eaque fugit aperiam
+    description: Rem non saepe id odio adipisci est. Iusto consequuntur omnis sed. Quasi quia quis expedita veniam.
+    slug: eveniet-esse-eaque-fugit-aperiam
+    createdAt: 2014-09-20 11:54:38
+    updatedAt: 2014-09-20 11:54:38
+    type: musician
+  -
+    id: 88
+    user_id: 36
+    name: In fugit
+    description: Et hic est qui rerum. Voluptas dolorum id id aperiam aut sint. Sequi eveniet ipsum et laborum sunt quibusdam.
+    slug: in-fugit
+    createdAt: 2014-09-20 11:54:41
+    updatedAt: 2014-09-20 11:54:41
+    type: musician
+  -
+    id: 89
+    user_id: 37
+    name: Qui repellat ipsum
+    description: Ratione sunt qui optio ex. Omnis voluptate recusandae quaerat molestias quia nostrum. Nobis quo rerum aut.
+    slug: qui-repellat-ipsum
+    createdAt: 2014-09-20 11:54:46
+    updatedAt: 2014-09-20 11:54:46
+    type: musician
+  -
+    id: 90
+    user_id: 38
+    name: Voluptatum optio eos sed
+    description: Eos voluptates est est aspernatur quasi animi molestiae. Repellat delectus impedit quia iste qui. Neque esse modi laudantium libero.
+    slug: voluptatum-optio-eos-sed
+    createdAt: 2014-09-20 11:54:48
+    updatedAt: 2014-09-20 11:54:48
+    type: musician
+  -
+    id: 91
+    user_id: 38
+    name: Reiciendis vel laboriosam alias
+    description: Expedita ab natus provident quo quae ut qui. Voluptatem quia nihil dolorem eum eligendi. Nihil corrupti minima rerum occaecati dolores provident dolor nostrum.
+    slug: reiciendis-vel-laboriosam-alias
+    createdAt: 2014-09-20 11:54:50
+    updatedAt: 2014-09-20 11:54:50
+    type: musician
+  -
+    id: 92
+    user_id: 39
+    name: Ea quia omnis pariatur
+    description: Cumque sunt error deserunt molestias. Praesentium culpa dolorum beatae illum sequi. Itaque omnis voluptates quia porro culpa autem. Iusto voluptate neque voluptatum ullam culpa consequatur quas et.
+    slug: ea-quia-omnis-pariatur
+    createdAt: 2014-09-20 11:54:53
+    updatedAt: 2014-09-20 11:54:53
+    type: musician
+  -
+    id: 93
+    user_id: 39
+    name: Nisi repudiandae enim
+    description: Ut laborum culpa consectetur. Recusandae quae ut repudiandae est aut voluptate aspernatur. Laborum et quos consequatur.
+    slug: nisi-repudiandae-enim
+    createdAt: 2014-09-20 11:54:55
+    updatedAt: 2014-09-20 11:54:55
+    type: musician
+  -
+    id: 94
+    user_id: 40
+    name: Sed voluptatem quae eos ea architecto optio
+    description: Eveniet facilis ut dolores sit occaecati placeat. Odit praesentium vitae fugit. Commodi et illum vitae voluptatibus. Commodi accusantium dolorem dolore necessitatibus.
+    slug: sed-voluptatem-quae-eos-ea-architecto-optio
+    createdAt: 2014-09-20 11:54:59
+    updatedAt: 2014-09-20 12:09:08
+    type: band
+  -
+    id: 95
+    user_id: 40
+    name: Aut perspiciatis laudantium incidunt omnis laudantium
+    description: Et aut nobis fuga odit nihil eum dolore harum. Pariatur expedita molestiae autem hic qui nam tempora. Recusandae non dolorem tempore quo est doloribus.
+    slug: aut-perspiciatis-laudantium-incidunt-omnis-laudantium
+    createdAt: 2014-09-20 11:55:03
+    updatedAt: 2014-09-20 11:55:03
+    type: musician
+  -
+    id: 96
+    user_id: 41
+    name: Fugiat laborum rem
+    description: Quia sed dolorem maiores nihil amet labore recusandae ut. Illo occaecati voluptate sunt.
+    slug: fugiat-laborum-rem
+    createdAt: 2014-09-20 11:55:08
+    updatedAt: 2014-09-20 11:55:08
+    type: musician
+  -
+    id: 97
+    user_id: 41
+    name: Voluptas earum nam quo
+    description: Repudiandae ullam neque debitis sit vitae officia. Veniam deleniti soluta explicabo.
+    slug: voluptas-earum-nam-quo
+    createdAt: 2014-09-20 11:55:12
+    updatedAt: 2014-09-20 11:55:12
+    type: musician
+  -
+    id: 98
+    user_id: 42
+    name: At fugit magnam et natus at
+    description: Ut dolor esse dicta et exercitationem. Et velit qui accusamus perferendis. Dolor iusto omnis tempora labore qui tempora eum harum. Nihil placeat cumque quibusdam deserunt doloremque.
+    slug: at-fugit-magnam-et-natus-at
+    createdAt: 2014-09-20 11:55:15
+    updatedAt: 2014-09-20 11:55:15
+    type: musician
+  -
+    id: 99
+    user_id: 42
+    name: Dolor officia
+    description: Esse nostrum esse voluptate voluptatem harum reiciendis. Ducimus fuga perspiciatis distinctio vel qui eaque. Aliquid illo et enim praesentium magni modi.
+    slug: dolor-officia
+    createdAt: 2014-09-20 11:55:19
+    updatedAt: 2014-09-20 11:55:19
+    type: musician
+  -
+    id: 100
+    user_id: 43
+    name: Animi occaecati totam
+    description: Ad ea sint molestiae ipsam. Mollitia consequatur in nulla illum in. Ipsa autem soluta architecto aut. Qui ut et quasi in alias ex.
+    slug: animi-occaecati-totam
+    createdAt: 2014-09-20 11:55:20
+    updatedAt: 2014-09-20 11:55:20
+    type: musician
+  -
+    id: 101
+    user_id: 43
+    name: Accusamus id aliquam
+    description: Sint corrupti quaerat quo velit dolor. Itaque dicta dolores laudantium cum vel rerum. Explicabo ipsa consequuntur labore. Placeat incidunt est sit recusandae quae delectus consequatur.
+    slug: accusamus-id-aliquam
+    createdAt: 2014-09-20 11:55:23
+    updatedAt: 2014-09-20 11:55:23
+    type: musician
+  -
+    id: 102
+    user_id: 44
+    name: Alias quaerat
+    description: Repellat qui eveniet et autem dolor quia. Tenetur id est est labore commodi omnis repellendus occaecati. Rem ut aperiam in nam.
+    slug: alias-quaerat
+    createdAt: 2014-09-20 11:55:26
+    updatedAt: 2014-09-20 12:09:08
+    type: band
+  -
+    id: 103
+    user_id: 44
+    name: Et mollitia iste
+    description: Officia tempora impedit nisi vel. Omnis rem impedit vero perspiciatis eligendi corrupti. Perspiciatis nemo molestiae reprehenderit consequatur natus consequatur natus.
+    slug: et-mollitia-iste
+    createdAt: 2014-09-20 11:55:29
+    updatedAt: 2014-09-20 11:55:29
+    type: musician
+  -
+    id: 104
+    user_id: 45
+    name: Dolorum adipisci consectetur
+    description: At debitis omnis excepturi quam est voluptatem placeat. Et tempore expedita voluptatem consequatur magni velit. Nostrum aperiam molestiae autem aut qui vero cumque illo.
+    slug: dolorum-adipisci-consectetur
+    createdAt: 2014-09-20 11:55:33
+    updatedAt: 2014-09-20 12:09:09
+    type: band
+  -
+    id: 105
+    user_id: 45
+    name: Amet veniam officiis quos quod optio
+    description: In qui ut eos et sint soluta enim. Sunt corporis facere doloribus fugit. Ipsum recusandae sit tempora omnis assumenda. Dolorum iste commodi at enim tempore qui.
+    slug: amet-veniam-officiis-quos-quod-optio
+    createdAt: 2014-09-20 11:55:35
+    updatedAt: 2014-09-20 11:55:35
+    type: musician
+  -
+    id: 106
+    user_id: 45
+    name: Facilis beatae assumenda repellendus fugiat
+    description: Reiciendis earum blanditiis aut impedit quasi eum in. Odit ipsum esse rerum minima. Quos dolorem harum vero corporis. Rerum et dignissimos corporis voluptas et.
+    slug: facilis-beatae-assumenda-repellendus-fugiat
+    createdAt: 2014-09-20 11:55:39
+    updatedAt: 2014-09-20 12:09:09
+    type: band
+  -
+    id: 107
+    user_id: 45
+    name: Est rerum debitis dolorem explicabo
+    description: Voluptates dolorem dicta sed in. Molestiae ea doloremque et velit odit. Et omnis nihil ratione cupiditate. Et fugit qui tempore perferendis porro asperiores non.
+    slug: est-rerum-debitis-dolorem-explicabo
+    createdAt: 2014-09-20 11:55:42
+    updatedAt: 2014-09-20 11:55:42
+    type: musician
+  -
+    id: 108
+    user_id: 45
+    name: Modi perferendis voluptatem
+    description: Vel adipisci libero non aut ducimus. Amet fuga enim dolorem quia qui consectetur. Et quibusdam voluptas eveniet eum perferendis architecto molestias.
+    slug: modi-perferendis-voluptatem
+    createdAt: 2014-09-20 11:55:45
+    updatedAt: 2014-09-20 11:55:45
+    type: musician
+  -
+    id: 109
+    user_id: 45
+    name: Ea aut dignissimos optio id error
+    description: Ipsam enim amet totam ea tempora et. Aliquam quis aspernatur consequuntur nihil nesciunt. Repudiandae a possimus earum error rerum recusandae tempora.
+    slug: ea-aut-dignissimos-optio-id-error
+    createdAt: 2014-09-20 11:55:49
+    updatedAt: 2014-09-20 11:55:49
+    type: musician
+  -
+    id: 110
+    user_id: 46
+    name: Ratione
+    description: Dignissimos cumque qui repellat blanditiis tenetur. Quia eos placeat ut fuga id. Ex unde distinctio quibusdam quidem ut nesciunt.
+    slug: ratione
+    createdAt: 2014-09-20 11:55:54
+    updatedAt: 2014-09-20 11:55:54
+    type: musician
+  -
+    id: 111
+    user_id: 46
+    name: Aut
+    description: Id a aliquam expedita alias in. Aut consequatur quae earum ut repellat veritatis. Aut nam placeat omnis quos et beatae unde nulla.
+    slug: aut
+    createdAt: 2014-09-20 11:56:02
+    updatedAt: 2014-09-20 11:56:02
+    type: musician
+  -
+    id: 112
+    user_id: 47
+    name: Sint quia
+    description: Et id ipsum omnis pariatur corporis. Et voluptates in vel deleniti perferendis dolorum. Aliquid natus aliquam ea. Blanditiis rerum id rerum.
+    slug: sint-quia
+    createdAt: 2014-09-20 11:56:04
+    updatedAt: 2014-09-20 11:56:04
+    type: musician
+  -
+    id: 113
+    user_id: 47
+    name: Quae dolore amet
+    description: Natus nemo provident sunt repellendus dolore odio. Minima neque harum ipsum quo ullam perferendis quia. Quo alias excepturi quas quasi et.
+    slug: quae-dolore-amet
+    createdAt: 2014-09-20 11:56:06
+    updatedAt: 2014-09-20 11:56:06
+    type: musician
+  -
+    id: 114
+    user_id: 48
+    name: Voluptas praesentium sequi a mollitia
+    description: Et aspernatur beatae enim deleniti consequatur corporis rerum. Accusantium iste ab omnis iusto dolorem quia facere. Reiciendis cumque facilis molestiae culpa.
+    slug: voluptas-praesentium-sequi-a-mollitia
+    createdAt: 2014-09-20 11:56:08
+    updatedAt: 2014-09-20 12:09:09
+    type: band
+  -
+    id: 115
+    user_id: 48
+    name: Qui distinctio
+    description: Est sit ducimus recusandae. Suscipit ut adipisci quidem laudantium eveniet. Illo dolore amet voluptatum.
+    slug: qui-distinctio
+    createdAt: 2014-09-20 11:56:11
+    updatedAt: 2014-09-20 11:56:11
+    type: musician
+  -
+    id: 116
+    user_id: 48
+    name: Ut labore
+    description: Esse magnam adipisci eos blanditiis. Nostrum temporibus et veniam distinctio fuga sed voluptas quidem. Ut ipsum omnis culpa ipsam tempore nostrum occaecati alias. Eligendi eos magnam ab autem ad.
+    slug: ut-labore
+    createdAt: 2014-09-20 11:56:13
+    updatedAt: 2014-09-20 12:09:09
+    type: band
+  -
+    id: 117
+    user_id: 48
+    name: Vitae autem id rem praesentium non debitis
+    description: Occaecati esse qui harum. Delectus doloremque totam exercitationem aut. Minima et rem sint voluptatem non corporis at aliquid.
+    slug: vitae-autem-id-rem-praesentium-non-debitis
+    createdAt: 2014-09-20 11:56:15
+    updatedAt: 2014-09-20 11:56:15
+    type: musician
+  -
+    id: 118
+    user_id: 49
+    name: Nostrum
+    description: Et aut aut ipsam in consequuntur ad. Quo labore vitae esse vel non. Neque quia iste suscipit qui consequatur ipsam. Voluptatem officiis et modi tenetur repellendus dolores eveniet.
+    slug: nostrum-1
+    createdAt: 2014-09-20 11:56:18
+    updatedAt: 2014-09-20 11:56:18
+    type: musician
+  -
+    id: 119
+    user_id: 49
+    name: Sint
+    description: Ratione et sit assumenda facere est voluptas in. Est eum atque dolor nulla nostrum. Qui quasi voluptates consequatur a. Et non voluptatem eos et enim.
+    slug: sint
+    createdAt: 2014-09-20 11:56:21
+    updatedAt: 2014-09-20 11:56:21
+    type: musician
+  -
+    id: 120
+    user_id: 50
+    name: Expedita nihil incidunt in similique et
+    description: Illum atque exercitationem voluptas nihil et sint qui. Vero unde illum neque eveniet suscipit optio atque labore. Sint qui consequatur quis minima.
+    slug: expedita-nihil-incidunt-in-similique-et
+    createdAt: 2014-09-20 11:56:23
+    updatedAt: 2014-09-20 11:56:23
+    type: musician
+  -
+    id: 121
+    user_id: 50
+    name: Modi sapiente cupiditate in
+    description: Rerum voluptatem quasi nobis et. Et explicabo qui placeat labore eius fugit. Atque quidem cumque ut eum. Doloremque tempora sint quasi facilis magnam ab.
+    slug: modi-sapiente-cupiditate-in
+    createdAt: 2014-09-20 11:56:26
+    updatedAt: 2014-09-20 11:56:26
+    type: musician
+  -
+    id: 122
+    user_id: 1
+    name: band1
+    description: band1
+    slug: band1
+    createdAt: 2014-09-20 12:12:55
+    updatedAt: 2014-09-20 12:12:55
+    type: band
+
+...

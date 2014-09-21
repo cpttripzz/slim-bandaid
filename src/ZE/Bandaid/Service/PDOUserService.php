@@ -22,7 +22,7 @@ class PDOUserService implements UserServiceInterface
         if(!$columns){
             $columns = array('id', 'email','username');
         }
-        $sql = 'SELECT '.implode(",",$columns).' FROM users WHERE email = :username AND password = SHA2(CONCAT(:password,salt), 256)';
+        $sql = 'SELECT '.implode(",",$columns).' FROM user WHERE email = :username AND password = SHA2(CONCAT(:password,salt), 256)';
         $stmt  = $this->db->prepare($sql);
         $stmt->execute(array(':username' => $username,':password'=>$password));
         return $stmt->fetch();
@@ -31,7 +31,7 @@ class PDOUserService implements UserServiceInterface
     public function createUser($username,$password, $email)
     {
         $salt = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
-        $sql = "INSERT INTO users(username,email,salt,password) VALUES (:username,:email,:salt, SHA2(CONCAT(:password,:salt), 256) )";
+        $sql = "INSERT INTO user(username,email,salt,password) VALUES (:username,:email,:salt, SHA2(CONCAT(:password,:salt), 256) )";
         $stmt  = $this->db->prepare($sql);
         try {
             $stmt->execute(array(':username' => $username, ':email' => $email, ':salt' => $salt, ':password' => $password));

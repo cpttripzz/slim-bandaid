@@ -1,367 +1,367 @@
 ---
-band_vacancy_association:
+bandvacancy_association:
   -
     id: 1
     band_id: 122
-    bandVacancy_id: 1
+    bandvacancy_id: 1
   -
     id: 2
     band_id: 2
-    bandVacancy_id: 2
+    bandvacancy_id: 2
   -
     id: 3
     band_id: 2
-    bandVacancy_id: 3
+    bandvacancy_id: 3
   -
     id: 4
     band_id: 4
-    bandVacancy_id: 4
+    bandvacancy_id: 4
   -
     id: 5
     band_id: 6
-    bandVacancy_id: 5
+    bandvacancy_id: 5
   -
     id: 6
     band_id: 8
-    bandVacancy_id: 6
+    bandvacancy_id: 6
   -
     id: 7
     band_id: 8
-    bandVacancy_id: 7
+    bandvacancy_id: 7
   -
     id: 8
     band_id: 8
-    bandVacancy_id: 8
+    bandvacancy_id: 8
   -
     id: 9
     band_id: 12
-    bandVacancy_id: 9
+    bandvacancy_id: 9
   -
     id: 10
     band_id: 12
-    bandVacancy_id: 10
+    bandvacancy_id: 10
   -
     id: 11
     band_id: 12
-    bandVacancy_id: 11
+    bandvacancy_id: 11
   -
     id: 12
     band_id: 12
-    bandVacancy_id: 12
+    bandvacancy_id: 12
   -
     id: 13
     band_id: 12
-    bandVacancy_id: 13
+    bandvacancy_id: 13
   -
     id: 14
     band_id: 16
-    bandVacancy_id: 14
+    bandvacancy_id: 14
   -
     id: 15
     band_id: 16
-    bandVacancy_id: 15
+    bandvacancy_id: 15
   -
     id: 16
     band_id: 16
-    bandVacancy_id: 16
+    bandvacancy_id: 16
   -
     id: 17
     band_id: 18
-    bandVacancy_id: 17
+    bandvacancy_id: 17
   -
     id: 18
     band_id: 18
-    bandVacancy_id: 18
+    bandvacancy_id: 18
   -
     id: 19
     band_id: 21
-    bandVacancy_id: 19
+    bandvacancy_id: 19
   -
     id: 20
     band_id: 21
-    bandVacancy_id: 20
+    bandvacancy_id: 20
   -
     id: 21
     band_id: 23
-    bandVacancy_id: 21
+    bandvacancy_id: 21
   -
     id: 22
     band_id: 23
-    bandVacancy_id: 22
+    bandvacancy_id: 22
   -
     id: 23
     band_id: 31
-    bandVacancy_id: 23
+    bandvacancy_id: 23
   -
     id: 24
     band_id: 31
-    bandVacancy_id: 24
+    bandvacancy_id: 24
   -
     id: 25
     band_id: 33
-    bandVacancy_id: 25
+    bandvacancy_id: 25
   -
     id: 26
     band_id: 33
-    bandVacancy_id: 26
+    bandvacancy_id: 26
   -
     id: 27
     band_id: 33
-    bandVacancy_id: 27
+    bandvacancy_id: 27
   -
     id: 28
     band_id: 33
-    bandVacancy_id: 28
+    bandvacancy_id: 28
   -
     id: 29
     band_id: 33
-    bandVacancy_id: 29
+    bandvacancy_id: 29
   -
     id: 30
     band_id: 37
-    bandVacancy_id: 30
+    bandvacancy_id: 30
   -
     id: 31
     band_id: 37
-    bandVacancy_id: 31
+    bandvacancy_id: 31
   -
     id: 32
     band_id: 37
-    bandVacancy_id: 32
+    bandvacancy_id: 32
   -
     id: 33
     band_id: 37
-    bandVacancy_id: 33
+    bandvacancy_id: 33
   -
     id: 34
     band_id: 37
-    bandVacancy_id: 34
+    bandvacancy_id: 34
   -
     id: 35
     band_id: 40
-    bandVacancy_id: 35
+    bandvacancy_id: 35
   -
     id: 36
     band_id: 42
-    bandVacancy_id: 36
+    bandvacancy_id: 36
   -
     id: 37
     band_id: 42
-    bandVacancy_id: 37
+    bandvacancy_id: 37
   -
     id: 38
     band_id: 44
-    bandVacancy_id: 38
+    bandvacancy_id: 38
   -
     id: 39
     band_id: 44
-    bandVacancy_id: 39
+    bandvacancy_id: 39
   -
     id: 40
     band_id: 44
-    bandVacancy_id: 40
+    bandvacancy_id: 40
   -
     id: 41
     band_id: 46
-    bandVacancy_id: 41
+    bandvacancy_id: 41
   -
     id: 42
     band_id: 46
-    bandVacancy_id: 42
+    bandvacancy_id: 42
   -
     id: 43
     band_id: 46
-    bandVacancy_id: 43
+    bandvacancy_id: 43
   -
     id: 44
     band_id: 57
-    bandVacancy_id: 44
+    bandvacancy_id: 44
   -
     id: 45
     band_id: 57
-    bandVacancy_id: 45
+    bandvacancy_id: 45
   -
     id: 46
     band_id: 57
-    bandVacancy_id: 46
+    bandvacancy_id: 46
   -
     id: 47
     band_id: 59
-    bandVacancy_id: 47
+    bandvacancy_id: 47
   -
     id: 48
     band_id: 59
-    bandVacancy_id: 48
+    bandvacancy_id: 48
   -
     id: 49
     band_id: 59
-    bandVacancy_id: 49
+    bandvacancy_id: 49
   -
     id: 50
     band_id: 62
-    bandVacancy_id: 50
+    bandvacancy_id: 50
   -
     id: 51
     band_id: 62
-    bandVacancy_id: 51
+    bandvacancy_id: 51
   -
     id: 52
     band_id: 62
-    bandVacancy_id: 52
+    bandvacancy_id: 52
   -
     id: 53
     band_id: 62
-    bandVacancy_id: 53
+    bandvacancy_id: 53
   -
     id: 54
     band_id: 64
-    bandVacancy_id: 54
+    bandvacancy_id: 54
   -
     id: 55
     band_id: 64
-    bandVacancy_id: 55
+    bandvacancy_id: 55
   -
     id: 56
     band_id: 66
-    bandVacancy_id: 56
+    bandvacancy_id: 56
   -
     id: 57
     band_id: 66
-    bandVacancy_id: 57
+    bandvacancy_id: 57
   -
     id: 58
     band_id: 66
-    bandVacancy_id: 58
+    bandvacancy_id: 58
   -
     id: 59
     band_id: 71
-    bandVacancy_id: 59
+    bandvacancy_id: 59
   -
     id: 60
     band_id: 71
-    bandVacancy_id: 60
+    bandvacancy_id: 60
   -
     id: 61
     band_id: 71
-    bandVacancy_id: 61
+    bandvacancy_id: 61
   -
     id: 62
     band_id: 73
-    bandVacancy_id: 62
+    bandvacancy_id: 62
   -
     id: 63
     band_id: 73
-    bandVacancy_id: 63
+    bandvacancy_id: 63
   -
     id: 64
     band_id: 73
-    bandVacancy_id: 64
+    bandvacancy_id: 64
   -
     id: 65
     band_id: 75
-    bandVacancy_id: 65
+    bandvacancy_id: 65
   -
     id: 66
     band_id: 75
-    bandVacancy_id: 66
+    bandvacancy_id: 66
   -
     id: 67
     band_id: 78
-    bandVacancy_id: 67
+    bandvacancy_id: 67
   -
     id: 68
     band_id: 78
-    bandVacancy_id: 68
+    bandvacancy_id: 68
   -
     id: 69
     band_id: 80
-    bandVacancy_id: 69
+    bandvacancy_id: 69
   -
     id: 70
     band_id: 80
-    bandVacancy_id: 70
+    bandvacancy_id: 70
   -
     id: 71
     band_id: 80
-    bandVacancy_id: 71
+    bandvacancy_id: 71
   -
     id: 72
     band_id: 84
-    bandVacancy_id: 72
+    bandvacancy_id: 72
   -
     id: 73
     band_id: 84
-    bandVacancy_id: 73
+    bandvacancy_id: 73
   -
     id: 74
     band_id: 86
-    bandVacancy_id: 74
+    bandvacancy_id: 74
   -
     id: 75
     band_id: 86
-    bandVacancy_id: 75
+    bandvacancy_id: 75
   -
     id: 76
     band_id: 86
-    bandVacancy_id: 76
+    bandvacancy_id: 76
   -
     id: 77
     band_id: 94
-    bandVacancy_id: 77
+    bandvacancy_id: 77
   -
     id: 78
     band_id: 94
-    bandVacancy_id: 78
+    bandvacancy_id: 78
   -
     id: 79
     band_id: 102
-    bandVacancy_id: 79
+    bandvacancy_id: 79
   -
     id: 80
     band_id: 102
-    bandVacancy_id: 80
+    bandvacancy_id: 80
   -
     id: 81
     band_id: 102
-    bandVacancy_id: 81
+    bandvacancy_id: 81
   -
     id: 82
     band_id: 104
-    bandVacancy_id: 82
+    bandvacancy_id: 82
   -
     id: 83
     band_id: 104
-    bandVacancy_id: 83
+    bandvacancy_id: 83
   -
     id: 84
     band_id: 106
-    bandVacancy_id: 84
+    bandvacancy_id: 84
   -
     id: 85
     band_id: 106
-    bandVacancy_id: 85
+    bandvacancy_id: 85
   -
     id: 86
     band_id: 114
-    bandVacancy_id: 86
+    bandvacancy_id: 86
   -
     id: 87
     band_id: 114
-    bandVacancy_id: 87
+    bandvacancy_id: 87
   -
     id: 88
     band_id: 116
-    bandVacancy_id: 88
+    bandvacancy_id: 88
   -
     id: 89
     band_id: 116
-    bandVacancy_id: 89
+    bandvacancy_id: 89
   -
     id: 90
     band_id: 122
-    bandVacancy_id: 90
+    bandvacancy_id: 90
   -
     id: 91
     band_id: 122
-    bandVacancy_id: 91
+    bandvacancy_id: 91
 

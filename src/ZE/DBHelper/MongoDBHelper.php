@@ -55,6 +55,7 @@ class MongoDBHelper
             $mongoIdsMap = $this->mongoIdsMap;
         }
         foreach ($row as $column => &$colValue) {
+
             if (isset($options['embed']['columns'][$column])){
                 if(!empty($row[$column])) {
                     $innerQuery = array($options['embed']['columns'][$column]['reference_table_id']

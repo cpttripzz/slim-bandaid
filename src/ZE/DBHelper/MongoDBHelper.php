@@ -72,8 +72,11 @@ class MongoDBHelper
             } elseif (isset($mongoIdsMap[$column])) {
                 $mongoIds = $this->getMongoIdsByValue($mongoIdsMap[$column], 'id', $colValue);
                 unset($row[$column]);
-                $row[$mongoIdsMap[$column]] = array_values($mongoIds);
+                $row[ empty($options['dual_reference_field'] ) ? $mongoIdsMap[$column] : $options['dual_reference_field'] ] = array_values($mongoIds);
                 foreach($mongoIds as $strMongoId){
+                    if (!empty($options['dual_reference_ref_field'])){
+                        $dualRefMap[$mongoIdsMap[$column]]['dual_reference_ref_field'] = $options['dual_reference_ref_field'];
+                    }
                     $dualRefMap[$mongoIdsMap[$column]][] = $strMongoId;
                 }
             }
@@ -84,18 +87,27 @@ class MongoDBHelper
             }
             $newDocument = $this->db->$table->findAndModify($query, $row, null, array('new' => true, 'upsert' => true));
             if ($dualReference) {
+                $dualReferenceRefField = false;
                 foreach ($dualRefMap as $refTable => $mongoIds) {
+                    if(!empty($mongoIds['dual_reference_ref_field'])) {
+                        $dualReferenceRefField = $mongoIds['dual_reference_ref_field'];
+                        unset($mongoIds['dual_reference_ref_field']);
+                    }
                     foreach($mongoIds as $strMongoId){
                         $mongoId = new \MongoId($strMongoId);
                         $query = array('_id' => $mongoId);
                         $refs = $this->db->$refTable->findOne($query);
-                        $refs = isset($refs[$table . 's']) ? $refs[$table . 's'] : array();
+                        if($dualReferenceRefField){
+                            $refs = isset($refs[$dualReferenceRefField]) ? $refs[$dualReferenceRefField] : array();
+                        } else {
+                            $refs = isset($refs[$table . 's']) ? $refs[$table . 's'] : array();
+                        }
                         $flippedRefs = array_flip($refs);
                         if(empty($flippedRefs[$newDocument['_id']->{'$id'}])) {
                             $refs[] = $newDocument['_id']->{'$id'};
                         }
                         $this->db->$refTable->update(
-                            $query, array('$set' => array($table . 's' => $refs))
+                            $query, array('$set' => array( $dualReferenceRefField ? $dualReferenceRefField : $table . 's' => $refs))
                         );
                     }
 

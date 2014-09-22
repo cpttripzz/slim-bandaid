@@ -133,9 +133,9 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
     {
         if (!empty($this->joinTableFixtures)) {
 
-            foreach ($this->joinTableFixtures as $joinTableFixture) {
+            foreach ($this->joinTableFixtures as $yamlFile => $joinTableFixture) {
 
-                $data = Spyc::YAMLLoad($this->fixturePath . DIRECTORY_SEPARATOR . $joinTableFixture['table_name'] . '.yml');
+                $data = Spyc::YAMLLoad($this->fixturePath . DIRECTORY_SEPARATOR . $yamlFile . '.yml');
 
                 foreach ($data as $table => $fixtureData) {
                     $this->dbHelper->saveJoinTableReferences($joinTableFixture,$fixtureData);

@@ -32,6 +32,7 @@ class MongoAssociationTest extends Abstract_TestCase
             'association' => array(),
             'genre' => array(),
             'country' => array(),
+            'instrument' => array(),
             'region' => array(
                 'embed' =>
                     array('columns' => array(
@@ -110,6 +111,28 @@ class MongoAssociationTest extends Abstract_TestCase
                                         'columns_to_embed' => array('address')
                                     ),
                             ))
+                    ),
+                'band_musician' =>
+                    array(
+                        'dual_reference' => true,
+                        'dual_reference_field' => 'bands',
+                        'dual_reference_ref_field' => 'musicians',
+                        'table_name' => 'association',
+                        'update_table' => 'association',
+                        'update_table_id' => 'musician_id',
+                        'reference_table' => 'association',
+                        'reference_table_id' => 'band_id',
+                    ),
+                'musician_instrument' =>
+                    array(
+                        'dual_reference' => true,
+                        'dual_reference_field' => 'instruments',
+                        'dual_reference_ref_field' => 'musicians',
+                        'table_name' => 'association',
+                        'update_table' => 'association',
+                        'update_table_id' => 'musician_id',
+                        'reference_table' => 'instrument',
+                        'reference_table_id' => 'instrument_id',
                     ),
 
             )

@@ -55,7 +55,7 @@ class MongoDBHelper
             $mongoIdsMap = $this->mongoIdsMap;
         }
         foreach ($row as $column => &$colValue) {
-
+            $altTableName = false;
             if (isset($options['embed']['columns'][$column])){
                 if(!empty($row[$column])) {
                     $innerQuery = array($options['embed']['columns'][$column]['reference_table_id']
@@ -66,10 +66,12 @@ class MongoDBHelper
                             $dualRefMap[$options['embed']['columns'][$column]['reference_table']][] = $document['_id']->{'$id'};
                             $dualRefMap[$options['embed']['columns'][$column]['reference_table']]['dual_reference_ref_field'] = $options['embed']['columns'][$column]['dual_reference_ref_field'];
 
+                            $altTableName = $options['embed']['columns'][$column]['dual_reference_field'];
+
                         }
                         $document = array_intersect_key($document, array_flip($options['embed']['columns'][$column]['columns_to_embed']));
                     }
-                    $row[$options['embed']['columns'][$column]['reference_table']] = $document;
+                    $row[ $altTableName ? $altTableName :$options['embed']['columns'][$column]['reference_table']] = $document;
                 }
                 unset($row[$column]);
 

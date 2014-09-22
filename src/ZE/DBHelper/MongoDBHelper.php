@@ -57,11 +57,14 @@ class MongoDBHelper
         foreach ($row as $column => &$colValue) {
             if (isset($options['embed']['columns'][$column])){
                 if(!empty($row[$column])) {
-                    $innerQuery = array($options['embed']['columns'][$column]['reference_table_id'] => (int)$row[$column]);
+                    $innerQuery = array($options['embed']['columns'][$column]['reference_table_id']
+                        => is_array($row[$column]) ? reset($row[$column]) :  (int)$row[$column]);
                     $document = $this->db->$options['embed']['columns'][$column]['reference_table']->findOne($innerQuery);
                     if (isset($options['embed']['columns'][$column]['columns_to_embed'])) {
                         if ($options['embed']['columns'][$column]['dual_reference']) {
                             $dualRefMap[$options['embed']['columns'][$column]['reference_table']][] = $document['_id']->{'$id'};
+                            $dualRefMap[$options['embed']['columns'][$column]['reference_table']]['dual_reference_ref_field'] = $options['embed']['columns'][$column]['dual_reference_ref_field'];
+
                         }
                         $document = array_intersect_key($document, array_flip($options['embed']['columns'][$column]['columns_to_embed']));
                     }

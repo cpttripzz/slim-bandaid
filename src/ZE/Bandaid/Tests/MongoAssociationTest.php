@@ -33,6 +33,7 @@ class MongoAssociationTest extends Abstract_TestCase
             'genre' => array(),
             'country' => array(),
             'instrument' => array(),
+            'band_vacancy' =>array(),
             'region' => array(
                 'embed' =>
                     array('columns' => array(
@@ -134,10 +135,47 @@ class MongoAssociationTest extends Abstract_TestCase
                         'reference_table' => 'instrument',
                         'reference_table_id' => 'instrument_id',
                     ),
+                'bandvacancy_genre' =>
+                    array(
+                        'dual_reference' => true,
+                        'table_name' => 'bandvacancy_genre',
+                        'update_table' => 'band_vacancy',
+                        'update_table_id' => 'bandvacancy_id',
+                        'reference_table' => 'genre',
+                        'reference_table_id' => 'genre_id',
+                        'embed' =>
+                            array('columns' => array(
+                                'genre_id' =>
+                                    array(
+                                        'dual_reference' => true,
+                                        'dual_reference_field' => 'genres',
+                                        'dual_reference_ref_field' => 'band_vacancies',
+                                        'table_name' => 'bandvacancy_genre',
+                                        'update_table' => 'band_vacancy',
+                                        'update_table_id' => 'bandvacancy_id',
+                                        'reference_table' => 'genre',
+                                        'reference_table_id' => 'id',
+                                        'columns_to_embed' => array('name','_id')
+                                    ),
+                            ))
+                    ),
 
             )
         );
         $this->loadJoinTableFixtures();
+        $bandVacancy = $this->db->band_vacancy->findOne(array('id' => 1));
+        $this->assertEquals('Country', $bandVacancy['genre']['name']);
+        $genre = $this->db->genre->findOne(array('_id' => $bandVacancy['genre']['_id']));
+        $this->assertEquals('Country', $genre['name']);
+        $this->assertEquals($bandVacancy['genre']['_id']->{'$id'},$genre['_id']->{'$id'});
+        $this->assertEquals($genre['band_vacancies'][0],$bandVacancy['_id']->{'$id'});
+
+        $bandVacancy = $this->db->band_vacancy->findOne(array('id' => 82));
+        $this->assertEquals('Jazz', $bandVacancy['genre']['name']);
+        $genre = $this->db->genre->findOne(array('_id' => $bandVacancy['genre']['_id']));
+        $this->assertEquals('Jazz', $genre['name']);
+        $this->assertEquals($bandVacancy['genre']['_id']->{'$id'},$genre['_id']->{'$id'});
+        $this->assertEquals($genre['band_vacancies'][7],$bandVacancy['_id']->{'$id'});
 
     }
 }

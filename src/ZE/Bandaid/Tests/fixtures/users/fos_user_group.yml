@@ -1,7 +1,0 @@
----
-fos_user_group:
-  -
-    id: 1
-    name: user
-    roles: a:0:{}
-

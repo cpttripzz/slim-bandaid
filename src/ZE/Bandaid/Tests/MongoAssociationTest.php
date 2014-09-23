@@ -77,7 +77,31 @@ class MongoAssociationTest extends Abstract_TestCase
                                 'reference_table_id' => 'id',
                                 'columns_to_embed' => array('long_name')
                             )
-                    )))
+                    ))),
+            'document' =>
+                array(
+                    'dual_reference' => true,
+                    'table_name' => 'document',
+                    'update_table' => 'document',
+                    'update_table_id' => 'document_id',
+                    'reference_table' => 'association',
+                    'reference_table_id' => 'association_id',
+                    'embed' =>
+                        array('columns' => array(
+                            'association_id' =>
+                                array(
+                                    'dual_reference' => true,
+                                    'dual_reference_field' => 'associations',
+                                    'dual_reference_ref_field' => 'documents',
+                                    'table_name' => 'document',
+                                    'update_table' => 'document',
+                                    'update_table_id' => 'document_id',
+                                    'reference_table' => 'association',
+                                    'reference_table_id' => 'id',
+                                    'columns_to_embed' => array('path','_id')
+                                )
+                        ))),
+
             ));
         $this->loadFixtures(true);
         $this->setJoinTableFixtures(
@@ -243,6 +267,8 @@ class MongoAssociationTest extends Abstract_TestCase
         $genre = $this->db->genre->findOne(array('_id' => $bandVacancy['genres']['_id']));
         $instrument = $this->db->instrument->findOne(array('_id' => $bandVacancy['instruments']['_id']));
         $band = $this->db->association->findOne(array('_id' => $bandVacancy['bands']['_id']));
+        $document =  $this->db->document->findOne(array('id' => 12 ));
+        $this->assertEquals($document['_id']->{'$id'},$band['documents'][0]);
         $this->assertEquals(12, $band['id']);
         $this->assertEquals('Punk Rock', $genre['name']);
         $this->assertEquals('Trumpet', $instrument['name']);
@@ -250,12 +276,13 @@ class MongoAssociationTest extends Abstract_TestCase
         $this->assertEquals($bandVacancy['instruments']['_id']->{'$id'},$instrument['_id']->{'$id'});
         $this->assertEquals($genre['band_vacancies'][1],$bandVacancy['_id']->{'$id'});
         $this->assertEquals($instrument['band_vacancies'][0],$bandVacancy['_id']->{'$id'});
-
+        $this->assertEquals(5,count($band['band_vacancies']));
         $band = $this->db->association->findOne(array('id' => 40 ));
         $this->assertEquals(1, count($band['band_vacancies']));
         $mongoId = new \MongoId($band['band_vacancies'][0]);
         $bandVacancyFromMongoId = $this->db->band_vacancy->findOne(array('_id' =>  $mongoId));
         $bandVacancyFromSqlId = $this->db->band_vacancy->findOne(array('id' => 35 ));
         $this->assertEquals($bandVacancyFromMongoId,$bandVacancyFromSqlId);
+
     }
 }

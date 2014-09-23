@@ -86,7 +86,7 @@ document:
     is_default: 
   -
     id: 13
-    association_id: 13
+    association_id: 12
     path: 5fa3424bd3b388b4c3edf5d641ccef36acdf92ad.jpeg
     crop_params: 
     type: 

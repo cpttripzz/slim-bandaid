@@ -98,7 +98,8 @@ class MongoAssociationTest extends Abstract_TestCase
                                     'update_table_id' => 'document_id',
                                     'reference_table' => 'association',
                                     'reference_table_id' => 'id',
-                                    'columns_to_embed' => array('path','_id')
+                                    'columns_to_embed' => array('name','_id'),
+                                    'ref_columns_to_embed' => array('path','_id'),
                                 )
                         ))),
 
@@ -268,7 +269,7 @@ class MongoAssociationTest extends Abstract_TestCase
         $instrument = $this->db->instrument->findOne(array('_id' => $bandVacancy['instruments']['_id']));
         $band = $this->db->association->findOne(array('_id' => $bandVacancy['bands']['_id']));
         $document =  $this->db->document->findOne(array('id' => 12 ));
-        $this->assertEquals($document['_id']->{'$id'},$band['documents'][0]);
+        $this->assertEquals($document['_id']->{'$id'},$band['documents'][0]['_id']->{'$id'});
         $this->assertEquals(12, $band['id']);
         $this->assertEquals('Punk Rock', $genre['name']);
         $this->assertEquals('Trumpet', $instrument['name']);

@@ -7,13 +7,13 @@ bandvacancy_genre:
     bandvacancy_id: 2
     genre_id: 11
   -
-    bandvacancy_id: 3
+    bandvacancy_id: 2
     genre_id: 8
   -
     bandvacancy_id: 4
     genre_id: 3
   -
-    bandvacancy_id: 5
+    bandvacancy_id: 1
     genre_id: 10
   -
     bandvacancy_id: 6
@@ -37,7 +37,7 @@ bandvacancy_genre:
     bandvacancy_id: 12
     genre_id: 8
   -
-    bandvacancy_id: 13
+    bandvacancy_id: 12
     genre_id: 3
   -
     bandvacancy_id: 14
@@ -247,10 +247,10 @@ bandvacancy_genre:
     bandvacancy_id: 82
     genre_id: 7
   -
-    bandvacancy_id: 83
+    bandvacancy_id: 82
     genre_id: 9
   -
-    bandvacancy_id: 84
+    bandvacancy_id: 82
     genre_id: 9
   -
     bandvacancy_id: 85

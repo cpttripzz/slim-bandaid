@@ -2,6 +2,7 @@
 namespace ZE\Bandaid\Tests;
 
 use Spyc;
+use ZE\Bandaid\Service\MongoUserService;
 
 abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
 {
@@ -81,11 +82,37 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
         }
     }
 
-    public function loadFixtures($truncate = false,$dualReference=true)
+    public function returnFixturesData($truncate = true)
+    {
+        $returnData = array();
+        foreach ($this->fixtures as $table => $options) {
+            $data = Spyc::YAMLLoad($this->fixturePath . DIRECTORY_SEPARATOR . $table . '.yml');
+            if ($truncate) {
+                $this->truncateTables(array('user'));
+            }
+            $returnData[$table]= reset($data);
+        }
+        return $returnData;
+    }
+
+    public function loadUsers()
+    {
+        $this->setFixturePath(getcwd() . '/src/ZE/Bandaid/Tests/fixtures/users/mongo');
+        $this->setFixtures(array('user'=>array()));
+        $data = $this->returnFixturesData(true);
+        $service = new MongoUserService($this->db);
+        foreach($data['user'] as $user){
+            $service->createUser($user['email'],$user['password'],$user['email'], $user['id']);
+        }
+
+    }
+
+
+    public function loadFixtures($truncate = false, $dualReference = true)
     {
         if (!empty($this->fixtures)) {
 
-            foreach ($this->fixtures as $table=>$options) {
+            foreach ($this->fixtures as $table => $options) {
 
                 $data = Spyc::YAMLLoad($this->fixturePath . DIRECTORY_SEPARATOR . $table . '.yml');
 
@@ -117,10 +144,10 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                         case 'mongo':
                             foreach ($fixtureData as $row) {
 
-                                if(isset($options['columns_to_delete'])){
-                                    $row = array_diff_key($row,array_flip($options['columns_to_delete']));
+                                if (isset($options['columns_to_delete'])) {
+                                    $row = array_diff_key($row, array_flip($options['columns_to_delete']));
                                 }
-                                $this->dbHelper->saveRow($row, $table, $dualReference,null,null,$options);
+                                $this->dbHelper->saveRow($row, $table, $dualReference, null, null, $options);
                             }
                             break;
                     }
@@ -129,7 +156,7 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
         }
     }
 
-    public function loadJoinTableFixtures($dualReference=true)
+    public function loadJoinTableFixtures($dualReference = true)
     {
         if (!empty($this->joinTableFixtures)) {
 
@@ -138,7 +165,7 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                 $data = Spyc::YAMLLoad($this->fixturePath . DIRECTORY_SEPARATOR . $yamlFile . '.yml');
 
                 foreach ($data as $table => $fixtureData) {
-                    $this->dbHelper->saveJoinTableReferences($joinTableFixture,$fixtureData);
+                    $this->dbHelper->saveJoinTableReferences($joinTableFixture, $fixtureData);
 
                 }
             }

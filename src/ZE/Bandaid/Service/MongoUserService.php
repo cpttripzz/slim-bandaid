@@ -32,7 +32,7 @@ class MongoUserService implements UserServiceInterface
         }
     }
 
-    public function createUser($username,$password, $email)
+    public function createUser($username,$password, $email, $id=null)
     {
         $salt = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
         $password = hash("sha256", $password . $salt);
@@ -42,6 +42,9 @@ class MongoUserService implements UserServiceInterface
             'salt' => $salt,
             'password' => $password
         );
+        if($id){
+            $user['id'] = $id;
+        }
         $userExists = $this->db->user->findOne(array('username' => $username));
         if($userExists){
             return array('success' => false, 'message' => 'Duplicate email or username');

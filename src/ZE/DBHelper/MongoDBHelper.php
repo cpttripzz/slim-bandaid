@@ -58,11 +58,27 @@ class MongoDBHelper
             $altTableName = false;
             if (isset($options['embed']['columns'][$column])) {
                 if (!empty($row[$column])) {
-                    $innerQuery = array($options['embed']['columns'][$column]['reference_table_id']
-                    => is_array($row[$column]) ? reset($row[$column]) : (int)$row[$column]);
-                    $document = $this->db->$options['embed']['columns'][$column]['reference_table']->findOne($innerQuery);
+                    $columns = array();
+                    if(!is_array($row[$column])){
+                        $columns = array($row[$column]);
+                    } else {
+                        $columns = $row[$column];
+                    }
+//                    $rangeQuery = array('x' => array( '$gt' => 5, '$lt' => 20 ));
+                    $innerQuery = array(
+                        $options['embed']['columns'][$column]['reference_table_id'] => array(
+                            '$in' => $columns
+                        )
+                    );
+                    $documents = $this->db->$options['embed']['columns'][$column]['reference_table']->find($innerQuery);
+                    $documents = iterator_to_array($documents,true);
                     if ($options['embed']['columns'][$column]['dual_reference']) {
-                        $dualRefMap[$options['embed']['columns'][$column]['reference_table']][] = $document['_id']->{'$id'};
+                        $docIds = array();
+                        foreach ($documents as $doc) {
+                            $docIds[] = $doc['_id']->{'$id'};
+                        }
+
+                        $dualRefMap[$options['embed']['columns'][$column]['reference_table']][] = $docIds;
                         $dualRefMap[$options['embed']['columns'][$column]['reference_table']]['dual_reference_ref_field'] = $options['embed']['columns'][$column]['dual_reference_ref_field'];
                         if (!empty($options['embed']['columns'][$column]['ref_columns_to_embed'])) {
                             $dualRefMap[$options['embed']['columns'][$column]['reference_table']]['ref_columns_to_embed'] = $options['embed']['columns'][$column]['ref_columns_to_embed'];
@@ -71,17 +87,20 @@ class MongoDBHelper
 
                     }
                     if (isset($options['embed']['columns'][$column]['columns_to_embed'])) {
-                        $document = array_intersect_key($document, array_flip($options['embed']['columns'][$column]['columns_to_embed']));
+                        $columnsToEmbed = array_flip($options['embed']['columns'][$column]['columns_to_embed']);
+                        array_walk($documents,function(&$value, $key) use ($columnsToEmbed){
+                            $value = array_intersect_key($value, $columnsToEmbed);
+                        });
                     }
-                    $row[$altTableName ? $altTableName : $options['embed']['columns'][$column]['reference_table']] = $document;
+                    $row[$altTableName ? $altTableName : $options['embed']['columns'][$column]['reference_table']] = $documents;
                 }
                 unset($row[$column]);
 
             } elseif (isset($mongoIdsMap[$column])) {
-                $mongoIds = $this->getMongoIdsByValue($mongoIdsMap[$column], 'id', $colValue);
+                $arrMongoIds = $this->getMongoIdsByValue($mongoIdsMap[$column], 'id', $colValue);
                 unset($row[$column]);
-                $row[empty($options['dual_reference_field']) ? $mongoIdsMap[$column] : $options['dual_reference_field']] = array_values($mongoIds);
-                foreach ($mongoIds as $strMongoId) {
+                $row[empty($options['dual_reference_field']) ? $mongoIdsMap[$column] : $options['dual_reference_field']] = array_values($arrMongoIds);
+                foreach ($arrMongoIds as $strMongoId) {
                     if (!empty($options['dual_reference_ref_field'])) {
                         $dualRefMap[$mongoIdsMap[$column]]['dual_reference_ref_field'] = $options['dual_reference_ref_field'];
                     }
@@ -97,16 +116,16 @@ class MongoDBHelper
             if ($dualReference) {
                 $dualReferenceRefField = false;
                 $dualReferenceFields = false;
-                foreach ($dualRefMap as $refTable => $mongoIds) {
-                    if (!empty($mongoIds['dual_reference_ref_field'])) {
-                        $dualReferenceRefField = $mongoIds['dual_reference_ref_field'];
-                        unset($mongoIds['dual_reference_ref_field']);
+                foreach ($dualRefMap as $refTable => $arrMongoIds) {
+                    if (!empty($arrMongoIds['dual_reference_ref_field'])) {
+                        $dualReferenceRefField = $arrMongoIds['dual_reference_ref_field'];
+                        unset($arrMongoIds['dual_reference_ref_field']);
                     }
-                    if (!empty($mongoIds['ref_columns_to_embed'])) {
-                        $dualReferenceFields = $mongoIds['ref_columns_to_embed'];
-                        unset($mongoIds['ref_columns_to_embed']);
+                    if (!empty($arrMongoIds['ref_columns_to_embed'])) {
+                        $dualReferenceFields = $arrMongoIds['ref_columns_to_embed'];
+                        unset($arrMongoIds['ref_columns_to_embed']);
                     }
-                    foreach ($mongoIds as $strMongoId) {
+                    foreach ($arrMongoIds as $strMongoId) {
                         $mongoId = new \MongoId($strMongoId);
                         $query = array('_id' => $mongoId);
                         $refs = $this->db->$refTable->findOne($query);

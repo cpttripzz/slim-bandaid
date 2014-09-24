@@ -1,7 +1,7 @@
 <?php
 $app->group('/user', function () use ($app) {
 
-    $userService = ZE\Bandaid\Factory\UserServiceFactory::create($app->dbType, $app->db);
+    $userService = ZE\Bandaid\Factory\ServiceFactory::create($app->dbType, $app->db, 'User');
 
     $app->map('/register', function ($app,$userService) {
         $params = $app->request()->params();

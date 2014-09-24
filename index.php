@@ -35,7 +35,7 @@ $config['databases'] = array(
     )
 );
 
-$config['routes'] = array('bands', 'auth', 'user');
+$config['routes'] = array('bands', 'user', 'home');
 
 function getJWTSecret()
 {

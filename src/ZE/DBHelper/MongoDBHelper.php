@@ -59,7 +59,7 @@ class MongoDBHelper
             if (isset($options['embed']['columns'][$column])) {
                 if (!empty($row[$column])) {
                     $columns = array();
-                    if(!is_array($row[$column])){
+                    if (!is_array($row[$column])) {
                         $columns = array($row[$column]);
                     } else {
                         $columns = $row[$column];
@@ -71,7 +71,7 @@ class MongoDBHelper
                         )
                     );
                     $documents = $this->db->$options['embed']['columns'][$column]['reference_table']->find($innerQuery);
-                    $documents = iterator_to_array($documents,true);
+                    $documents = iterator_to_array($documents, true);
                     if ($options['embed']['columns'][$column]['dual_reference']) {
                         $docIds = array();
                         foreach ($documents as $doc) {
@@ -88,7 +88,7 @@ class MongoDBHelper
                     }
                     if (isset($options['embed']['columns'][$column]['columns_to_embed'])) {
                         $columnsToEmbed = array_flip($options['embed']['columns'][$column]['columns_to_embed']);
-                        array_walk($documents,function(&$value, $key) use ($columnsToEmbed){
+                        array_walk($documents, function (&$value, $key) use ($columnsToEmbed) {
                             $value = array_intersect_key($value, $columnsToEmbed);
                         });
                     }
@@ -116,54 +116,36 @@ class MongoDBHelper
             if ($dualReference) {
                 $dualReferenceRefField = false;
                 $dualReferenceFields = false;
-                foreach ($dualRefMap as $refTable => $arrMongoIds) {
-                    if (!empty($arrMongoIds['dual_reference_ref_field'])) {
-                        $dualReferenceRefField = $arrMongoIds['dual_reference_ref_field'];
-                        unset($arrMongoIds['dual_reference_ref_field']);
+                foreach ($dualRefMap as $refTable => $mongoIds) {
+                    if (!empty($mongoIds['dual_reference_ref_field'])) {
+                        $dualReferenceRefField = $mongoIds['dual_reference_ref_field'];
+                        unset($mongoIds['dual_reference_ref_field']);
                     }
-                    if (!empty($arrMongoIds['ref_columns_to_embed'])) {
-                        $dualReferenceFields = $arrMongoIds['ref_columns_to_embed'];
-                        unset($arrMongoIds['ref_columns_to_embed']);
+                    if (!empty($mongoIds['ref_columns_to_embed'])) {
+                        $dualReferenceFields = $mongoIds['ref_columns_to_embed'];
+                        unset($mongoIds['ref_columns_to_embed']);
                     }
-                    foreach ($arrMongoIds as $strMongoId) {
-                        $mongoId = new \MongoId($strMongoId);
-                        $query = array('_id' => $mongoId);
-                        $refs = $this->db->$refTable->findOne($query);
-
-                        if ($dualReferenceRefField) {
-                            $refs = isset($refs[$dualReferenceRefField]) ? $refs[$dualReferenceRefField] : array();
-                        } else {
-                            $refs = isset($refs[$table . 's']) ? $refs[$table . 's'] : array();
+                    foreach ($mongoIds as $id) {
+                        if (!is_array($id)) {
+                            $id = array($id);
                         }
-                        if ($dualReferenceFields) { //only true if $dualReferenceRefField
-                            if (is_array($dualReferenceFields)) {
-                                if (empty($refs)) {
-                                    $refsFields = array_intersect_key($newDocument, array_flip($dualReferenceFields));
-                                    $refs[] = $refsFields;
-                                } else {
-                                    $docIsNew = true;
-                                    foreach ($refs as $key => $ref) {
-                                        if ($ref['_id']->{'$id'} == $newDocument['_id']->{'$id'}) {
-                                            $refs[$key] = $newDocument;
-                                            $docIsNew = false;
-                                            break;
-                                        }
-                                    }
-                                    if ($docIsNew){
-                                        $refs[] = $newDocument;
-                                    }
-                                }
+                        foreach ($id as $refId) {
+                            $mongoId = new \MongoId($refId);
+                            $query = array('_id' => $mongoId);
 
+                            if (!$dualReferenceFields) {
+                                $dualReferenceFields = array('_id');
                             }
-                        } else {
-                            $flippedRefs = array_flip($refs);
-                            if (empty($flippedRefs[$newDocument['_id']->{'$id'}])) {
-                                $refs[] = $newDocument['_id']->{'$id'};
-                            }
+
+
+                            $refDoc = array_intersect_key($newDocument, array_flip($dualReferenceFields));
+                            $this->db->$refTable->update(
+                                $query, array('$addToSet' =>
+                                    array($dualReferenceRefField ? $dualReferenceRefField : $table . 's' => $refDoc))
+                            );
+
+
                         }
-                        $this->db->$refTable->update(
-                            $query, array('$set' => array($dualReferenceRefField ? $dualReferenceRefField : $table . 's' => $refs))
-                        );
                     }
 
                 }

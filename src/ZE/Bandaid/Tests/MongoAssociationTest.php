@@ -99,7 +99,7 @@ class MongoAssociationTest extends Abstract_TestCase
                                     'update_table_id' => 'document_id',
                                     'reference_table' => 'association',
                                     'reference_table_id' => 'id',
-                                    'columns_to_embed' => array('name','_id'),
+                                    'columns_to_embed' => array('_id', 'name'),
                                     'ref_columns_to_embed' => array('path','_id'),
                                 )
                         ))),
@@ -188,11 +188,11 @@ class MongoAssociationTest extends Abstract_TestCase
                                         'update_table_id' => 'id',
                                         'reference_table' => 'instrument',
                                         'reference_table_id' => 'id',
-                                        'columns_to_embed' => array('name','_id'),
+                                        'columns_to_embed' => array('_id', 'name'),
                                         'ref_columns_to_embed' => array('_id', 'name'),
                                     ),
                             )),
-                    ),
+                    ), 
                 'bandvacancy_genre' =>
                     array(
                         'dual_reference' => true,
@@ -213,7 +213,8 @@ class MongoAssociationTest extends Abstract_TestCase
                                         'update_table_id' => 'bandvacancy_id',
                                         'reference_table' => 'genre',
                                         'reference_table_id' => 'id',
-                                        'columns_to_embed' => array('name','_id')
+                                        'columns_to_embed' => array('_id', 'name'),
+                                        'ref_columns_to_embed' => array('_id', 'name'),
                                     ),
                             ))
                     ),
@@ -261,7 +262,8 @@ class MongoAssociationTest extends Abstract_TestCase
                                         'update_table_id' => 'bandvacancy_id',
                                         'reference_table' => 'association',
                                         'reference_table_id' => 'id',
-                                        'columns_to_embed' => array('name','_id')
+                                        'columns_to_embed' => array('name','_id'),
+                                        'ref_columns_to_embed' => array('_id'),
                                     ),
                             ))
                     ),
@@ -270,10 +272,11 @@ class MongoAssociationTest extends Abstract_TestCase
         );
         $this->loadJoinTableFixtures();
         $bandVacancy = $this->db->band_vacancy->findOne(array('id' => 1));
-        $bandVacancyGenre = $this->db->genre->findOne(array('_id' => reset($bandVacancy['genres'])['_id']));
-        $this->assertEquals('Country', $bandVacancyGenre['name']);
-        $this->assertEquals($this->db->genre->findOne(array('name' => 'Country')),$bandVacancyGenre);
-
+        $genre = $this->db->genre->findOne(array('name' => 'Country'));
+        $this->assertEquals('Country', $bandVacancy['genres'][$genre['_id']->{'$id'}]['name']);
+        $genre = $this->db->genre->findOne(array('name' => 'Rock'));
+        $this->assertEquals($genre['name'], $bandVacancy['genres'][$genre['_id']->{'$id'}]['name']);
+        $this->assertEquals(count($bandVacancy['genres']),2);
 
         $bandVacancy = $this->db->band_vacancy->findOne(array('id' => 82));
         $genre = $this->db->genre->findOne(array('name' => 'Jazz'));
@@ -285,26 +288,23 @@ class MongoAssociationTest extends Abstract_TestCase
         $this->assertEquals(count($bandVacancy['genres']),2);
 
         $bandVacancy = $this->db->band_vacancy->findOne(array('id' => 12));
-        $this->assertEquals('Country', current($bandVacancy['genres'])['name']);
-        $this->assertEquals('Punk Rock', next($bandVacancy['genres'])['name']);
+        $this->assertEquals('Punk Rock', current($bandVacancy['genres'])['name']);
+        $this->assertEquals('Country', next($bandVacancy['genres'])['name']);
         $this->assertEquals('Trumpet', current($bandVacancy['instruments'])['name']);
         $genre = $this->db->genre->findOne(array('_id' => current($bandVacancy['genres'])['_id']));
         $band = $this->db->association->findOne(array('_id' => current($bandVacancy['bands'])['_id']));
         $document =  $this->db->document->findOne(array('id' => 12 ));
         $this->assertEquals($document['_id']->{'$id'},current($band['documents'])['_id']->{'$id'});
         $this->assertEquals(12, $band['id']);
-        $this->assertEquals('Punk Rock', $genre['name']);
-        $this->assertEquals($bandVacancy['genres'][0]['_id']->{'$id'},$genre['_id']->{'$id'});
-        $this->assertEquals($bandVacancy['instruments']['_id']->{'$id'},$instrument['_id']->{'$id'});
-        $this->assertEquals($genre['band_vacancies'][1],$bandVacancy['_id']->{'$id'});
-        $this->assertEquals($instrument['band_vacancies'][0],$bandVacancy['_id']->{'$id'});
+        $this->assertEquals('Country', $genre['name']);
+        $instrument = $this->db->instrument->findOne(array('name' => 'Trumpet'));
+        $this->assertEquals($bandVacancy['instruments'][$instrument['_id']->{'$id'}]['_id']->{'$id'},$instrument['_id']->{'$id'});
         $this->assertEquals(5,count($band['band_vacancies']));
         $band = $this->db->association->findOne(array('id' => 40 ));
         $this->assertEquals(1, count($band['band_vacancies']));
-        $mongoId = new \MongoId($band['band_vacancies'][0]);
+        $mongoId = new \MongoId(current($band['band_vacancies'])['_id']->{'$id'});
         $bandVacancyFromMongoId = $this->db->band_vacancy->findOne(array('_id' =>  $mongoId));
         $bandVacancyFromSqlId = $this->db->band_vacancy->findOne(array('id' => 35 ));
         $this->assertEquals($bandVacancyFromMongoId,$bandVacancyFromSqlId);
-
     }
 }

@@ -5,18 +5,11 @@
  * Date: 05/09/14
  * Time: 15:51
  */
-namespace ZE\Bandaid\Service;
+namespace ZE\Bandaid\Service\Mongo;
 
-class MongoUserService implements UserServiceInterface
+
+class UserService extends  ServiceAbstract
 {
-    
-    protected $db;
-
-    public function __construct($db)
-    {
-        $this->db = $db;
-    }
-
     public function getUserByCredentials($username,$password,$columns=null)
     {
         if(!$columns){
@@ -55,4 +48,5 @@ class MongoUserService implements UserServiceInterface
             return array('success' => false, 'message' => 'Unkown error');
         }
     }
+
 }

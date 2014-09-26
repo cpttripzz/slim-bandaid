@@ -2,6 +2,7 @@
 namespace ZE\Bandaid\Tests;
 
 use Spyc;
+use ZE\Bandaid\Service\Mongo\UserService;
 use ZE\Bandaid\Service\MongoUserService;
 
 abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
@@ -100,7 +101,7 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
         $this->setFixturePath(getcwd() . '/src/ZE/Bandaid/Tests/fixtures/users/mongo');
         $this->setFixtures(array('user'=>array()));
         $data = $this->returnFixturesData(true);
-        $service = new MongoUserService($this->db);
+        $service = new UserService($this->db);
         foreach($data['user'] as $user){
             $service->createUser($user['email'],$user['password'],$user['email'], $user['id']);
         }

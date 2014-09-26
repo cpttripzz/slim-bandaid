@@ -5,18 +5,11 @@
  * Date: 05/09/14
  * Time: 15:51
  */
-namespace ZE\Bandaid\Service;
+namespace ZE\Bandaid\Service\PDO;
 
-class PDOUserService implements UserServiceInterface
+
+class PDOUserService
 {
-    
-    protected $db;
-
-    public function __construct($db)
-    {
-        $this->db = $db;
-    }
-
     public function getUserByCredentials($username,$password,$columns=null)
     {
         if(!$columns){

@@ -14,11 +14,10 @@ class ServiceFactory {
     {
         switch($dbType){
             case 'pdo':
-                $class ='ZE\Bandaid\Service\PDO' . $className.'Service';
-
+                $class ='ZE\Bandaid\Service\PDO\\' . $className.'Service';
             break;
             case 'mongo':
-                $class ='ZE\Bandaid\Service\Mongo' . $className.'Service';
+                $class ='ZE\Bandaid\Service\Mongo\\' . $className.'Service';
             break;
         }
         $object = new $class($db);

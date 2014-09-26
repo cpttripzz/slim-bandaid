@@ -13,7 +13,23 @@ class MongoDBHelper
 {
     protected $db;
     protected $mongoIdsMap;
+    protected $columnsModifier;
 
+    /**
+     * @return mixed
+     */
+    public function getColumnsModifier()
+    {
+        return $this->columnsModifier;
+    }
+
+    /**
+     * @param mixed $columnsModifier
+     */
+    public function setColumnsModifier($columnsModifier)
+    {
+        $this->columnsModifier = $columnsModifier;
+    }
     /**
      * @return mixed
      */
@@ -47,6 +63,18 @@ class MongoDBHelper
         return $arrIds;
     }
 
+    public function getModifiedColumn($type,$value)
+    {
+        $returnValue = null;
+        switch ($type){
+            case 'MongoDate':
+                if ($value instanceof \MongoDate){
+                    return $value;
+                }
+                $returnValue = new \MongoDate(strtotime($value));
+        }
+        return $returnValue;
+    }
     public function saveRow($row, $table, $dualReference = true, $mongoIdsMap = null, $query = null, $options = array())
     {
         $dualRefMap = array();
@@ -56,7 +84,9 @@ class MongoDBHelper
         }
         foreach ($row as $column => &$colValue) {
             $altTableName = false;
-            if (isset($options['embed']['columns'][$column])) {
+            if (isset($this->columnsModifier[$column])) {
+                $row[$column] = $this->getModifiedColumn($this->columnsModifier[$column],$colValue);
+            } elseif (isset($options['embed']['columns'][$column])) {
                 if (!empty($row[$column])) {
                     $columns = array();
                     if (!is_array($row[$column])) {

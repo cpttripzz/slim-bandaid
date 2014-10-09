@@ -3,7 +3,8 @@
 $app->get('/home', function () use ($app) {
     $associationService = ZE\Bandaid\Factory\ServiceFactory::create($app->dbType, $app->db, 'Association');
     $params = $app->request()->params();
-    $lastId = empty($params['last_id']) ? null : $params['last_id'];
-    $bands = $associationService->getBandsWithVacancies($lastId);
+    $lastId = empty($params['last_element']) ? null : $params['last_element'];
+    $direction = empty($params['direction']) ? null : $params['direction'];
+    $bands = $associationService->getBandsWithVacancies($lastId,$direction);
     returnJson($bands);
 });

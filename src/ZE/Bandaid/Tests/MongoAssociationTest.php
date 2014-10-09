@@ -71,7 +71,7 @@ class MongoAssociationTest extends Abstract_TestCase
                                 'dual_reference' => false,
                                 'reference_table' => 'city',
                                 'reference_table_id' => 'id',
-                                'columns_to_embed' => array('name')
+                                'columns_to_embed' => array('name','country')
 
                             ),
                         'region_id' =>
@@ -131,7 +131,7 @@ class MongoAssociationTest extends Abstract_TestCase
                                         'update_table_id' => 'id',
                                         'reference_table' => 'genre',
                                         'reference_table_id' => 'id',
-                                        'columns_to_embed' => array('_id', 'name'),
+                                        'columns_to_embed' => array('_id', 'name', 'slug'),
                                         'ref_columns_to_embed' => array('name', '_id', 'type'),
                                     ),
                             )),
@@ -154,7 +154,7 @@ class MongoAssociationTest extends Abstract_TestCase
                                         'update_table_id' => 'id',
                                         'reference_table' => 'address',
                                         'reference_table_id' => 'id',
-                                        'columns_to_embed' => array('address')
+                                        'columns_to_embed' => array('address','city')
                                     ),
                             ))
                     ),
@@ -315,6 +315,5 @@ class MongoAssociationTest extends Abstract_TestCase
     {
         $this->service = new AssociationService($this->db);
         $bandsWithVacancies = $this->service->getBandsWithVacancies();
-        var_dump($bandsWithVacancies);
     }
 }

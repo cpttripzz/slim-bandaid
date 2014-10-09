@@ -18,7 +18,7 @@ abstract class ServiceAbstract
 
 
     protected $sortDirection='-1';
-    protected $limit=10;
+    protected $limit=12;
 
     public function __construct($db)
     {
@@ -85,16 +85,21 @@ abstract class ServiceAbstract
         }
 
     }
-    public function getPaginatedFind($conditions=array(),$lastId=null)
+    public function getPaginatedFind($conditions=array(),$lastElement=null,$direction=null)
     {
         $pageConditions = array();
-        if($lastId) {
-            $mongoId = new \MongoId($lastId);
+        if($lastElement) {
+            $mongoId = new \MongoId($lastElement);
             $pageConditions = array($this->sortField => array($this->getMongoDirection() => $mongoId));
         }
+        $total = $this->db->{$this->table}->find($conditions)->count();
         $sort = array($this->sortField => $this->sortDirection);
         $conditions = array_merge($conditions, $pageConditions);
         $iterator = $this->db->{$this->table}->find($conditions)->sort($sort)->limit($this->limit);
-        return iterator_to_array($iterator,true);
+
+        $data = iterator_to_array($iterator,true);
+
+        $meta = array('total' => $total, 'last_element'=>$lastElement);
+        return(array('data' => $data, 'meta'=>$meta));
     }
 }

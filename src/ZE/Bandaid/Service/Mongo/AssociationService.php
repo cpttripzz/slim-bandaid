@@ -16,14 +16,14 @@ class AssociationService extends ServiceAbstract
         $this->table = 'association';
         parent::__construct($db);
     }
-    public function getAssociation($conditions,$lastElement=null,$direction=null)
+    public function getAssociation($conditions,$fields=array(),$lastElement=null,$pageDirection=null)
     {
-        return $this->getPaginatedFind($conditions,$lastElement,$direction);
+        return $this->getPaginatedFind($conditions,$fields,$lastElement,$pageDirection);
     }
 
-    public function getBandsWithVacancies($lastElement=null,$direction=null)
+    public function getBandsWithVacancies($lastElement=null,$pageDirection=null)
     {
-        return $this->getAssociation(array('band_vacancies' => array('$exists' => true )),$lastElement,$direction);
+        return $this->getAssociation(array('band_vacancies' => array('$exists' => true )),array('id'),$lastElement,$pageDirection);
     }
 
 }

@@ -17,7 +17,7 @@ abstract class ServiceAbstract
     protected $sortField='_id';
 
 
-    protected $sortDirection='-1';
+    protected $sortDirection=1;
     protected $limit=12;
 
     public function __construct($db)
@@ -76,29 +76,40 @@ abstract class ServiceAbstract
         return $this;
     }
 
-    public function getMongoDirection()
+    public function getMongoDirection($sortDirection)
     {
-        if($this->sortDirection < 1) {
+        if($sortDirection > 0) {
             return '$gt';
         } else {
             return '$lt';
         }
 
     }
-    public function getPaginatedFind($conditions=array(),$lastElement=null,$direction=null)
+    public function getPaginatedFind($conditions=array(),$fields=array(),$lastElement=null,$pageDirection=null)
     {
         $pageConditions = array();
+
         if($lastElement) {
             $mongoId = new \MongoId($lastElement);
-            $pageConditions = array($this->sortField => array($this->getMongoDirection() => $mongoId));
+            if($pageDirection=='back'){
+                $this->sortDirection = -1;
+            }
+            $pageConditions = array($this->sortField => array($this->getMongoDirection($this->sortDirection) => $mongoId));
         }
-        $total = $this->db->{$this->table}->find($conditions)->count();
         $sort = array($this->sortField => $this->sortDirection);
+
+        $total = $this->db->{$this->table}->find($conditions)->count();
         $conditions = array_merge($conditions, $pageConditions);
-        $iterator = $this->db->{$this->table}->find($conditions)->sort($sort)->limit($this->limit);
+        if($fields){
+            $cursor = $this->db->{$this->table}->find($conditions,$fields)->sort($sort)->limit($this->limit);
+        } else {
+            $cursor = $this->db->{$this->table}->find($conditions)->sort($sort)->limit($this->limit);
+        }
 
-        $data = iterator_to_array($iterator,true);
-
+        $data = iterator_to_array($cursor,true);
+        if($pageDirection=='back'){
+            $data = array_reverse($data);
+        }
         $meta = array('total' => $total, 'last_element'=>$lastElement);
         return(array('data' => $data, 'meta'=>$meta));
     }

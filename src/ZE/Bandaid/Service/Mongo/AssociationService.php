@@ -23,7 +23,7 @@ class AssociationService extends ServiceAbstract
 
     public function getBandsWithVacancies($lastElement=null,$pageDirection=null)
     {
-        return $this->getAssociation(array('band_vacancies' => array('$exists' => true )),array('id'),$lastElement,$pageDirection);
+        return $this->getAssociation(array('band_vacancies' => array('$exists' => true )),null,$lastElement,$pageDirection);
     }
 
 }

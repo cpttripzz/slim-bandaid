@@ -133,6 +133,17 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                             foreach ($fixtureData as $row) {
                                 $stmt = $this->db->prepare($query);
                                 foreach ($row as $key => &$value) {
+                                    preg_match('/{([^}]*)}/',$value, $matches);
+                                    if($matches){
+                                        $strToSearch = 'Date:';
+                                        if (!is_bool(strpos($matches[1], $strToSearch))){
+                                            $strDateModifier = trim(substr($matches[1], strpos($matches[1],$strToSearch)+strlen($strToSearch)));
+                                            $now = new \DateTime();
+                                            $now->modify($strDateModifier);
+                                            $value = $now->format("Y-m-d H:i:s");
+
+                                        }
+                                    }
                                     $stmt->bindParam(':' . $key, $value, \PDO::PARAM_STR);
                                 }
                                 try {

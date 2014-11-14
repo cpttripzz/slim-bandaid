@@ -17,20 +17,21 @@ class PDOUserServiceTest extends Abstract_TestCase
     public function __construct()
     {
         parent::__construct('pdo');
-        $this->service = new PDOUserService($this->db);
+//        $this->service = new PDOUserService($this->db);
     }
     public function testUserCreated()
     {
-//        $this->setFixturePath(getcwd() . '/src/ZE/Bandaid/Tests/fixtures/users');
-//        $this->setFixtures(array('users'), true);
-//        $this->loadFixtures(true);
-        $this->truncateTables(array('users'));
+        $this->setFixturePath('/home/zach/dev/slim-bandaid/src/ZE/Bandaid/Tests/fixtures/users/mongo/');
+        $this->setFixtures(array('user'=>array()));
+        $this->loadFixtures(true);
+        /*$this->truncateTables(array('users'));
         $username = 'bboplifa@gmail.com';
         $password = '123456';
         $email = 'bboplifa@gmail.com';
         $this->service->createUser($username,$password,$email);
         $user = $this->service->getUserByCredentials($username,$password);
         $this->assertEquals($user['id'], 1);
+        */
     }
 
 }

@@ -130,8 +130,11 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                             });
 
                             $query = 'INSERT INTO `' . $table . '`(' . implode(',', $columns) . ' ) VALUES ( ' . implode(',', $values) . ' )';
+                            $incrementor = 0;
                             foreach ($fixtureData as $row) {
                                 $stmt = $this->db->prepare($query);
+                                $incrementor ++;
+                                $params=array();
                                 foreach ($row as $key => &$value) {
                                     preg_match('/{([^}]*)}/',$value, $matches);
                                     if($matches){
@@ -143,11 +146,18 @@ abstract class Abstract_TestCase extends \PHPUnit_Framework_TestCase
                                             $value = $now->format("Y-m-d H:i:s");
 
                                         }
+                                        $strToSearch = 'Increment:';
+                                        if (!is_bool(strpos($matches[1], $strToSearch))){
+
+                                            $newValue = str_replace('{' .$strToSearch.'}',$incrementor,$value );
+                                            $value = $newValue;
+
+                                        }
                                     }
-                                    $stmt->bindParam(':' . $key, $value, \PDO::PARAM_STR);
+                                    $params[':' . $key] = $value;
                                 }
                                 try {
-                                    $stmt->execute();
+                                    $stmt->execute($params);
                                 } catch (\Exception $e) {
                                     var_dump($e);
                                 }

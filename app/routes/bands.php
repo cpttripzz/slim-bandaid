@@ -1,8 +1,8 @@
 <?php
+$app->get('/band', function () use ($app) {
+    $associationService = ZE\Bandaid\Factory\ServiceFactory::create($app->dbType, $app->db, 'Association');
+    $params = $app->request()->params();
 
-
-    $app->get('/bands', function () use ($app) {
-        $bands = $app->db->select('SELECT * FROM association WHERE `type` = "band"');
-        $app->response()->header('Content-Type', 'application/json');
-        echo json_encode($bands);
-    });
+    $bands = $associationService->getBandsWithVacancies($lastId,$direction);
+    returnJson($bands);
+});
